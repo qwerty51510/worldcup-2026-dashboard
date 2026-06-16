@@ -443,10 +443,15 @@
                                 <div class="details-card glass-card pitch-card">
                                     <div class="pitch-header">
                                         <h3>战术阵型与风格投影</h3>
+                                        <div class="pitch-controls">
+                                            <button class="pitch-btn offense" id="btn-drill-offense">⚔️ 进攻演示</button>
+                                            <button class="pitch-btn defense" id="btn-drill-defense">🛡️ 防守落位</button>
+                                            <button class="pitch-btn reset" id="btn-drill-reset">🔄 重置</button>
+                                        </div>
                                         <div class="pitch-formations-info">
-                                            <span class="form-badge home-bg" id="form-badge-home">4-3-3</span>
+                                            <span class="form-badge home-bg" id="form-badge-home" title="点击查看战术详解">4-3-3</span>
                                             <span class="vs-text">vs</span>
-                                            <span class="form-badge away-bg" id="form-badge-away">4-3-3</span>
+                                            <span class="form-badge away-bg" id="form-badge-away" title="点击查看战术详解">4-3-3</span>
                                         </div>
                                     </div>
                                     
@@ -465,33 +470,43 @@
                                             <rect x="130" y="10" width="100" height="25" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2"></rect>
                                             <path d="M 140 80 A 50 50 0 0 0 220 80" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2"></path>
                                             <circle cx="180" cy="55" r="2" fill="rgba(255,255,255,0.5)"></circle>
-
+ 
                                             <!-- Bottom (Home Team Side) -->
                                             <rect x="90" y="420" width="180" height="70" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2"></rect>
                                             <rect x="130" y="465" width="100" height="25" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2"></rect>
                                             <path d="M 140 420 A 50 50 0 0 1 220 420" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2"></path>
                                             <circle cx="180" cy="445" r="2" fill="rgba(255,255,255,0.5)"></circle>
-
+ 
                                             <!-- Goals -->
                                             <rect x="150" y="4" width="60" height="6" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"></rect>
                                             <rect x="150" y="490" width="60" height="6" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"></rect>
                                             
                                             <!-- Player Nodes Container (Rendered Dynamically via JS) -->
                                             <g id="pitch-players-group"></g>
+
+                                            <!-- Passing / Run Lines for animation -->
+                                            <g id="pitch-animation-lines"></g>
+                                            
+                                            <!-- Ball Node for animation -->
+                                            <circle id="pitch-animation-ball" r="5.5" fill="#f59e0b" stroke="#ffffff" stroke-width="1.5" style="display: none; filter: drop-shadow(0 0 6px #f59e0b);"></circle>
                                         </svg>
                                     </div>
-
+ 
                                     <div class="pitch-tactics-desc">
                                         <h4>战术倾向与特征</h4>
                                         <p id="tactics-explanation-text">
                                             法国队主张通过中前场技术压制对手，塞内加尔依靠中场屏障拦截后发起反击。
                                         </p>
+                                        <div id="tactics-live-caption" class="tactics-live-caption" style="display: none;">
+                                            <span class="caption-pulse"></span>
+                                            <span id="tactics-live-text">正在演练中...</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
 
                         </div>
-
+                        
                         <!-- 核心球员详细数据看板 -->
                         <div class="details-card glass-card players-detail-card" style="margin-top: 24px;">
                             <h3>核心成员深度数据与战术角色 (各队 4 名关键球员)</h3>
@@ -650,6 +665,60 @@
                     <div class="team-matches-list" id="team-recent-matches">
                         <!-- JS 动态生成比赛列表条目 -->
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 阵型详情模态框 -->
+    <div class="modal-overlay" id="formation-modal">
+        <div class="modal-card glass-card" style="max-width: 580px;">
+            <button class="modal-close-btn" id="formation-modal-close-btn">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            
+            <div class="modal-header" style="margin-bottom: 20px;">
+                <div class="modal-player-title">
+                    <h2 id="formation-modal-title">4-3-3 阵型解析</h2>
+                    <span id="formation-modal-subtitle" class="text-secondary">欧洲现代进攻足球的代名词</span>
+                </div>
+            </div>
+            
+            <div class="formation-modal-body">
+                <!-- Characteristics -->
+                <div class="formation-detail-section" style="margin-bottom: 15px;">
+                    <h4 class="form-section-title" style="font-size: 0.88rem; font-weight: 700; margin-bottom: 6px; color: var(--text-primary);">📈 阵型核心特点</h4>
+                    <p id="formation-characteristics" class="form-desc-text" style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.5;"></p>
+                </div>
+                
+                <!-- Offense and Defense playbooks -->
+                <div class="formation-detail-section" style="margin-bottom: 15px;">
+                    <h4 class="form-section-title" style="font-size: 0.88rem; font-weight: 700; margin-bottom: 6px; color: var(--text-primary);">⚔️ 常用攻防套路</h4>
+                    <div class="form-playbook-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 6px;">
+                        <div class="playbook-box" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); padding: 10px; border-radius: 8px;">
+                            <span class="playbook-lbl" style="display: block; font-size: 0.68rem; color: var(--text-muted); text-transform: uppercase;">进攻常态</span>
+                            <span id="formation-offense-play" class="playbook-val" style="display: block; font-size: 0.78rem; font-weight: 600; color: #ffffff; margin-top: 4px;"></span>
+                        </div>
+                        <div class="playbook-box" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); padding: 10px; border-radius: 8px;">
+                            <span class="playbook-lbl" style="display: block; font-size: 0.68rem; color: var(--text-muted); text-transform: uppercase;">防守重心</span>
+                            <span id="formation-defense-play" class="playbook-val" style="display: block; font-size: 0.78rem; font-weight: 600; color: #ffffff; margin-top: 4px;"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Defensive Disruption -->
+                <div class="formation-detail-section" style="margin-bottom: 15px;">
+                    <h4 class="form-section-title" style="font-size: 0.88rem; font-weight: 700; margin-bottom: 6px; color: var(--text-primary);">🛡️ 防御阻断特征 (主要切断什么)</h4>
+                    <p id="formation-disruption" class="form-desc-text" style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.5;"></p>
+                </div>
+
+                <!-- Keypoint Position -->
+                <div class="formation-detail-section keypoint-box" style="background: rgba(245, 158, 11, 0.05); border: 1px solid rgba(245, 158, 11, 0.15); padding: 12px; border-radius: 10px; margin-top: 10px;">
+                    <h4 class="form-section-title" style="font-size: 0.88rem; font-weight: 700; margin-bottom: 6px; color: var(--accent-yellow);">🔑 Keypoint 核心关键点</h4>
+                    <p id="formation-keypoint" class="form-desc-text" style="font-size: 0.82rem; color: #ffffff; line-height: 1.5; font-weight: 500;"></p>
                 </div>
             </div>
         </div>

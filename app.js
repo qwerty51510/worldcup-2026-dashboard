@@ -32,6 +32,9 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function initializeDashboard() {
+    let currentMatchId = null;
+    let tacticalTimeouts = [];
+
     const tabs = {
         'overview': document.getElementById('section-overview'),
         'correlation': document.getElementById('section-correlation'),
@@ -71,6 +74,8 @@ function initializeDashboard() {
             pageSubtitle.innerText = '基于2026周期8支球队场均数据的科学实证分析';
             renderCorrelationCharts();
         } else if (targetTabId === 'match-details' && matchId) {
+            currentMatchId = matchId;
+            resetTacticalPitch(matchId);
             const matchBtn = document.getElementById(`btn-match-${matchId}`);
             if (matchBtn) matchBtn.classList.add('active');
             pageTitle.innerText = `${matchData[matchId].teams.home.name} vs ${matchData[matchId].teams.away.name}`;
@@ -99,6 +104,49 @@ function initializeDashboard() {
             switchTab('match-details', matchId);
         });
     });
+
+    // Bind tactics board drill buttons and badges
+    const btnDrillOffense = document.getElementById('btn-drill-offense');
+    const btnDrillDefense = document.getElementById('btn-drill-defense');
+    const btnDrillReset = document.getElementById('btn-drill-reset');
+
+    if (btnDrillOffense) {
+        btnDrillOffense.addEventListener('click', () => {
+            if (currentMatchId) runTacticalAnimation(currentMatchId, 'offense');
+        });
+    }
+    if (btnDrillDefense) {
+        btnDrillDefense.addEventListener('click', () => {
+            if (currentMatchId) runTacticalAnimation(currentMatchId, 'defense');
+        });
+    }
+    if (btnDrillReset) {
+        btnDrillReset.addEventListener('click', () => {
+            if (currentMatchId) resetTacticalPitch(currentMatchId);
+        });
+    }
+
+    const badgeHome = document.getElementById('form-badge-home');
+    const badgeAway = document.getElementById('form-badge-away');
+
+    if (badgeHome) {
+        badgeHome.addEventListener('click', () => {
+            if (currentMatchId) {
+                const teamName = matchData[currentMatchId].teams.home.name;
+                const formation = matchData[currentMatchId].tactics.homeForm;
+                openFormationModal(formation, teamName);
+            }
+        });
+    }
+    if (badgeAway) {
+        badgeAway.addEventListener('click', () => {
+            if (currentMatchId) {
+                const teamName = matchData[currentMatchId].teams.away.name;
+                const formation = matchData[currentMatchId].tactics.awayForm;
+                openFormationModal(formation, teamName);
+            }
+        });
+    }
 
     // 2. Render Dynamic Details for Single Match
     function renderMatchDetails(matchId) {
@@ -320,6 +368,7 @@ function initializeDashboard() {
         data.tactics.players.forEach(p => {
             const nodeG = document.createElementNS('http://www.w3.org/2000/svg', 'g');
             nodeG.setAttribute('class', 'pitch-node');
+            nodeG.setAttribute('data-name', p.name);
             
             // Set glowing color based on team (home is blue, away is theme-specific)
             let color = '#3b82f6'; // Home Blue
@@ -853,6 +902,469 @@ function initializeDashboard() {
         let g = parseInt(hex.substring(2, 4), 16);
         let b = parseInt(hex.substring(4, 6), 16);
         return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+    }
+
+    // 4.5 Tactics Drill Database & Animations
+    const TACTICAL_DB = {
+        '4-3-3': {
+            title: '4-3-3 阵型',
+            subtitle: '攻守平衡与边路突破的现代足球模板',
+            characteristics: '注重场地宽度的拉开，前场三叉戟能实现高强度的就地压迫。中场三人组能够灵活切换单双后腰，兼顾控球与拦截，防守时落位极具层次感，能迅速拉宽进攻路线。',
+            offensePlay: '通过肋部套边重叠，由翼锋内切或下底传中寻找包抄点，配合中场插上远射。',
+            defensePlay: '中前场高位就地反抢，封锁对方边卫起动通道，以攻代守。',
+            disruption: '能有效阻断对手在后场平稳起步、中场平推以及弱侧的慢速大范围横向转移。',
+            keypoint: '单后腰 (DM) 的横向跑动拦截与落位防守至关重要（例如法国的坎特/琼阿梅尼）。若单后腰被打穿，防线将直接面对对手反击的直塞冲击。'
+        },
+        '4-2-3-1': {
+            title: '4-2-3-1 阵型',
+            subtitle: '后腰屏障深厚、层次分明的攻守阵型',
+            characteristics: '双防守后腰提供扎实的中路拦截屏障，极大释放两侧边后卫的前插能力。前场四人组在中前腰的梳理下，可以开展极其流畅的传跑配合，中路及肋部威胁极大。',
+            offensePlay: '前腰前场派牌，翼锋肋部内切，边后卫插上套边套底，单中锋穿插做球。',
+            defensePlay: '双后腰在门前立起高墙，边路采取延缓退守，压缩大禁区前沿及弧顶空间。',
+            disruption: '能有效阻断对手在禁区前沿的中路直塞、弧顶倒三角回传以及半肋部的斜塞传跑。',
+            keypoint: '前腰 (AM) 的致命分球与无球拼抢、以及双后腰的默契滑铲移动是阵型能否高效运转的命脉所在（例如挪威战中的伊拉克、阿根廷战中的阿尔及利亚）。'
+        },
+        '4-4-2': {
+            title: '4-4-2 阵型',
+            subtitle: '经典、结构扁平而攻守极其严密的均衡阵型',
+            characteristics: '两条四人防线形成极其规则的网格覆盖，空间压缩力极强。进攻时主要依靠双中锋一高一快或一前一后打乱对方站位，两翼的攻防覆盖面积极大，容错率极高。',
+            offensePlay: '通过中场横向过渡，快速分边利用边路传中，或中路双中锋做球撕扯打身后。',
+            defensePlay: '两条规则的防线整体横移、前后压迫，封锁两条防线之间的空当。',
+            disruption: '能有效阻断对手的肋部套边配合、后腰插上直塞以及边锋在中路的内切路径。',
+            keypoint: '双中场/边前卫 (LM/RM) 的往复折返奔跑体能和双中锋在前场的交叉跑位扯动是打破僵局的命脉（例如阿根廷的梅西/劳塔罗双中锋绞杀）。'
+        },
+        '4-2-2-2': {
+            title: '4-2-2-2 阵型',
+            subtitle: '朗尼克极速 Gegenpressing 的疯狂乱战大杀器',
+            characteristics: '中路极度拥挤，双防守后腰配双前腰，完全放弃纯粹的边路，将兵力全部集结于中路和肋部。追求在前场断球后的3秒内直接刺入禁区形成射门，节奏极其狂暴。',
+            offensePlay: '前场就地多人疯狂夹攻断球，快速出球找斜线插上的双中锋完成致命一击。',
+            defensePlay: '疯狗式贴身逼抢（Gegenpressing），整体高位压迫，在中场破坏对手出球路线。',
+            disruption: '强力阻断对手的后防线出球、守门员手抛球策划以及后场向中场的地面出球传递。',
+            keypoint: '双前腰 (AM) 与防守中场的高强度跑动逼抢与就地断球快下是此阵型运转的核心（例如奥地利萨比策/莱默尔的中前场窒息绞杀）。'
+        },
+        '5-4-1': {
+            title: '5-4-1 阵型',
+            subtitle: '宽度与纵深防守锁死的低位铁血大巴',
+            characteristics: '五后卫封死整个大禁区线，三中卫防空与门前卡位能力拉满，两条防线距离极近，对手极难打穿纵深。进攻端完全寄托于极速快马和定位球争顶。',
+            offensePlay: '后场长传打身后，或者利用极速边路单兵突袭完成致命反击，多打一剑穿心。',
+            defensePlay: '低位极其密集的双层屏障，翼卫随时落位成五后卫，彻底压缩门前空当。',
+            disruption: '有效切断对手在禁区内的传中争顶、边路肋部的倒三角传中以及中卫起脚打门路线。',
+            keypoint: '三中卫 (CB) 的解围卡位和两侧翼卫 (WB) 的长跑体能是维系防线不塌方的死穴（例如约旦队的低位防守大巴）。'
+        }
+    };
+
+    const TACTICAL_DRILLS = {
+        'fra-sen': {
+            'offense': {
+                caption: '法国 4-3-3 经典进攻配合：边路突击与门前包抄',
+                commentary: [
+                    { time: 0, text: '【拉比奥中场起动策划，直推前场肋部】' },
+                    { time: 1000, text: '【登贝莱高速套边接球，起脚低平球传中！】' },
+                    { time: 2200, text: '【姆巴佩门前冷静包抄，推射破门！⚽ 法国 1-0 塞内加尔】' }
+                ],
+                players: {
+                    '迈尼昂': { x: 180, y: 460 },
+                    '孔德': { x: 70, y: 390 },
+                    '萨利巴': { x: 140, y: 400 },
+                    '于帕': { x: 220, y: 400 },
+                    '特奥': { x: 290, y: 390 },
+                    '琼阿梅尼': { x: 110, y: 300 },
+                    '坎特': { x: 250, y: 320 },
+                    '拉比奥': { x: 160, y: 230 },
+                    '登贝莱': { x: 60, y: 120 },
+                    '奥利塞': { x: 280, y: 170 },
+                    '姆巴佩': { x: 180, y: 95 },
+                    // Opponent defenders shift to cover
+                    '门迪': { x: 170, y: 45 },
+                    '库利巴利': { x: 160, y: 95 },
+                    '迪亚洛': { x: 200, y: 100 },
+                    '雅各布斯': { x: 75, y: 115 },
+                    '萨巴利': { x: 275, y: 115 }
+                },
+                passes: [
+                    { from: { x: 180, y: 280 }, to: { x: 60, y: 120 }, duration: 1000, delay: 0 },
+                    { from: { x: 60, y: 120 }, to: { x: 180, y: 95 }, duration: 1200, delay: 1000 },
+                    { from: { x: 180, y: 95 }, to: { x: 180, y: 15 }, duration: 500, delay: 2200 }
+                ],
+                runs: [
+                    { name: '登贝莱', from: { x: 70, y: 210 }, to: { x: 60, y: 120 }, duration: 1000, delay: 0 },
+                    { name: '姆巴佩', from: { x: 180, y: 170 }, to: { x: 180, y: 95 }, duration: 1000, delay: 500 }
+                ]
+            },
+            'defense': {
+                caption: '塞内加尔 4-3-3 深度防守阻断与快下反击',
+                commentary: [
+                    { time: 0, text: '【法国队拉比奥横敲奥利塞，尝试直塞禁区弧顶】' },
+                    { time: 1000, text: '【塞内加尔双人包夹封堵，盖耶倒地滑铲抢断！🛡️】' },
+                    { time: 2200, text: '【得球后第一秒直传发起快攻，打特奥压上的空当寻找马内！】' }
+                ],
+                players: {
+                    '拉比奥': { x: 180, y: 260 },
+                    '奥利塞': { x: 250, y: 210 },
+                    '姆巴佩': { x: 180, y: 170 },
+                    // Defending team blocks
+                    '门迪': { x: 180, y: 40 },
+                    '库利巴利': { x: 160, y: 110 },
+                    '迪亚洛': { x: 200, y: 110 },
+                    '雅各布斯': { x: 80, y: 120 },
+                    '萨巴利': { x: 280, y: 120 },
+                    '盖耶': { x: 180, y: 165 },
+                    'P.萨尔': { x: 220, y: 160 },
+                    'L.卡马拉': { x: 150, y: 175 },
+                    '马内': { x: 70, y: 220 },
+                    'I.萨尔': { x: 290, y: 240 },
+                    '杰克逊': { x: 180, y: 240 }
+                },
+                passes: [
+                    { from: { x: 180, y: 280 }, to: { x: 250, y: 210 }, duration: 1000, delay: 0 },
+                    { from: { x: 250, y: 210 }, to: { x: 180, y: 165 }, duration: 1000, delay: 1000 },
+                    { from: { x: 180, y: 165 }, to: { x: 70, y: 220 }, duration: 1000, delay: 2200 }
+                ],
+                runs: [
+                    { name: '盖耶', from: { x: 120, y: 170 }, to: { x: 180, y: 165 }, duration: 800, delay: 1000 },
+                    { name: '马内', from: { x: 80, y: 270 }, to: { x: 70, y: 220 }, duration: 1000, delay: 1500 }
+                ]
+            }
+        },
+        'irq-nor': {
+            'offense': {
+                caption: '挪威 4-3-3 肋部渗透与哈兰德门前终结',
+                commentary: [
+                    { time: 0, text: '【厄德高右肋拿球观察，送出手术刀般精妙低传】' },
+                    { time: 1000, text: '【哈兰德依住防守中卫，强行前插获得单刀门前机会】' },
+                    { time: 2200, text: '【哈兰德倒地铲射打球门近角！球进了！⚽ 挪威 1-0 伊拉克】' }
+                ],
+                players: {
+                    '厄德高': { x: 210, y: 180 },
+                    '哈兰德': { x: 180, y: 100 },
+                    '瑟洛特': { x: 260, y: 140 },
+                    '努萨': { x: 100, y: 150 },
+                    // Opponent defenders
+                    '哈希姆': { x: 170, y: 45 },
+                    '苏拉卡': { x: 160, y: 105 },
+                    '纳蒂克': { x: 195, y: 110 },
+                    '亚希亚': { x: 70, y: 120 },
+                    'H.阿里': { x: 290, y: 120 }
+                },
+                passes: [
+                    { from: { x: 180, y: 210 }, to: { x: 180, y: 100 }, duration: 1200, delay: 0 },
+                    { from: { x: 180, y: 100 }, to: { x: 180, y: 15 }, duration: 500, delay: 2200 }
+                ],
+                runs: [
+                    { name: '哈兰德', from: { x: 180, y: 310 }, to: { x: 180, y: 100 }, duration: 1200, delay: 0 },
+                    { name: '瑟洛特', from: { x: 290, y: 270 }, to: { x: 260, y: 140 }, duration: 1000, delay: 0 }
+                ]
+            },
+            'defense': {
+                caption: '伊拉克 4-2-3-1 低位防守落位与长传阻击',
+                commentary: [
+                    { time: 0, text: '【挪威中场贝尔格向前做球，准备塞给肋部空切的努萨】' },
+                    { time: 1000, text: '【伊拉克后腰阿姆马里卡住内线，直接大脚断下并完成解围！🛡️】' },
+                    { time: 2200, text: '【解围球准确找到前场高中锋侯赛因，伊拉克就地发起防反！】' }
+                ],
+                players: {
+                    // Iraq defending
+                    '阿姆马里': { x: 140, y: 220 },
+                    '拉希德': { x: 220, y: 240 },
+                    '侯赛因': { x: 180, y: 310 },
+                    '苏拉卡': { x: 140, y: 140 },
+                    '纳蒂克': { x: 220, y: 140 },
+                    '亚希亚': { x: 70, y: 130 },
+                    'H.阿里': { x: 290, y: 130 }
+                },
+                passes: [
+                    { from: { x: 120, y: 170 }, to: { x: 140, y: 220 }, duration: 1000, delay: 0 },
+                    { from: { x: 140, y: 220 }, to: { x: 180, y: 310 }, duration: 1200, delay: 1800 }
+                ],
+                runs: [
+                    { name: '阿姆马里', from: { x: 120, y: 330 }, to: { x: 140, y: 220 }, duration: 1000, delay: 0 },
+                    { name: '侯赛因', from: { x: 180, y: 180 }, to: { x: 180, y: 310 }, duration: 1000, delay: 500 }
+                ]
+            }
+        },
+        'arg-alg': {
+            'offense': {
+                caption: '阿根廷 4-4-2 短传渗透配合：中路小范围绣花与破门',
+                commentary: [
+                    { time: 0, text: '【恩佐中路推进，短斜传给接应的梅西】' },
+                    { time: 1000, text: '【梅西虚晃突破，与劳塔罗进行撞墙配合，斜塞给侧向插上的麦卡】' },
+                    { time: 2200, text: '【麦卡利斯特禁区边缘脚弓推射死角挂网！⚽ 阿根廷 1-0 阿尔及利亚】' }
+                ],
+                players: {
+                    '恩佐': { x: 170, y: 240 },
+                    '梅西': { x: 200, y: 140 },
+                    '劳塔罗': { x: 140, y: 100 },
+                    '麦卡': { x: 90, y: 130 },
+                    // Opponent defenders
+                    '本博特': { x: 170, y: 45 },
+                    '本塞拜尼': { x: 140, y: 105 },
+                    '贝莱德': { x: 200, y: 105 }
+                },
+                passes: [
+                    { from: { x: 180, y: 320 }, to: { x: 200, y: 140 }, duration: 1000, delay: 0 },
+                    { from: { x: 200, y: 140 }, to: { x: 140, y: 100 }, duration: 800, delay: 1000 },
+                    { from: { x: 140, y: 100 }, to: { x: 90, y: 130 }, duration: 800, delay: 1800 },
+                    { from: { x: 90, y: 130 }, to: { x: 180, y: 15 }, duration: 600, delay: 2600 }
+                ],
+                runs: [
+                    { name: '梅西', from: { x: 240, y: 195 }, to: { x: 200, y: 140 }, duration: 1000, delay: 0 },
+                    { name: '麦卡', from: { x: 100, y: 330 }, to: { x: 90, y: 130 }, duration: 1200, delay: 500 }
+                ]
+            },
+            'defense': {
+                caption: '阿尔及利亚 4-2-3-1 双后腰移动合围与断球',
+                commentary: [
+                    { time: 0, text: '【阿根廷德保罗试图斜传寻找中路活动的梅西】' },
+                    { time: 1000, text: '【阿尔及利亚后腰班塔莱布与泽鲁基形成夹攻，将球破坏！🛡️】' },
+                    { time: 2200, text: '【抢断后快速分球给右翼马赫雷斯，顺势铺开反击！】' }
+                ],
+                players: {
+                    // Defending team Algeria
+                    '班塔莱布': { x: 150, y: 220 },
+                    '泽鲁基': { x: 210, y: 220 },
+                    '马赫雷斯': { x: 290, y: 280 },
+                    '艾特努里': { x: 70, y: 150 },
+                    '本塞拜尼': { x: 140, y: 140 },
+                    '贝莱德': { x: 220, y: 140 }
+                },
+                passes: [
+                    { from: { x: 260, y: 330 }, to: { x: 150, y: 220 }, duration: 1000, delay: 0 },
+                    { from: { x: 150, y: 220 }, to: { x: 290, y: 280 }, duration: 1000, delay: 2000 }
+                ],
+                runs: [
+                    { name: '班塔莱布', from: { x: 120, y: 170 }, to: { x: 150, y: 220 }, duration: 800, delay: 0 },
+                    { name: '马赫雷斯', from: { x: 300, y: 240 }, to: { x: 290, y: 280 }, duration: 1000, delay: 1000 }
+                ]
+            }
+        },
+        'aut-jor': {
+            'offense': {
+                caption: '奥地利 4-2-2-2 Gegenpressing 抢断反击快下配合',
+                commentary: [
+                    { time: 0, text: '【约旦后卫传球迟缓，萨比策与莱默尔形成高位夹击将球强行断下！】' },
+                    { time: 1000, text: '【断球后瞬间斜塞穿透防线，格雷戈里奇心领神会斜插】' },
+                    { time: 2200, text: '【格雷戈里奇禁区左侧左脚怒射破网！⚽ 奥地利 1-0 约旦】' }
+                ],
+                players: {
+                    '萨比策': { x: 160, y: 180 },
+                    '莱默尔': { x: 210, y: 200 },
+                    '格雷戈里奇': { x: 120, y: 95 },
+                    '阿瑙托维奇': { x: 220, y: 100 },
+                    // Opponent defenders
+                    '阿布莱拉': { x: 180, y: 40 },
+                    '阿拉伯': { x: 180, y: 110 }
+                },
+                passes: [
+                    { from: { x: 180, y: 140 }, to: { x: 160, y: 180 }, duration: 800, delay: 0 },
+                    { from: { x: 160, y: 180 }, to: { x: 120, y: 95 }, duration: 800, delay: 1000 },
+                    { from: { x: 120, y: 95 }, to: { x: 180, y: 15 }, duration: 500, delay: 2200 }
+                ],
+                runs: [
+                    { name: '萨比策', from: { x: 100, y: 250 }, to: { x: 160, y: 180 }, duration: 800, delay: 0 },
+                    { name: '格雷戈里奇', from: { x: 130, y: 180 }, to: { x: 120, y: 95 }, duration: 1000, delay: 500 }
+                ]
+            },
+            'defense': {
+                caption: '约旦 5-4-1 铁血五后卫落位防御与横移阻断',
+                commentary: [
+                    { time: 0, text: '【奥地利萨比策分边左翼，维默尔起脚大范围传中】' },
+                    { time: 1000, text: '【约旦三中卫体系整体横移，高大中卫阿拉伯禁区内头球解围！🛡️】' },
+                    { time: 2200, text: '【翼卫阿布塔哈拿到二点球，大脚解围大范围转移，解围危机！】' }
+                ],
+                players: {
+                    // Defending team Jordan 5-4-1
+                    '阿拉伯': { x: 180, y: 120 },
+                    '纳赛布': { x: 230, y: 125 },
+                    '马里': { x: 130, y: 125 },
+                    '阿布塔哈': { x: 70, y: 150 },
+                    '哈达德': { x: 290, y: 150 },
+                    '拉瓦比德': { x: 150, y: 200 },
+                    '阿尔马尔迪': { x: 210, y: 200 }
+                },
+                passes: [
+                    { from: { x: 100, y: 250 }, to: { x: 180, y: 120 }, duration: 1200, delay: 0 },
+                    { from: { x: 180, y: 120 }, to: { x: 70, y: 150 }, duration: 800, delay: 1500 },
+                    { from: { x: 70, y: 150 }, to: { x: 30, y: 350 }, duration: 1000, delay: 2400 }
+                ],
+                runs: [
+                    { name: '阿拉伯', from: { x: 180, y: 90 }, to: { x: 180, y: 120 }, duration: 800, delay: 500 },
+                    { name: '阿布塔哈', from: { x: 40, y: 110 }, to: { x: 70, y: 150 }, duration: 1000, delay: 500 }
+                ]
+            }
+        }
+    };
+
+    function clearTacticalTimeouts() {
+        tacticalTimeouts.forEach(t => clearTimeout(t));
+        tacticalTimeouts = [];
+    }
+
+    function runTacticalAnimation(matchId, type) {
+        clearTacticalTimeouts();
+
+        const matchInfo = matchData[matchId];
+        if (!matchInfo) return;
+
+        // Reset players to initial static coordinates immediately so we start from defaults
+        matchInfo.tactics.players.forEach(p => {
+            const playerNode = document.querySelector(`.pitch-node[data-name="${p.name}"]`);
+            if (playerNode) {
+                const circle = playerNode.querySelector('circle');
+                const texts = playerNode.querySelectorAll('text');
+                circle.setAttribute('cx', p.x);
+                circle.setAttribute('cy', p.y);
+                if (texts[0]) {
+                    texts[0].setAttribute('x', p.x);
+                    texts[0].setAttribute('y', p.y + 3);
+                }
+                if (texts[1]) {
+                    texts[1].setAttribute('x', p.x);
+                    texts[1].setAttribute('y', p.y + 16);
+                }
+            }
+        });
+
+        const linesGroup = document.getElementById('pitch-animation-lines');
+        if (linesGroup) linesGroup.innerHTML = '';
+        const ball = document.getElementById('pitch-animation-ball');
+        if (ball) ball.style.display = 'none';
+
+        const drill = TACTICAL_DRILLS[matchId] ? TACTICAL_DRILLS[matchId][type] : null;
+        if (!drill) return;
+
+        const captionContainer = document.getElementById('tactics-live-caption');
+        const captionText = document.getElementById('tactics-live-text');
+        if (captionContainer && captionText) {
+            captionContainer.style.display = 'flex';
+            captionText.innerText = '准备开始演练...';
+        }
+
+        // Delay starting movements to allow DOM layout coordinates to settle
+        const initTimeout = setTimeout(() => {
+            // A. Move players to tactical animation positions
+            Object.keys(drill.players).forEach(pName => {
+                const playerNode = document.querySelector(`.pitch-node[data-name="${pName}"]`);
+                if (playerNode) {
+                    const targetCoords = drill.players[pName];
+                    const circle = playerNode.querySelector('circle');
+                    const texts = playerNode.querySelectorAll('text');
+                    circle.setAttribute('cx', targetCoords.x);
+                    circle.setAttribute('cy', targetCoords.y);
+                    if (texts[0]) {
+                        texts[0].setAttribute('x', targetCoords.x);
+                        texts[0].setAttribute('y', targetCoords.y + 3);
+                    }
+                    if (texts[1]) {
+                        texts[1].setAttribute('x', targetCoords.x);
+                        texts[1].setAttribute('y', targetCoords.y + 16);
+                    }
+                }
+            });
+
+            // B. Draw running lines
+            if (drill.runs && linesGroup) {
+                drill.runs.forEach(run => {
+                    const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                    line.setAttribute('class', 'run-line');
+                    line.setAttribute('x1', run.from.x);
+                    line.setAttribute('y1', run.from.y);
+                    line.setAttribute('x2', run.to.x);
+                    line.setAttribute('y2', run.to.y);
+                    linesGroup.appendChild(line);
+                });
+            }
+
+            // C. Play ball passes
+            if (drill.passes && ball && linesGroup) {
+                ball.style.display = 'block';
+                ball.style.transition = 'none';
+                ball.setAttribute('cx', drill.passes[0].from.x);
+                ball.setAttribute('cy', drill.passes[0].from.y);
+
+                ball.getBoundingClientRect(); // force reflow
+
+                drill.passes.forEach(pass => {
+                    const pTimeout = setTimeout(() => {
+                        const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                        line.setAttribute('class', 'pass-line');
+                        line.setAttribute('x1', pass.from.x);
+                        line.setAttribute('y1', pass.from.y);
+                        line.setAttribute('x2', pass.to.x);
+                        line.setAttribute('y2', pass.to.y);
+                        linesGroup.appendChild(line);
+
+                        ball.style.transition = `cx ${pass.duration}ms cubic-bezier(0.25, 0.46, 0.45, 0.94), cy ${pass.duration}ms cubic-bezier(0.25, 0.46, 0.45, 0.94)`;
+                        ball.setAttribute('cx', pass.to.x);
+                        ball.setAttribute('cy', pass.to.y);
+                    }, pass.delay);
+                    tacticalTimeouts.push(pTimeout);
+                });
+            }
+
+            // D. Commentary subtitle updates
+            if (drill.commentary && captionText) {
+                drill.commentary.forEach(comment => {
+                    const cTimeout = setTimeout(() => {
+                        captionText.innerText = comment.text;
+                    }, comment.time);
+                    tacticalTimeouts.push(cTimeout);
+                });
+            }
+        }, 150);
+        tacticalTimeouts.push(initTimeout);
+    }
+
+    function resetTacticalPitch(matchId) {
+        clearTacticalTimeouts();
+        
+        const captionContainer = document.getElementById('tactics-live-caption');
+        if (captionContainer) captionContainer.style.display = 'none';
+        
+        const linesGroup = document.getElementById('pitch-animation-lines');
+        if (linesGroup) linesGroup.innerHTML = '';
+        
+        const ball = document.getElementById('pitch-animation-ball');
+        if (ball) ball.style.display = 'none';
+
+        // Re-render original coordinates
+        renderMatchDetails(matchId);
+    }
+
+    // Formation Modal Details Display
+    const formationModalEl = document.getElementById('formation-modal');
+    const formationModalCloseBtn = document.getElementById('formation-modal-close-btn');
+
+    function openFormationModal(formationName, teamName) {
+        if (!formationModalEl) return;
+        
+        const data = TACTICAL_DB[formationName];
+        if (!data) return;
+
+        document.getElementById('formation-modal-title').innerText = `${teamName} ${data.title}`;
+        document.getElementById('formation-modal-subtitle').innerText = data.subtitle;
+        document.getElementById('formation-characteristics').innerText = data.characteristics;
+        document.getElementById('formation-offense-play').innerText = data.offensePlay;
+        document.getElementById('formation-defense-play').innerText = data.defensePlay;
+        document.getElementById('formation-disruption').innerText = data.disruption;
+        document.getElementById('formation-keypoint').innerText = data.keypoint;
+
+        formationModalEl.classList.add('active');
+    }
+
+    function closeFormationModal() {
+        if (formationModalEl) formationModalEl.classList.remove('active');
+    }
+
+    if (formationModalCloseBtn) {
+        formationModalCloseBtn.addEventListener('click', closeFormationModal);
+    }
+    
+    if (formationModalEl) {
+        formationModalEl.addEventListener('click', (e) => {
+            if (e.target === formationModalEl) {
+                closeFormationModal();
+            }
+        });
     }
 
     // 5. Initialize Widget Clock
