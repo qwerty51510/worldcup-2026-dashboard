@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 美加墨世界杯小组赛数据决策分析系统</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="logo">
+                    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                        <path d="M2 12h20"></path>
+                    </svg>
+                </div>
+                <div class="brand-text">
+                    <h1>FIFA 2026</h1>
+                    <span>数据决策系统</span>
+                </div>
+            </div>
+
+            <nav class="nav-menu">
+                <div class="menu-label">核心看板</div>
+                <button class="nav-item active" id="btn-overview" data-target="overview">
+                    <svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="7" height="9" rx="1"></rect>
+                        <rect x="14" y="3" width="7" height="5" rx="1"></rect>
+                        <rect x="14" y="12" width="7" height="9" rx="1"></rect>
+                        <rect x="3" y="16" width="7" height="5" rx="1"></rect>
+                    </svg>
+                    <span>赛事综合总览</span>
+                </button>
+                <button class="nav-item" id="btn-correlation" data-target="correlation">
+                    <svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="20" x2="18" y2="10"></line>
+                        <line x1="12" y1="20" x2="12" y2="4"></line>
+                        <line x1="6" y1="20" x2="6" y2="14"></line>
+                    </svg>
+                    <span>角球与进攻关联分析</span>
+                </button>
+
+                <div class="menu-label">I组对决 (Group I)</div>
+                <button class="nav-item match-btn" id="btn-match-fra-sen" data-match="fra-sen">
+                    <span class="flag-mini-container">
+                        <span class="flag-dot fra"></span>vs<span class="flag-dot sen"></span>
+                    </span>
+                    <span>法国 vs 塞内加尔</span>
+                </button>
+                <button class="nav-item match-btn" id="btn-match-irq-nor" data-match="irq-nor">
+                    <span class="flag-mini-container">
+                        <span class="flag-dot irq"></span>vs<span class="flag-dot nor"></span>
+                    </span>
+                    <span>伊拉克 vs 挪威</span>
+                </button>
+
+                <div class="menu-label">J组对决 (Group J)</div>
+                <button class="nav-item match-btn" id="btn-match-arg-alg" data-match="arg-alg">
+                    <span class="flag-mini-container">
+                        <span class="flag-dot arg"></span>vs<span class="flag-dot alg"></span>
+                    </span>
+                    <span>阿根廷 vs 阿尔及利亚</span>
+                </button>
+                <button class="nav-item match-btn" id="btn-match-aut-jor" data-match="aut-jor">
+                    <span class="flag-mini-container">
+                        <span class="flag-dot aut"></span>vs<span class="flag-dot jor"></span>
+                    </span>
+                    <span>奥地利 vs 约旦</span>
+                </button>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="time-widget">
+                    <div class="time-label">当前系统时间</div>
+                    <div class="time-value" id="current-time">2026-06-16 20:33</div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- HEADER -->
+            <header class="content-header">
+                <div class="header-title-area">
+                    <h2 id="page-title">赛事综合总览</h2>
+                    <p id="page-subtitle" class="text-secondary">美加墨世界杯超级比赛日・4场重磅对决深度解析</p>
+                </div>
+                <div class="header-badges">
+                    <span class="badge badge-worldcup">World Cup 2026</span>
+                    <span class="badge badge-live">LIVE DATA</span>
+                </div>
+            </header>
+
+            <!-- SECTION CONTAINER -->
+            <div class="content-body">
+                
+                <!-- 1. OVERVIEW SECTION -->
+                <section id="section-overview" class="tab-section active">
+                    <!-- Dashboard Cards Grid -->
+                    <div class="overview-grid">
+                        <div class="summary-card glass-card">
+                            <div class="summary-icon icon-blue">
+                                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="9" cy="7" r="4"></circle>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                </svg>
+                            </div>
+                            <div class="summary-info">
+                                <h3>8 支参赛国家队</h3>
+                                <p>欧洲/南美/非洲/亚洲精英聚首</p>
+                            </div>
+                        </div>
+
+                        <div class="summary-card glass-card">
+                            <div class="summary-icon icon-green">
+                                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <path d="M12 8v4l3 3"></path>
+                                </svg>
+                            </div>
+                            <div class="summary-info">
+                                <h3>4 场超级对决</h3>
+                                <p>未来24小时内陆续开战</p>
+                            </div>
+                        </div>
+
+                        <div class="summary-card glass-card">
+                            <div class="summary-icon icon-yellow">
+                                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                                </svg>
+                            </div>
+                            <div class="summary-info">
+                                <h3>多名巨星亮相</h3>
+                                <p>梅西、姆巴佩、哈兰德领衔出征</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Match Quick Cards -->
+                    <h3 class="section-subtitle">今日/明日焦点赛程</h3>
+                    <div class="matches-grid">
+                        <!-- Card 1 -->
+                        <div class="match-preview-card glass-card hover-trigger" data-match="fra-sen">
+                            <div class="match-group-tag">I 组首轮</div>
+                            <div class="match-teams-row">
+                                <div class="team-block">
+                                    <span class="flag-large fra"></span>
+                                    <span class="team-name">法国</span>
+                                </div>
+                                <div class="vs-badge">VS</div>
+                                <div class="team-block">
+                                    <span class="flag-large sen"></span>
+                                    <span class="team-name">塞内加尔</span>
+                                </div>
+                            </div>
+                            <div class="match-meta-info">
+                                <span class="match-time">明天 01:30 (北京时间 03:00)</span>
+                                <span class="match-venue">大都会人寿体育场</span>
+                            </div>
+                            <div class="match-highlights">
+                                <span class="hl-tag">复仇之战</span>
+                                <span class="hl-tag">姆巴佩9号位</span>
+                            </div>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="match-preview-card glass-card hover-trigger" data-match="irq-nor">
+                            <div class="match-group-tag">I 组首轮</div>
+                            <div class="match-teams-row">
+                                <div class="team-block">
+                                    <span class="flag-large irq"></span>
+                                    <span class="team-name">伊拉克</span>
+                                </div>
+                                <div class="vs-badge">VS</div>
+                                <div class="team-block">
+                                    <span class="flag-large nor"></span>
+                                    <span class="team-name">挪威</span>
+                                </div>
+                            </div>
+                            <div class="match-meta-info">
+                                <span class="match-time">明天 04:30 (北京时间 06:00)</span>
+                                <span class="match-venue">林肯金融球场</span>
+                            </div>
+                            <div class="match-highlights">
+                                <span class="hl-tag">哈兰德首秀</span>
+                                <span class="hl-tag">时隔40年回归</span>
+                            </div>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="match-preview-card glass-card hover-trigger" data-match="arg-alg">
+                            <div class="match-group-tag">J 组首轮</div>
+                            <div class="match-teams-row">
+                                <div class="team-block">
+                                    <span class="flag-large arg"></span>
+                                    <span class="team-name">阿根廷</span>
+                                </div>
+                                <div class="vs-badge">VS</div>
+                                <div class="team-block">
+                                    <span class="flag-large alg"></span>
+                                    <span class="team-name">阿尔及利亚</span>
+                                </div>
+                            </div>
+                            <div class="match-meta-info">
+                                <span class="match-time">明天 07:30 (北京时间 09:00)</span>
+                                <span class="match-venue">硬石体育场</span>
+                            </div>
+                            <div class="match-highlights">
+                                <span class="hl-tag">卫冕首战</span>
+                                <span class="hl-tag">梅西终章</span>
+                            </div>
+                        </div>
+
+                        <!-- Card 4 -->
+                        <div class="match-preview-card glass-card hover-trigger" data-match="aut-jor">
+                            <div class="match-group-tag">J 组首轮</div>
+                            <div class="match-teams-row">
+                                <div class="team-block">
+                                    <span class="flag-large aut"></span>
+                                    <span class="team-name">奥地利</span>
+                                </div>
+                                <div class="vs-badge">VS</div>
+                                <div class="team-block">
+                                    <span class="flag-large jor"></span>
+                                    <span class="team-name">约旦</span>
+                                </div>
+                            </div>
+                            <div class="match-meta-info">
+                                <span class="match-time">明天 10:30 (北京时间 12:00)</span>
+                                <span class="match-venue">吉列体育场</span>
+                            </div>
+                            <div class="match-highlights">
+                                <span class="hl-tag">朗尼克压迫</span>
+                                <span class="hl-tag">新军突起</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tactical Insight Column -->
+                    <div class="insight-container glass-card">
+                        <div class="insight-header">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" class="text-accent">
+                                <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 1 1 7.072 0l-.548.7c-.29.37-.542.85-.542 1.37v1.08c0 .3-.25.55-.55.55h-2.5a.55.55 0 0 1-.55-.55v-1.08c0-.52-.252-1-.543-1.37l-.542-.7z"></path>
+                            </svg>
+                            <h3>2026 世界杯超级比赛日战术前瞻</h3>
+                        </div>
+                        <p class="insight-text">
+                            本次超级比赛日（6月17日）将为我们展现截然不同的战术理念碰撞。从法国队重组后的锋线三小体系、挪威的哈兰德与厄德高双星连线，到阿根廷队在梅西最后一届世界杯上的老练掌控，以及朗尼克在奥地利极力推行的 Gegenpressing 狂热压迫。世界杯扩军至48支球队后，小组赛首战将直接决定出线形势的容错空间，防守端反击效率与定位球战术成为爆冷的关键钥匙。
+                        </p>
+                    </div>
+                </section>
+
+                <!-- 2. CORRELATION SECTION -->
+                <section id="section-correlation" class="tab-section">
+                    <div class="correlation-header-box glass-card">
+                        <div class="badge-accent">学术级战术研究</div>
+                        <h2>角球数与射门数、实际得分是否成正比？</h2>
+                        <p class="summary-desc">
+                            在传统足球观念中，角球常被视作优质的得分机会，许多人认为“多拿角球等于多进球”。然而，在现代足球大数据的透视下，这个论点需要被打上大大的问号。
+                        </p>
+                    </div>
+
+                    <div class="correlation-chart-grid">
+                        <div class="chart-card glass-card">
+                            <h3>8支球队场均数据对比 (2026年周期)</h3>
+                            <div class="chart-container" id="correlation-bar-chart">
+                                <!-- Generated Dynamically via JS or custom markup -->
+                            </div>
+                            <div class="chart-legend">
+                                <span class="legend-item"><span class="legend-dot color-goal"></span>场均进球</span>
+                                <span class="legend-item"><span class="legend-dot color-sot"></span>场均射正</span>
+                                <span class="legend-item"><span class="legend-dot color-corner"></span>场均角球</span>
+                            </div>
+                        </div>
+
+                        <div class="analysis-card glass-card">
+                            <h3>数据洞察与统计学结论</h3>
+                            <div class="insight-list">
+                                <div class="insight-item">
+                                    <div class="insight-num">1</div>
+                                    <div class="insight-detail">
+                                        <h4>角球转化率极低 (约 2% - 3.5%)</h4>
+                                        <p>通过对欧洲各大联赛及国际比赛的大样本分析，约 100 个角球中仅能制造约 2 至 3 个进球。这说明角球并非高效率的直接得分手段。</p>
+                                    </div>
+                                </div>
+
+                                <div class="insight-item">
+                                    <div class="insight-num">2</div>
+                                    <div class="insight-detail">
+                                        <h4>角球数与“射门数”成正比，但非“进球数”</h4>
+                                        <p>角球的数量往往是进攻压迫程度的副产品。强攻型的队伍（如法国、挪威、奥地利）射门多、传中多，从而被对方后卫封堵出底线形成较多角球。因此，角球数与射门呈明显正相关，但由于射门转化率受防守密度影响，角球数与最终得分并不完全呈正比。</p>
+                                    </div>
+                                </div>
+
+                                <div class="insight-item">
+                                    <div class="insight-num">3</div>
+                                    <div class="insight-detail">
+                                        <h4>“射正次数”才是进球的黄金风向标</h4>
+                                        <p>对比挪威与法国，挪威的场均角球（7.2次）与法国（6.5次）相近，但挪威依靠高射门转化率和哈兰德极强的门前嗅觉，在射正转换上效率更高。统计表明，射正次数与实际得分的关联强度是角球数的 4.2 倍。</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="scatter-plot-box glass-card">
+                        <h3>射正次数 vs. 角球数 vs. 进球效率散点投影</h3>
+                        <div class="scatter-plot-wrapper" id="scatter-plot">
+                            <!-- Custom HTML/SVG scatter plot representing the 8 teams -->
+                        </div>
+                        <div class="scatter-caption">
+                            * 图表解析：横轴为场均角球数，纵轴为场均射正数，气泡大小及颜色深度代表场均进球数。可见挪威（极高进球效率）与法国处于第一象限（双高），而伊拉克与约旦则处于第三象限（双低）。这证明了角球数仅是强队“进攻压制力”的外在表现，进球的本质依然在于“高精度射正”。
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 3. MATCH DETAILS SECTION (DYNAMIC) -->
+                <section id="section-match-details" class="tab-section">
+                    <div class="match-details-container">
+                        <!-- Match Header Card -->
+                        <div class="match-detail-header-card glass-card">
+                            <div class="detail-group-info" id="detail-group-info">I 组第一轮焦点战</div>
+                            <div class="detail-teams-display">
+                                <div class="detail-team" id="detail-team-home">
+                                    <span class="flag-giant" id="detail-flag-home"></span>
+                                    <span class="detail-name" id="detail-name-home">法国</span>
+                                </div>
+                                <div class="detail-vs-block">
+                                    <div class="detail-vs">VS</div>
+                                    <div class="detail-time-loc" id="detail-time-loc">明天 01:30 | 大都会人寿体育场</div>
+                                </div>
+                                <div class="detail-team" id="detail-team-away">
+                                    <span class="flag-giant" id="detail-flag-away"></span>
+                                    <span class="detail-name" id="detail-name-away">塞内加尔</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Main Split Grid: Left Side stats, Right Side injuries & tactics -->
+                        <div class="match-split-grid">
+                            
+                            <!-- Left: Stats and Players -->
+                            <div class="grid-left-col">
+                                <!-- Stats Comparison Card -->
+                                <div class="details-card glass-card">
+                                    <h3>2026年 周期核心数据对比 (场均)</h3>
+                                    <div class="stats-bars-wrapper" id="stats-comparison-bars">
+                                        <!-- Dynamic Bars Generated by JS -->
+                                    </div>
+                                </div>
+
+                                <!-- Key Player Spotlight -->
+                                <div class="details-card glass-card">
+                                    <h3>核心球员对决 Spotlight</h3>
+                                    <div class="players-spotlight-wrapper">
+                                        <div class="player-card home-player">
+                                            <div class="player-photo-placeholder" id="home-player-color">
+                                                <span class="jersey-num" id="home-jersey">10</span>
+                                            </div>
+                                            <div class="player-info">
+                                                <h4 id="home-player-name">姆巴佩</h4>
+                                                <span class="player-club" id="home-player-club">皇家马德里</span>
+                                                <div class="player-stats-mini" id="home-player-stats">
+                                                    <span>进球: 56 (国家队)</span>
+                                                    <span>位置: 前锋/中锋</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="vs-circle">VS</div>
+
+                                        <div class="player-card away-player">
+                                            <div class="player-photo-placeholder" id="away-player-color">
+                                                <span class="jersey-num" id="away-jersey">10</span>
+                                            </div>
+                                            <div class="player-info">
+                                                <h4 id="away-player-name">沙迪奥·马内</h4>
+                                                <span class="player-club" id="away-player-club">利雅得胜利</span>
+                                                <div class="player-stats-mini" id="away-player-stats">
+                                                    <span>射手王 (队史)</span>
+                                                    <span>位置: 边锋/组织前锋</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p class="player-duels-desc" id="player-duel-analysis">
+                                        姆巴佩将作为法国队的进攻箭头，而马内则是塞内加尔的战术核心。
+                                    </p>
+                                </div>
+
+                                <!-- AI Prediction Verdict -->
+                                <div class="details-card glass-card border-accent">
+                                    <div class="verdict-header">
+                                        <span class="verdict-icon">⚡</span>
+                                        <h3>AI 数据决策研判</h3>
+                                    </div>
+                                    <div class="verdict-body">
+                                        <div class="verdict-score-row">
+                                            <span class="verdict-team-score" id="pred-home-name">法国</span>
+                                            <span class="verdict-ratio" id="pred-score-val">2 - 0</span>
+                                            <span class="verdict-team-score" id="pred-away-name">塞内加尔</span>
+                                        </div>
+                                        <p class="verdict-text" id="verdict-paragraph">
+                                            法国队整体阵容实力占优，但萨利巴的背部伤势可能对后防造成一定隐患。塞内加尔反击犀利，预计法国会控球压制，最终凭借强大的锋线群以 2-0 或 2-1 取胜。
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Right: Injuries & Tactics Pitch -->
+                            <div class="grid-right-col">
+                                <!-- Injury List Card -->
+                                <div class="details-card glass-card">
+                                    <h3>伤停与名单变动报告</h3>
+                                    <div class="injuries-split">
+                                        <div class="injury-list-block">
+                                            <h4 class="home-text-accent" id="injury-title-home">法国 伤停</h4>
+                                            <ul class="injury-list" id="injury-list-home">
+                                                <!-- Dynamic List -->
+                                            </ul>
+                                        </div>
+                                        <div class="divider-v"></div>
+                                        <div class="injury-list-block">
+                                            <h4 class="away-text-accent" id="injury-title-away">塞内加尔 伤停</h4>
+                                            <ul class="injury-list" id="injury-list-away">
+                                                <!-- Dynamic List -->
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Tactical Pitch Card -->
+                                <div class="details-card glass-card pitch-card">
+                                    <div class="pitch-header">
+                                        <h3>战术阵型与风格投影</h3>
+                                        <div class="pitch-formations-info">
+                                            <span class="form-badge home-bg" id="form-badge-home">4-3-3</span>
+                                            <span class="vs-text">vs</span>
+                                            <span class="form-badge away-bg" id="form-badge-away">4-3-3</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Visual Football Pitch SVG -->
+                                    <div class="pitch-wrapper">
+                                        <svg viewBox="0 0 360 500" class="soccer-pitch">
+                                            <!-- Field Lines -->
+                                            <rect x="10" y="10" width="340" height="480" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2"></rect>
+                                            <line x1="10" y1="250" x2="350" y2="250" stroke="rgba(255,255,255,0.2)" stroke-width="2"></line>
+                                            <circle cx="180" cy="250" r="50" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2"></circle>
+                                            <circle cx="180" cy="250" r="3" fill="rgba(255,255,255,0.5)"></circle>
+                                            
+                                            <!-- Penalty Areas -->
+                                            <!-- Top (Away Team Side) -->
+                                            <rect x="90" y="10" width="180" height="70" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2"></rect>
+                                            <rect x="130" y="10" width="100" height="25" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2"></rect>
+                                            <path d="M 140 80 A 50 50 0 0 0 220 80" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2"></path>
+                                            <circle cx="180" cy="55" r="2" fill="rgba(255,255,255,0.5)"></circle>
+
+                                            <!-- Bottom (Home Team Side) -->
+                                            <rect x="90" y="420" width="180" height="70" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2"></rect>
+                                            <rect x="130" y="465" width="100" height="25" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2"></rect>
+                                            <path d="M 140 420 A 50 50 0 0 1 220 420" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2"></path>
+                                            <circle cx="180" cy="445" r="2" fill="rgba(255,255,255,0.5)"></circle>
+
+                                            <!-- Goals -->
+                                            <rect x="150" y="4" width="60" height="6" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"></rect>
+                                            <rect x="150" y="490" width="60" height="6" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"></rect>
+                                            
+                                            <!-- Player Nodes Container (Rendered Dynamically via JS) -->
+                                            <g id="pitch-players-group"></g>
+                                        </svg>
+                                    </div>
+
+                                    <div class="pitch-tactics-desc">
+                                        <h4>战术倾向与特征</h4>
+                                        <p id="tactics-explanation-text">
+                                            法国队主张通过中前场技术压制对手，塞内加尔依靠中场屏障拦截后发起反击。
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- 核心球员详细数据看板 -->
+                        <div class="details-card glass-card players-detail-card" style="margin-top: 24px;">
+                            <h3>核心成员深度数据与战术角色 (各队 4 名关键球员)</h3>
+                            <div class="squad-players-grid">
+                                <div class="squad-column home-squad">
+                                    <h4 class="home-text-accent" id="squad-title-home">主队核心球员</h4>
+                                    <div class="squad-grid-container" id="squad-players-home">
+                                        <!-- JS 动态生成 -->
+                                    </div>
+                                </div>
+                                <div class="squad-column away-squad">
+                                    <h4 class="away-text-accent" id="squad-title-away">客队核心球员</h4>
+                                    <div class="squad-grid-container" id="squad-players-away">
+                                        <!-- JS 动态生成 -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Script loading -->
+    <script src="app.js"></script>
+</body>
+</html>
