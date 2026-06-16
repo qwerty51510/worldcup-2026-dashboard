@@ -518,6 +518,80 @@
         </main>
     </div>
 
+    <!-- 球员详情弹窗模态框 -->
+    <div class="modal-overlay" id="player-modal">
+        <div class="modal-card glass-card">
+            <button class="modal-close-btn" id="modal-close-btn">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            
+            <div class="modal-header">
+                <div class="modal-player-title">
+                    <h2 id="modal-player-name">基利安·姆巴佩</h2>
+                    <span id="modal-player-meta" class="text-secondary">年龄: 27 | 位置: 前锋/中锋 | 皇家马德里</span>
+                </div>
+                <div class="modal-player-flag-wrapper">
+                    <span id="modal-player-team" class="text-secondary">法国</span>
+                    <span id="modal-player-flag" class="flag-large fra"></span>
+                </div>
+            </div>
+            
+            <div class="modal-body-split">
+                <!-- Left Column: Radar Chart -->
+                <div class="modal-left-col">
+                    <h3 class="modal-section-title">球员能力六维投影 (Radar)</h3>
+                    <div class="radar-chart-wrapper">
+                        <svg viewBox="0 0 200 200" id="radar-svg" width="100%" height="100%">
+                            <!-- JS 动态计算雷达轴、网格与属性层 -->
+                        </svg>
+                    </div>
+                </div>
+                
+                <!-- Right Column: Stats & Text -->
+                <div class="modal-right-col">
+                    <!-- Stat Row -->
+                    <div class="modal-stats-row">
+                        <div class="m-stat-box">
+                            <span class="m-stat-val" id="modal-stat-overall">预选赛9球2助</span>
+                            <span class="m-stat-lbl">场上核心数据</span>
+                        </div>
+                        <div class="m-stat-box">
+                            <span class="m-stat-val text-accent" id="modal-stat-conversion">22.5%</span>
+                            <span class="m-stat-lbl">射门转化率</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Goal Distribution -->
+                    <div class="modal-section">
+                        <h4 class="modal-section-subtitle">射门/进球位置分布比率</h4>
+                        <div class="goal-dist-wrapper" id="modal-goal-dist">
+                            <!-- JS 动态生成 -->
+                        </div>
+                    </div>
+                    
+                    <!-- Defensive analysis -->
+                    <div class="modal-section">
+                        <h4 class="modal-section-subtitle">防守端与身体特征分析</h4>
+                        <p id="modal-def-desc" class="modal-text-desc">
+                            回防速度极快（冲刺时速 36.5km/h），主要依靠前场高压逼抢限制对手出球，但在阵地战防守落位较浅。
+                        </p>
+                    </div>
+                    
+                    <!-- Tactical warning -->
+                    <div class="modal-section modal-warning-box">
+                        <h4 class="warning-text-accent">🚨 战术防守注意事项</h4>
+                        <p id="modal-def-warn" class="modal-text-desc">
+                            防守端需警惕其边路快速折线内切，反击第一点必须包夹封堵其右脚射门路径。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Script loading -->
     <script src="app.js"></script>
 </body>

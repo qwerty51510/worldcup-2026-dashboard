@@ -1,6 +1,6 @@
 /* ==========================================
    FIFA 2026 MATCH ANALYTICS DASHBOARD JS
-   Handles dynamic data loading and dashboard UI
+   Handles dynamic data loading, dashboard UI, and radar charts
    ========================================== */
 
 let matchData = {};
@@ -215,6 +215,10 @@ function initializeDashboard() {
                     <div class="squad-player-stats">${p.stats}</div>
                     <div class="squad-player-role"><strong>核心角色:</strong> ${p.role}</div>
                 `;
+                // Add click event for modal details
+                card.addEventListener('click', () => {
+                    openPlayerModal(p, data.teams.home.name, data.teams.home.flag, data.themeClass);
+                });
                 squadHomeContainer.appendChild(card);
             });
 
@@ -232,7 +236,36 @@ function initializeDashboard() {
                     <div class="squad-player-stats">${p.stats}</div>
                     <div class="squad-player-role"><strong>核心角色:</strong> ${p.role}</div>
                 `;
+                // Add click event for modal details
+                card.addEventListener('click', () => {
+                    openPlayerModal(p, data.teams.away.name, data.teams.away.flag, data.themeClass);
+                });
                 squadAwayContainer.appendChild(card);
+            });
+        }
+
+        // Make Spotlight elements clickable
+        const homePlayerSpotlight = document.querySelector('.home-player');
+        const awayPlayerSpotlight = document.querySelector('.away-player');
+        
+        const findFullPlayerData = (name, list) => list.find(item => item.name.includes(name));
+
+        if (homePlayerSpotlight) {
+            const clone = homePlayerSpotlight.cloneNode(true);
+            homePlayerSpotlight.parentNode.replaceChild(clone, homePlayerSpotlight);
+            clone.style.cursor = 'pointer';
+            clone.addEventListener('click', () => {
+                const fullP = findFullPlayerData(data.playerDuel.home.name, data.squadPlayers.home);
+                if (fullP) openPlayerModal(fullP, data.teams.home.name, data.teams.home.flag, data.themeClass);
+            });
+        }
+        if (awayPlayerSpotlight) {
+            const clone = awayPlayerSpotlight.cloneNode(true);
+            awayPlayerSpotlight.parentNode.replaceChild(clone, awayPlayerSpotlight);
+            clone.style.cursor = 'pointer';
+            clone.addEventListener('click', () => {
+                const fullP = findFullPlayerData(data.playerDuel.away.name, data.squadPlayers.away);
+                if (fullP) openPlayerModal(fullP, data.teams.away.name, data.teams.away.flag, data.themeClass);
             });
         }
 
@@ -437,7 +470,185 @@ function initializeDashboard() {
         });
     }
 
-    // 4. Initialize Widget Clock
+    // 4. Player Modal Detailed Display
+    const modalEl = document.getElementById('player-modal');
+    const modalCloseBtn = document.getElementById('modal-close-btn');
+
+    function openPlayerModal(player, teamName, teamFlag, themeClass) {
+        if (!modalEl) return;
+
+        // Set Basic Text
+        document.getElementById('modal-player-name').innerText = player.name;
+        document.getElementById('modal-player-meta').innerText = `年龄: ${player.age} | 位置: ${player.position} | 状态: ${player.form}`;
+        document.getElementById('modal-player-team').innerText = teamName;
+        document.getElementById('modal-player-flag').className = `flag-large ${teamFlag}`;
+        document.getElementById('modal-stat-overall').innerText = player.stats;
+        document.getElementById('modal-stat-conversion').innerText = player.goalDist.conversion;
+        document.getElementById('modal-def-desc').innerText = player.defenseDefense;
+        document.getElementById('modal-def-warn').innerText = player.defenseWarnings;
+
+        // Render Goal Distribution CSS Progress Bars
+        const distContainer = document.getElementById('modal-goal-dist');
+        distContainer.innerHTML = ''; // clear
+
+        const distData = [
+            { label: '禁区内左侧进球', val: player.goalDist.leftBox },
+            { label: '禁区内中央进球', val: player.goalDist.centerBox },
+            { label: '禁区内右侧进球', val: player.goalDist.rightBox },
+            { label: '禁区外远射进球', val: player.goalDist.outsideBox }
+        ];
+
+        // Determine bar color based on theme
+        let barColor = '#3b82f6'; // default blue
+        if (themeClass.includes('fra-sen') && teamFlag === 'sen') barColor = '#10b981';
+        else if (themeClass.includes('irq-nor') && teamFlag === 'nor') barColor = '#ef4444';
+        else if (themeClass.includes('arg-alg') && teamFlag === 'alg') barColor = '#f59e0b';
+        else if (themeClass.includes('aut-jor') && teamFlag === 'jor') barColor = '#ef4444';
+
+        distData.forEach(item => {
+            const row = document.createElement('div');
+            row.className = 'g-dist-row';
+            row.innerHTML = `
+                <span class="g-dist-lbl">${item.label}</span>
+                <div class="g-dist-track">
+                    <div class="g-dist-bar" style="width: 0%; background-color: ${barColor}"></div>
+                </div>
+                <span class="g-dist-val">${item.val}</span>
+            `;
+            distContainer.appendChild(row);
+            
+            // Trigger transition animation in next tick
+            setTimeout(() => {
+                row.querySelector('.g-dist-bar').style.width = item.val;
+            }, 100);
+        });
+
+        // Draw SVG Radar Chart
+        drawRadarChart(player.ratings, barColor);
+
+        // Open Modal
+        modalEl.classList.add('active');
+    }
+
+    function closePlayerModal() {
+        if (modalEl) modalEl.classList.remove('active');
+    }
+
+    if (modalCloseBtn) {
+        modalCloseBtn.addEventListener('click', closePlayerModal);
+    }
+    
+    // Close modal when clicking on the overlay backdrop
+    if (modalEl) {
+        modalEl.addEventListener('click', (e) => {
+            if (e.target === modalEl) {
+                closePlayerModal();
+            }
+        });
+    }
+
+    // SVG Radar Drawing Logic
+    function drawRadarChart(ratings, themeColor) {
+        const svg = document.getElementById('radar-svg');
+        if (!svg) return;
+        svg.innerHTML = ''; // clear
+
+        const cx = 100;
+        const cy = 100;
+        const R = 68; // max radius
+        const labels = ['速度', '射门', '传球', '盘带', '防守', '力量'];
+        const angles = [];
+
+        // 1. Calculate angles (6 axes, pointing straight up first)
+        for (let i = 0; i < 6; i++) {
+            angles.push(-Math.PI / 2 + (i * Math.PI) / 3);
+        }
+
+        // Create radial grid background (4 levels: 25%, 50%, 75%, 100%)
+        const gridLevels = [0.25, 0.5, 0.75, 1];
+        gridLevels.forEach(level => {
+            const points = [];
+            angles.forEach(angle => {
+                const x = cx + R * level * Math.cos(angle);
+                const y = cy + R * level * Math.sin(angle);
+                points.push(`${x},${y}`);
+            });
+            const poly = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
+            poly.setAttribute('points', points.join(' '));
+            poly.setAttribute('class', 'radar-grid');
+            svg.appendChild(poly);
+        });
+
+        // Draw 6 straight axis lines and text labels
+        angles.forEach((angle, i) => {
+            const xOuter = cx + R * Math.cos(angle);
+            const yOuter = cy + R * Math.sin(angle);
+            
+            // Line
+            const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+            line.setAttribute('x1', cx);
+            line.setAttribute('y1', cy);
+            line.setAttribute('x2', xOuter);
+            line.setAttribute('y2', yOuter);
+            line.setAttribute('class', 'radar-axis');
+            svg.appendChild(line);
+
+            // Label push out position
+            const xLabel = cx + (R + 15) * Math.cos(angle);
+            const yLabel = cy + (R + 13) * Math.sin(angle) + 2.5;
+
+            const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+            text.setAttribute('x', xLabel);
+            text.setAttribute('y', yLabel);
+            text.setAttribute('text-anchor', 'middle');
+            text.setAttribute('class', 'radar-label');
+            text.textContent = `${labels[i]} (${ratings[i]})`;
+            svg.appendChild(text);
+        });
+
+        // Calculate player points polygon
+        const playerPoints = [];
+        angles.forEach((angle, i) => {
+            const r = R * (ratings[i] / 100);
+            const x = cx + r * Math.cos(angle);
+            const y = cy + r * Math.sin(angle);
+            playerPoints.push(`${x},${y}`);
+        });
+
+        // Render filled polygon
+        const playerPoly = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
+        playerPoly.setAttribute('points', playerPoints.join(' '));
+        playerPoly.setAttribute('class', 'radar-polygon');
+        playerPoly.setAttribute('style', `fill: ${hexToRgba(themeColor, 0.25)}; stroke: ${themeColor}`);
+        svg.appendChild(playerPoly);
+
+        // Add small glowing vertices dots
+        angles.forEach((angle, i) => {
+            const r = R * (ratings[i] / 100);
+            const x = cx + r * Math.cos(angle);
+            const y = cy + r * Math.sin(angle);
+            const dot = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+            dot.setAttribute('cx', x);
+            dot.setAttribute('cy', y);
+            dot.setAttribute('r', '2.5');
+            dot.setAttribute('fill', '#ffffff');
+            dot.setAttribute('stroke', themeColor);
+            dot.setAttribute('stroke-width', '1.5');
+            svg.appendChild(dot);
+        });
+    }
+
+    // Helper to convert hex colors to RGBA for semi-transparent radar fill
+    function hexToRgba(hex, alpha) {
+        // Remove # if present
+        hex = hex.replace('#', '');
+        let r = parseInt(hex.substring(0, 2), 16);
+        let g = parseInt(hex.substring(2, 4), 16);
+        let b = parseInt(hex.substring(4, 6), 16);
+        return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+    }
+
+    // 5. Initialize Widget Clock
     function updateClock() {
         const now = new Date();
         const yyyy = now.getFullYear();
