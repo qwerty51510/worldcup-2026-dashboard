@@ -373,15 +373,19 @@ function initializeDashboard() {
             const m = matchData[key];
             teamSet[m.teams.home.name] = {
                 name: m.teams.home.name,
+                flag: m.teams.home.flag,
                 goals: m.teams.home.goals,
                 sot: m.teams.home.sot,
-                corners: m.teams.home.corners
+                corners: m.teams.home.corners,
+                history: m.teams.home.history
             };
             teamSet[m.teams.away.name] = {
                 name: m.teams.away.name,
+                flag: m.teams.away.flag,
                 goals: m.teams.away.goals,
                 sot: m.teams.away.sot,
-                corners: m.teams.away.corners
+                corners: m.teams.away.corners,
+                history: m.teams.away.history
             };
         });
 
@@ -415,7 +419,13 @@ function initializeDashboard() {
                         <span class="bar-val">${t.corners} 角球</span>
                     </div>
                 </div>
+                <div style="text-align: center;">
+                    <button class="btn-more-data" data-team="${t.name}">更多...</button>
+                </div>
             `;
+            row.querySelector('.btn-more-data').addEventListener('click', () => {
+                openTeamModal(t);
+            });
             barChartContainer.appendChild(row);
         });
 
@@ -429,44 +439,241 @@ function initializeDashboard() {
         const xMin = 3.0, xMax = 8.0;
         const yMin = 2.5, yMax = 8.5;
 
+        // SVG Dimensions
+        const width = 600;
+        const height = 380;
+        const padding = { top: 25, right: 30, bottom: 45, left: 50 };
+        const plotWidth = width - padding.left - padding.right;
+        const plotHeight = height - padding.top - padding.bottom;
+
+        const xScale = (corners) => padding.left + ((corners - xMin) / (xMax - xMin)) * plotWidth;
+        const yScale = (sot) => padding.top + (1 - (sot - yMin) / (yMax - yMin)) * plotHeight;
+
+        // Tooltip container inside wrapper
+        let tooltip = document.getElementById('scatter-tooltip');
+        if (!tooltip) {
+            tooltip = document.createElement('div');
+            tooltip.id = 'scatter-tooltip';
+            tooltip.className = 'scatter-tooltip';
+            tooltip.style.opacity = '0';
+            tooltip.style.pointerEvents = 'none';
+            scatterContainer.appendChild(tooltip);
+        }
+
+        // Start building SVG
+        let svgHtml = `<svg viewBox="0 0 ${width} ${height}" class="scatter-svg" xmlns="http://www.w3.org/2000/svg">`;
+
+        // 1. Grid lines (corners: 3.0 to 8.0 step 1.0, sot: 3.0 to 8.0 step 1.0)
+        for (let val = 3.0; val <= 8.0; val += 1.0) {
+            const x = xScale(val);
+            svgHtml += `<line class="scatter-grid-line" x1="${x}" y1="${padding.top}" x2="${x}" y2="${padding.top + plotHeight}"></line>`;
+        }
+        for (let val = 3.0; val <= 8.0; val += 1.0) {
+            const y = yScale(val);
+            svgHtml += `<line class="scatter-grid-line" x1="${padding.left}" y1="${y}" x2="${padding.left + plotWidth}" y2="${y}"></line>`;
+        }
+
+        // 2. Quadrant Dividers at X = 5.5, Y = 5.5
+        const xDivider = xScale(5.5);
+        const yDivider = yScale(5.5);
+        svgHtml += `
+            <line class="scatter-quadrant-line" x1="${xDivider}" y1="${padding.top}" x2="${xDivider}" y2="${padding.top + plotHeight}"></line>
+            <line class="scatter-quadrant-line" x1="${padding.left}" y1="${yDivider}" x2="${padding.left + plotWidth}" y2="${yDivider}"></line>
+        `;
+
+        // 3. Quadrant Watermarks
+        svgHtml += `
+            <text class="scatter-quadrant-label" x="${xScale(6.75)}" y="${yScale(7.2)}" text-anchor="middle">第一象限: 双高统治区 (强攻与高射正)</text>
+            <text class="scatter-quadrant-label" x="${xScale(6.75)}" y="${yScale(3.8)}" text-anchor="middle">第四象限: 只传不射区 (控球多/缺终结)</text>
+            <text class="scatter-quadrant-label" x="${xScale(4.25)}" y="${yScale(7.2)}" text-anchor="middle">第二象限: 高效突袭区 (射术精/重反击)</text>
+            <text class="scatter-quadrant-label" x="${xScale(4.25)}" y="${yScale(3.8)}" text-anchor="middle">第三象限: 低迷稳守区 (重防守/落位深)</text>
+        `;
+
+        // 4. Coordinate Axes Lines
+        svgHtml += `
+            <line class="scatter-axis-line" x1="${padding.left}" y1="${padding.top - 10}" x2="${padding.left}" y2="${padding.top + plotHeight}"></line>
+            <line class="scatter-axis-line" x1="${padding.left}" y1="${padding.top + plotHeight}" x2="${padding.left + plotWidth + 10}" y2="${padding.top + plotHeight}"></line>
+        `;
+
+        // 5. Ticks & Labels on X and Y
+        for (let val = 3.0; val <= 8.0; val += 1.0) {
+            const x = xScale(val);
+            svgHtml += `
+                <line class="scatter-axis-tick" x1="${x}" y1="${padding.top + plotHeight}" x2="${x}" y2="${padding.top + plotHeight + 4}"></line>
+                <text class="scatter-tick-label" x="${x}" y="${padding.top + plotHeight + 16}" text-anchor="middle">${val.toFixed(1)}</text>
+            `;
+        }
+        for (let val = 2.5; val <= 8.5; val += 1.0) {
+            const y = yScale(val);
+            svgHtml += `
+                <line class="scatter-axis-tick" x1="${padding.left - 4}" y1="${y}" x2="${padding.left}" y2="${y}"></line>
+                <text class="scatter-tick-label" x="${padding.left - 8}" y="${y + 3}" text-anchor="end">${val.toFixed(1)}</text>
+            `;
+        }
+
+        // 6. Axis titles
+        svgHtml += `
+            <text class="scatter-axis-title" x="${padding.left + plotWidth / 2}" y="${height - 8}" text-anchor="middle">场均角球数 (角球量) →</text>
+            <text class="scatter-axis-title" x="${- (padding.top + plotHeight / 2)}" y="${15}" text-anchor="middle" transform="rotate(-90)">场均射正数 (终结准星) →</text>
+        `;
+
+        // 7. Render bubbles using foreignObject for rich HTML rendering of flag and goals
         teams.forEach(t => {
-            // Calculate percentages for position (absolute styling)
-            const xPercent = ((t.corners - xMin) / (xMax - xMin)) * 100;
-            const yPercent = ((t.sot - yMin) / (yMax - yMin)) * 100;
-
-            // Bubble size correlates with goals (from 30px to 55px)
-            const bubbleSize = 30 + ((t.goals - 1.1) / (4.6 - 1.1)) * 25;
+            const xVal = xScale(t.corners);
+            const yVal = yScale(t.sot);
             
-            // Color shifts based on goal volume
-            let color = 'rgba(59, 130, 246, 0.4)'; // blue (low/mid)
-            let border = '#3b82f6';
-            if (t.goals > 2.0) {
-                color = 'rgba(16, 185, 129, 0.45)'; // green (high)
-                border = '#10b981';
+            // Calculate size based on goals (diameter between 52px and 76px)
+            const bubbleSize = 52 + ((t.goals - 1.1) / (4.6 - 1.1)) * 24;
+            const radius = bubbleSize / 2;
+
+            // Highlight border
+            let border = 'rgba(59, 130, 246, 0.7)';
+            if (t.goals > 2.0) border = 'rgba(16, 185, 129, 0.8)';
+            if (t.goals >= 4.0) border = 'rgba(245, 158, 11, 0.85)';
+
+            svgHtml += `
+                <foreignObject x="${xVal - radius}" y="${yVal - radius}" width="${bubbleSize}" height="${bubbleSize}" class="scatter-fo" data-team="${t.name}">
+                    <div class="scatter-bubble-badge" style="border-color: ${border}">
+                        <div class="scatter-bubble-flag ${t.flag}"></div>
+                        <span class="scatter-bubble-name">${t.name}</span>
+                        <span class="scatter-bubble-goals">${t.goals}球/场</span>
+                    </div>
+                </foreignObject>
+            `;
+        });
+
+        svgHtml += `</svg>`;
+        scatterContainer.innerHTML += svgHtml;
+
+        // 8. Bind hover and click interactions
+        const bubbleNodes = scatterContainer.querySelectorAll('.scatter-fo');
+        bubbleNodes.forEach(node => {
+            const teamName = node.getAttribute('data-team');
+            const teamObj = teamSet[teamName];
+
+            node.addEventListener('mouseenter', () => {
+                tooltip.innerHTML = `
+                    <div class="scatter-tooltip-header">
+                        <span class="flag-dot ${teamObj.flag}"></span>
+                        <span>${teamObj.name}国家队</span>
+                    </div>
+                    <div class="scatter-tooltip-row">
+                        <span class="scatter-tooltip-lbl">场均进球:</span>
+                        <span class="scatter-tooltip-val text-accent">${teamObj.goals} 球</span>
+                    </div>
+                    <div class="scatter-tooltip-row">
+                        <span class="scatter-tooltip-lbl">场均射正:</span>
+                        <span class="scatter-tooltip-val">${teamObj.sot} 次</span>
+                    </div>
+                    <div class="scatter-tooltip-row">
+                        <span class="scatter-tooltip-lbl">场均角球:</span>
+                        <span class="scatter-tooltip-val">${teamObj.corners} 次</span>
+                    </div>
+                    <div class="scatter-tooltip-row">
+                        <span class="scatter-tooltip-lbl">射门进球转化率:</span>
+                        <span class="scatter-tooltip-val" style="color: var(--accent-green)">${teamObj.history.shotConversion}</span>
+                    </div>
+                    <div class="scatter-tooltip-explanation">
+                        <strong>进球效率分析: </strong>${teamObj.history.conversionExplanation.substring(0, 75)}...
+                    </div>
+                `;
+                tooltip.style.opacity = '1';
+                tooltip.style.transform = 'translate(-50%, -105%) scale(1)';
+            });
+
+            node.addEventListener('mousemove', (e) => {
+                const rect = scatterContainer.getBoundingClientRect();
+                const xPos = e.clientX - rect.left;
+                const yPos = e.clientY - rect.top;
+                tooltip.style.left = `${xPos}px`;
+                tooltip.style.top = `${yPos}px`;
+            });
+
+            node.addEventListener('mouseleave', () => {
+                tooltip.style.opacity = '0';
+                tooltip.style.transform = 'translate(-50%, -105%) scale(0.95)';
+            });
+
+            node.addEventListener('click', () => {
+                openTeamModal(teamObj);
+            });
+        });
+    }
+
+    // 4. Team Modal Detailed Display
+    const teamModalEl = document.getElementById('team-modal');
+    const teamModalCloseBtn = document.getElementById('team-modal-close-btn');
+
+    function openTeamModal(teamObj) {
+        if (!teamModalEl) return;
+
+        // Set Basic Text
+        document.getElementById('modal-team-name').innerText = `${teamObj.name}国家队`;
+        document.getElementById('modal-team-subtitle').innerText = `近一年战绩: ${teamObj.history.record1Year}`;
+        document.getElementById('modal-team-flag').className = `flag-large ${teamObj.flag}`;
+        
+        document.getElementById('team-stat-possession').innerText = teamObj.history.possession;
+        document.getElementById('team-stat-pass').innerText = teamObj.history.passAccuracy;
+        document.getElementById('team-stat-cleansheet').innerText = teamObj.history.cleanSheets;
+        document.getElementById('team-stat-conversion').innerText = teamObj.history.shotConversion;
+        
+        document.getElementById('team-conversion-explanation').innerText = teamObj.history.conversionExplanation;
+
+        // Populate Recent Matches
+        const matchesContainer = document.getElementById('team-recent-matches');
+        matchesContainer.innerHTML = '';
+
+        if (teamObj.history.recentMatches && teamObj.history.recentMatches.length > 0) {
+            teamObj.history.recentMatches.forEach(match => {
+                const matchEl = document.createElement('div');
+                matchEl.className = 'team-match-item';
+                
+                const scores = match.score.split('-').map(s => parseInt(s.trim()));
+                let resultClass = 'draw';
+                let resultText = '平';
+                if (scores.length === 2 && !isNaN(scores[0]) && !isNaN(scores[1])) {
+                    if (scores[0] > scores[1]) {
+                        resultClass = 'win';
+                        resultText = '胜';
+                    } else if (scores[0] < scores[1]) {
+                        resultClass = 'loss';
+                        resultText = '负';
+                    }
+                }
+                
+                matchEl.innerHTML = `
+                    <div class="team-match-meta">
+                        <span class="team-match-type">${match.type}</span>
+                        <span class="team-match-date">${match.date}</span>
+                    </div>
+                    <div class="team-match-vs">
+                        <span class="team-match-opponent">vs ${match.opponent}</span>
+                        <span class="team-match-score ${resultClass}">${match.score} (${resultText})</span>
+                    </div>
+                `;
+                matchesContainer.appendChild(matchEl);
+            });
+        } else {
+            matchesContainer.innerHTML = '<div style="color:var(--text-muted);font-size:0.8rem;text-align:center;padding:20px;">暂无历史战绩数据</div>';
+        }
+
+        // Open Modal
+        teamModalEl.classList.add('active');
+    }
+
+    function closeTeamModal() {
+        if (teamModalEl) teamModalEl.classList.remove('active');
+    }
+
+    if (teamModalCloseBtn) {
+        teamModalCloseBtn.addEventListener('click', closeTeamModal);
+    }
+    
+    if (teamModalEl) {
+        teamModalEl.addEventListener('click', (e) => {
+            if (e.target === teamModalEl) {
+                closeTeamModal();
             }
-            if (t.goals >= 4.0) {
-                color = 'rgba(245, 158, 11, 0.5)'; // gold (extraordinary)
-                border = '#f59e0b';
-            }
-
-            const node = document.createElement('div');
-            node.className = 'scatter-node';
-            node.style.left = `${xPercent}%`;
-            node.style.bottom = `${yPercent}%`;
-            node.style.width = `${bubbleSize}px`;
-            node.style.height = `${bubbleSize}px`;
-            node.style.backgroundColor = color;
-            node.style.color = '#ffffff';
-            node.style.border = `2px solid ${border}`;
-            node.innerText = `${t.goals}`;
-
-            // Tooltip label
-            const label = document.createElement('div');
-            label.className = 'scatter-node-label';
-            label.innerHTML = `<strong>${t.name}</strong><br>角球: ${t.corners}<br>射正: ${t.sot}<br>进球: ${t.goals}`;
-            node.appendChild(label);
-
-            scatterContainer.appendChild(node);
         });
     }
 

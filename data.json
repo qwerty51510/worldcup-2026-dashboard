@@ -4,8 +4,52 @@
     "group": "I 组第一轮焦点战",
     "timeLoc": "北京时间 6月17日 03:00 | 大都会人寿体育场",
     "teams": {
-      "home": { "name": "法国", "flag": "fra", "goals": 2.45, "shots": 19.3, "sot": 7.2, "sOff": 12.1, "corners": 6.5 },
-      "away": { "name": "塞内加尔", "flag": "sen", "goals": 1.2, "shots": 10.5, "sot": 3.8, "sOff": 6.7, "corners": 4.2 }
+      "home": { 
+        "name": "法国", 
+        "flag": "fra", 
+        "goals": 2.45, 
+        "shots": 19.3, 
+        "sot": 7.2, 
+        "sOff": 12.1, 
+        "corners": 6.5,
+        "history": {
+          "record1Year": "8胜 1平 1负 (胜率 80%)",
+          "possession": "58.5%",
+          "passAccuracy": "88.2%",
+          "cleanSheets": "4次",
+          "shotConversion": "12.7%",
+          "conversionExplanation": "法国队的射门转化率处于欧洲一流水准。这主要归功于姆巴佩在左侧肋部的绝对终结能力以及前插攻击手的个人技术。然而，由于近期中场大面积压上导致禁区前沿远射偏多，射门经常被对方低位防守的后卫阻挡。本届世界杯需减少大禁区外的盲目起脚以提升致命率。",
+          "recentMatches": [
+            { "opponent": "加拿大", "score": "0 - 0", "type": "国际友谊赛", "date": "2026-06" },
+            { "opponent": "卢森堡", "score": "3 - 0", "type": "国际友谊赛", "date": "2026-06" },
+            { "opponent": "智利", "score": "3 - 2", "type": "国际友谊赛", "date": "2026-03" },
+            { "opponent": "德国", "score": "2 - 0", "type": "国际友谊赛", "date": "2026-03" }
+          ]
+        }
+      },
+      "away": { 
+        "name": "塞内加尔", 
+        "flag": "sen", 
+        "goals": 1.2, 
+        "shots": 10.5, 
+        "sot": 3.8, 
+        "sOff": 6.7, 
+        "corners": 4.2,
+        "history": {
+          "record1Year": "5胜 3平 2负 (胜率 50%)",
+          "possession": "51.2%",
+          "passAccuracy": "81.5%",
+          "cleanSheets": "5次",
+          "shotConversion": "11.4%",
+          "conversionExplanation": "塞内加尔的进球转化率处于中游水准。球队过度依赖马内回撤拿球后的肋部内切和定位球争顶。在面对低位密集防守时常出现阵地战破门乏术的情况。尼古拉斯·杰克逊在门前的把握机会能力仍有待提高，浪费黄金机会的概率偏高是影响转化率的关键。",
+          "recentMatches": [
+            { "opponent": "毛里塔尼亚", "score": "1 - 0", "type": "世预赛", "date": "2026-06" },
+            { "opponent": "刚果民主共和国", "score": "1 - 1", "type": "世预赛", "date": "2026-06" },
+            { "opponent": "贝宁", "score": "1 - 0", "type": "国际友谊赛", "date": "2026-03" },
+            { "opponent": "加蓬", "score": "3 - 0", "type": "国际友谊赛", "date": "2026-03" }
+          ]
+        }
+      }
     },
     "playerDuel": {
       "home": { "name": "姆巴佩", "jersey": "10", "club": "皇家马德里", "role": "中锋/前锋", "color": "#3b82f6", "details": "法国国家队打入56球，距离队史射手王吉鲁仅差1球，是本届世界杯金靴热门。当前主打9号位中锋。" },
@@ -65,7 +109,7 @@
         { "name": "沙迪奥·马内", "age": 34, "position": "左边锋/前腰", "stats": "预选赛7球3助 (队史第一射手)", "role": "精神领袖与前场核心。主要通过持球内切和回撤串联来策动防守反击。", "form": "稳定", "ratings": [86, 88, 84, 87, 48, 79], "goalDist": { "leftBox": "40%", "centerBox": "30%", "rightBox": "15%", "outsideBox": "15%", "conversion": "19.5%" }, "defenseDefense": "经验丰富，拼抢硬朗。在中前场防守反抢时极其强悍，但受年龄限制深度回防的频率有所降低。", "defenseWarnings": "防守端应重点切断其与杰克逊的传球路线。在其拿球时，应采取物理对抗限制其转身推进。" },
         { "name": "尼古拉斯·杰克逊", "age": 24, "position": "中锋", "stats": "预选赛5球2助", "role": "锋线桥头堡，利用跑位压制对方中卫，主要负责反击突前和做球配合。", "form": "良好", "ratings": [85, 81, 74, 82, 38, 83], "goalDist": { "leftBox": "20%", "centerBox": "60%", "rightBox": "15%", "outsideBox": "5%", "conversion": "16.8%" }, "defenseDefense": "身体对抗能力优秀，前场就地高压压迫积极。移动频繁，在防守端是反抢的第一线。", "defenseWarnings": "需注意其大范围的横向扯动。防守中卫应在中路保持紧身缠斗，防止其在禁区前沿转弯抹角切入。" },
         { "name": "帕普·马塔尔·萨尔", "age": 23, "position": "中场", "stats": "预选赛2球3助", "role": "B2B全能中场，负责拦截和中后场出球，在反击中提供大范围奔跑与后插上。", "form": "极佳", "ratings": [80, 75, 82, 79, 78, 82], "goalDist": { "leftBox": "10%", "centerBox": "30%", "rightBox": "20%", "outsideBox": "40%", "conversion": "11.2%" }, "defenseDefense": "体力怪兽，移动覆盖范围极广，具备极强的缠斗和中场扫荡拦截能力，防守效率极高。", "defenseWarnings": "对手在中场推进时需小心其突然的上抢。同时在其前插时，中卫需要防范其在弧顶的远射。" },
-        { "name": "伊斯梅拉·萨尔", "age": 28, "position": "右边锋", "stats": "预选赛4球2助", "role": "右路边突突击点，擅长利用爆发力生吃对方边后卫，提供高空球助攻。", "form": "稳定", "ratings": [92, 79, 76, 83, 44, 76], "goalDist": { "leftBox": "10%", "centerBox": "40%", "rightBox": "40%", "outsideBox": "10%", "conversion": "15.0%" }, "defenseDefense": "反抢速度快，但落位防守战术素养一般。常依靠爆发力回追封堵，对抗力量尚可。", "defenseWarnings": "法国队左后卫特奥压上时必须注意身后空当，严防萨尔的强行突破和底线倒三角传中。" }
+        { "name": "伊斯梅拉·萨尔", "age": 28, "position": "右边锋", "stats": "预选赛4球2助", "role": "右路边突突击点，擅长利用爆发力生吃对方边后卫，提供高空球助攻。", "form": "稳定", "ratings": [92, 79, 76, 83, 44, 76], "goalDist": { "leftBox": "10%", "centerBox": "40%", "rightBox": "40%", "outsideBox": "10%", "conversion": "15.0%" }, "defenseDefense": "反抢速度快，但落位防守战术素养一般。常依靠爆发力回追封堵，对抗强度一般。", "defenseWarnings": "法国队左后卫特奥压上时必须注意身后空当，严防萨尔的强行突破和底线倒三角传中。" }
       ]
     }
   },
@@ -74,8 +118,52 @@
     "group": "I 组第一轮焦点战",
     "timeLoc": "北京时间 6月17日 06:00 | 林肯金融球场",
     "teams": {
-      "home": { "name": "伊拉克", "flag": "irq", "goals": 1.1, "shots": 8.2, "sot": 3.0, "sOff": 5.2, "corners": 3.5 },
-      "away": { "name": "挪威", "flag": "nor", "goals": 4.6, "shots": 18.5, "sot": 8.1, "sOff": 10.4, "corners": 7.2 }
+      "home": { 
+        "name": "伊拉克", 
+        "flag": "irq", 
+        "goals": 1.1, 
+        "shots": 8.2, 
+        "sot": 3.0, 
+        "sOff": 5.2, 
+        "corners": 3.5,
+        "history": {
+          "record1Year": "6胜 1平 3负 (胜率 60%)",
+          "possession": "46.8%",
+          "passAccuracy": "78.4%",
+          "cleanSheets": "3次",
+          "shotConversion": "13.4%",
+          "conversionExplanation": "伊拉克的进球转化率较高。这是因为他们的反击战术极其简练直接，通过在边路快速推进后传高空球寻找中锋侯赛因，由其进行高空压制。在禁区外的射门较少，虽然射正次数偏低，但门前攻击效率十分可观。",
+          "recentMatches": [
+            { "opponent": "越南", "score": "3 - 1", "type": "世预赛", "date": "2026-06" },
+            { "opponent": "印度尼西亚", "score": "2 - 0", "type": "世预赛", "date": "2026-06" },
+            { "opponent": "玻利维亚", "score": "2 - 1", "type": "世预赛附加赛", "date": "2026-05" },
+            { "opponent": "西班牙", "score": "1 - 1", "type": "国际友谊赛", "date": "2026-06" }
+          ]
+        }
+      },
+      "away": { 
+        "name": "挪威", 
+        "flag": "nor", 
+        "goals": 4.6, 
+        "shots": 18.5, 
+        "sot": 8.1, 
+        "sOff": 10.4, 
+        "corners": 7.2,
+        "history": {
+          "record1Year": "9胜 1平 0负 (胜率 90%)",
+          "possession": "56.4%",
+          "passAccuracy": "86.5%",
+          "cleanSheets": "6次",
+          "shotConversion": "24.8%",
+          "conversionExplanation": "挪威的进球转化率高达 24.8%，居全球第一流位置。哈兰德门前致命的身体优势和厄德高直插身后的球路，使挪威的大部分起脚都在禁区内的绝对黄金机会区，几乎不进行低效的禁区外强射。这种打法效率极高，因此得分与射正均名列第一。",
+          "recentMatches": [
+            { "opponent": "科索沃", "score": "3 - 0", "type": "国际友谊赛", "date": "2026-06" },
+            { "opponent": "斯洛伐克", "score": "1 - 1", "type": "国际友谊赛", "date": "2026-03" },
+            { "opponent": "捷克", "score": "2 - 1", "type": "国际友谊赛", "date": "2026-03" },
+            { "opponent": "苏格兰", "score": "3 - 3", "type": "欧预赛", "date": "2025-11" }
+          ]
+        }
+      }
     },
     "playerDuel": {
       "home": { "name": "艾曼·侯赛因", "jersey": "18", "club": "空军俱乐部", "role": "主力中锋", "color": "#3b82f6", "details": "伊拉克第一射手，1.89米的高大身材使他成为世预赛乃至附加赛中解决问题的唯一支点。" },
@@ -132,10 +220,10 @@
         { "name": "易卜拉欣·巴耶什", "age": 26, "position": "右中场/右翼", "stats": "预选赛2球2助", "role": "拼命三郎，覆盖面极大的防守与就地围抢工兵，为反击争夺第一落点。", "form": "稳定", "ratings": [82, 70, 72, 74, 70, 80], "goalDist": { "leftBox": "15%", "centerBox": "40%", "rightBox": "35%", "outsideBox": "10%", "conversion": "12.0%" }, "defenseDefense": "中后场扫荡型球员，具备大范围的拼抢体能，防守端善于利用身体对抗和坚韧战意实施缠斗。", "defenseWarnings": "挪威队需通过快传球撕开他的防守纠缠，避免在中圈附近被其就地拦截起速。" }
       ],
       "away": [
-        { "name": "埃尔林·哈兰德", "age": 25, "position": "中锋", "stats": "预选赛12球1助", "role": "挪威的锋线终极核武器。世界第一射门转化率，负责在禁区内一击致命。", "form": "极佳", "ratings": [89, 96, 70, 80, 45, 93], "goalDist": { "leftBox": "25%", "centerBox": "65%", "rightBox": "8%", "outsideBox": "2%", "conversion": "28.5%" }, "defenseDefense": "前场压迫极具压迫感，身体坦克般强壮，反击起步时速度奇快，前场定位球防守也是重要防空点。", "defenseWarnings": "伊拉克后卫绝对不能放其单刀，必须时刻贴身并实行两人包夹防守，重点防范其门前的凌空和低射。" },
+        { "name": "埃尔林·哈兰德", "age": 25, "position": "中锋", "stats": "预选赛12球1助", "role": "挪威的锋线终极核武器。世界第一射门转化率，负责在禁区内一击致命。", "form": "极佳", "ratings": [89, 96, 70, 80, 45, 93], "goalDist": { "leftBox": "25%", "centerBox": "65%", "rightBox": "8%", "outsideBox": "2%" }, "defenseDefense": "前场压迫极具压迫感，身体坦克般强壮，反击起步时速度极快，前场定位球防守也是重要防空点。", "defenseWarnings": "伊拉克后卫绝对不能放其单刀，必须时刻贴身并实行两人包夹防守，重点防范其门前的凌空和低射。" },
         { "name": "马丁·厄德高", "age": 27, "position": "前腰/中场", "stats": "预选赛4球8助", "role": "队长及中场发牌器，组织转换的核心大脑，专门负责在前场为哈兰德送出手术刀直塞。", "form": "极佳", "ratings": [80, 82, 94, 91, 62, 70], "goalDist": { "leftBox": "10%", "centerBox": "20%", "rightBox": "40%", "outsideBox": "30%", "conversion": "15.6%" }, "defenseDefense": "高位逼抢执行力强，在中前场断球防守时极具智慧，通过选位和滑铲拦截球权，拼抢积极。", "defenseWarnings": "伊拉克后腰必须切断他的接球线路，限制其转身，不能给他在前场好整以暇观察并塞直塞球的舒适空间。" },
         { "name": "亚历山大·瑟洛特", "age": 30, "position": "前锋/右翼", "stats": "预选赛6球4助", "role": "大身板边锋，主要利用身体护球和高空争顶，辅助哈兰德牵扯防线空当。", "form": "良好", "ratings": [84, 86, 78, 82, 50, 89], "goalDist": { "leftBox": "15%", "centerBox": "50%", "rightBox": "30%", "outsideBox": "5%", "conversion": "19.0%" }, "defenseDefense": "身体极其强壮，空中防守对抗性好。回防定位球时是主力争顶解围点，就地拦截态度积极。", "defenseWarnings": "伊拉克左后卫要防止其在高空球时欺压身位，同时注意他在后点的无球前插头槌。" },
-        { "name": "安东尼奥·努萨", "age": 21, "position": "左边锋", "stats": "预选赛2球5助", "role": "带球突破手，在左边路撕扯对方防守阵型，内切或者传球制造机会。", "form": "良好", "ratings": [92, 78, 80, 91, 38, 65], "goalDist": { "leftBox": "30%", "centerBox": "25%", "rightBox": "25%", "outsideBox": "20%", "conversion": "14.8%" }, "defenseDefense": "回防偏弱，主要留在高位随时准备抓反击，防守落位较慢，对抗强度一般。", "defenseWarnings": "伊拉克右后卫要注意不要失位，防范其高速盘带和底线传中，切忌在禁区边缘盲目出脚导致犯规。" }
+        { "name": "安东尼奥·努萨", "age": 21, "position": "左边锋", "stats": "预选赛2球5助", "role": "带球突破手，在左边路撕扯对方防线阵型，内切或者传球制造机会。", "form": "良好", "ratings": [92, 78, 80, 91, 38, 65], "goalDist": { "leftBox": "30%", "centerBox": "25%", "rightBox": "25%", "outsideBox": "20%", "conversion": "14.8%" }, "defenseDefense": "回防偏弱，主要留在高位随时准备抓反击，防守落位较慢，对抗强度一般。", "defenseWarnings": "伊拉克右后卫要注意不要失位，防范其高速盘带和底线传中，切忌在禁区边缘盲目出脚导致犯规。" }
       ]
     }
   },
@@ -144,11 +232,55 @@
     "group": "J 组第一轮焦点战",
     "timeLoc": "北京时间 6月17日 09:00 | 硬石体育场",
     "teams": {
-      "home": { "name": "阿根廷", "flag": "arg", "goals": 2.1, "shots": 15.4, "sot": 6.1, "sOff": 9.3, "corners": 5.8 },
-      "away": { "name": "阿尔及利亚", "flag": "alg", "goals": 1.8, "shots": 12.2, "sot": 4.5, "sOff": 7.7, "corners": 4.8 }
+      "home": { 
+        "name": "阿根廷", 
+        "flag": "arg", 
+        "goals": 2.1, 
+        "shots": 15.4, 
+        "sot": 6.1, 
+        "sOff": 9.3, 
+        "corners": 5.8,
+        "history": {
+          "record1Year": "8胜 1平 1负 (胜率 80%)",
+          "possession": "62.3%",
+          "passAccuracy": "89.8%",
+          "cleanSheets": "7次",
+          "shotConversion": "13.6%",
+          "conversionExplanation": "阿根廷队的进球效率稳扎稳打。在中场强大的控制和短传过渡下，大部分起脚都在对方禁区周围，并利用梅西的组织送出极佳传球。由于防守反抢和体力消耗，门前的瞬间爆发破门效率较卡塔尔时期略有下滑，但仍具备极高的战术容错率。",
+          "recentMatches": [
+            { "opponent": "危地马拉", "score": "4 - 1", "type": "国际友谊赛", "date": "2026-06" },
+            { "opponent": "厄瓜多尔", "score": "1 - 0", "type": "国际友谊赛", "date": "2026-06" },
+            { "opponent": "哥斯达黎加", "score": "3 - 1", "type": "国际友谊赛", "date": "2026-03" },
+            { "opponent": "萨尔瓦多", "score": "3 - 0", "type": "国际友谊赛", "date": "2026-03" }
+          ]
+        }
+      },
+      "away": { 
+        "name": "阿尔及利亚", 
+        "flag": "alg", 
+        "goals": 1.8, 
+        "shots": 12.2, 
+        "sot": 4.5, 
+        "sOff": 7.7, 
+        "corners": 4.8,
+        "history": {
+          "record1Year": "7胜 2平 1负 (胜率 70%)",
+          "possession": "54.8%",
+          "passAccuracy": "83.6%",
+          "cleanSheets": "4次",
+          "shotConversion": "14.7%",
+          "conversionExplanation": "阿尔及利亚的进球转化率达到 14.7%。这主要得益于在佩特科维奇执教下，球队在中路的技术型小组传控配合。马赫雷斯内切吸引防守后，前锋古伊里和阿穆拉在弱侧的插上让射门机会通常非常接近球门，射歪概率偏低。",
+          "recentMatches": [
+            { "opponent": "乌干达", "score": "2 - 1", "type": "世预赛", "date": "2026-06" },
+            { "opponent": "几内亚", "score": "1 - 2", "type": "世预赛", "date": "2026-06" },
+            { "opponent": "南非", "score": "3 - 3", "type": "国际友谊赛", "date": "2026-03" },
+            { "opponent": "玻利维亚", "score": "3 - 2", "type": "国际友谊赛", "date": "2026-03" }
+          ]
+        }
+      }
     },
     "playerDuel": {
-      "home": { "name": "利昂内尔·梅西", "jersey": "10", "club": "迈阿密国际", "role": "前腰/领袖", "color": "#3b82f6", "details": "39岁的球王最后一届世界杯，肌肉疲劳已完全恢复。是全队的精神象征和定位球/传威胁球的保障。" },
+      "home": { "name": "利昂内尔·梅西", "jersey": "10", "club": "迈阿密国际", "role": "前腰/领袖", "color": "#3b82f6", "details": "39岁的球王最后一届世界杯，肌肉疲劳已完全恢复。是全队的精神象征 and 定位球/传威胁球的保障。" },
       "away": { "name": "里亚德·马赫雷斯", "jersey": "7", "club": "吉达国民", "role": "右翼锋", "details": "阿尔及利亚的核心，经验极其老道，传球与边路内切射门依然是球队首选爆破手段。" },
       "description": "两位世界级左脚右路大师的经典对决。虽然都远离了欧洲核心赛区，但梅西的视野与传控，加上马赫雷斯关键时刻的突袭与定位球交付，依然会决定整场比赛的上限。"
     },
@@ -214,8 +346,52 @@
     "group": "J 组第一轮焦点战",
     "timeLoc": "北京时间 6月17日 12:00 | 吉列体育场",
     "teams": {
-      "home": { "name": "奥地利", "flag": "aut", "goals": 2.75, "shots": 16.8, "sot": 6.5, "sOff": 10.3, "corners": 6.2 },
-      "away": { "name": "约旦", "flag": "jor", "goals": 1.4, "shots": 9.2, "sot": 3.6, "sOff": 5.6, "corners": 3.8 }
+      "home": { 
+        "name": "奥地利", 
+        "flag": "aut", 
+        "goals": 2.75, 
+        "shots": 16.8, 
+        "sot": 6.5, 
+        "sOff": 10.3, 
+        "corners": 6.2,
+        "history": {
+          "record1Year": "7胜 1平 2负 (胜率 70%)",
+          "possession": "53.2%",
+          "passAccuracy": "82.4%",
+          "cleanSheets": "4次",
+          "shotConversion": "16.3%",
+          "conversionExplanation": "奥地利拥有极高进球效率的 16.3%。这主要来自于朗尼克标志性的 Gegenpressing 高强度前压反抢战术。抢下球后直接切入对方立足未稳的防区在几秒内形成打门，因此进球成功率十分出众。主力中锋阿瑙托维奇与多特的萨比策是主要的禁区终结核心。",
+          "recentMatches": [
+            { "opponent": "瑞士", "score": "1 - 1", "type": "国际友谊赛", "date": "2026-06" },
+            { "opponent": "塞尔维亚", "score": "2 - 1", "type": "国际友谊赛", "date": "2026-06" },
+            { "opponent": "土耳其", "score": "6 - 1", "type": "国际友谊赛", "date": "2026-03" },
+            { "opponent": "斯洛伐克", "score": "2 - 0", "type": "国际友谊赛", "date": "2026-03" }
+          ]
+        }
+      },
+      "away": { 
+        "name": "约旦", 
+        "flag": "jor", 
+        "goals": 1.4, 
+        "shots": 9.2, 
+        "sot": 3.6, 
+        "sOff": 5.6, 
+        "corners": 3.8,
+        "history": {
+          "record1Year": "6胜 2平 2负 (胜率 60%)",
+          "possession": "43.5%",
+          "passAccuracy": "76.8%",
+          "cleanSheets": "5次",
+          "shotConversion": "15.2%",
+          "conversionExplanation": "约旦在近一年的战术极具针对性：彻底放弃控球，转为 5-4-1 纯防守大巴，伺机通过塔马里的极速推进和奥尔万的接应反击。因为射门数量基数少，但每一次都是极具威胁的单刀或防线空虚机会，所以 15.2% 的转化率非常高效，属于“一剑穿心”风格。",
+          "recentMatches": [
+            { "opponent": "沙特阿拉伯", "score": "2 - 1", "type": "世预赛", "date": "2026-06" },
+            { "opponent": "塔吉克斯坦", "score": "3 - 0", "type": "世预赛", "date": "2026-06" },
+            { "opponent": "巴基斯坦", "score": "7 - 0", "type": "世预赛", "date": "2026-03" },
+            { "opponent": "巴基斯坦", "score": "3 - 0", "type": "世预赛", "date": "2026-03" }
+          ]
+        }
+      }
     },
     "playerDuel": {
       "home": { "name": "马塞尔·萨比策", "jersey": "9", "club": "多特蒙德", "role": "中场核心", "color": "#3b82f6", "details": "迎来个人国家队第100场里程碑，战意极其强烈，是朗尼克疯狗流逼抢的核心推动者与插上爆点。" },
@@ -234,7 +410,7 @@
     "tactics": {
       "homeForm": "4-2-2-2",
       "awayForm": "5-4-1",
-      "explanation": "奥地利依靠主教练朗尼克的 Gegenpressing 狂热逼抢，主打双前腰/双前锋的 4-2-2-2 乱战阵型，追求前场断球后的3秒解决战斗。约旦则在塞拉米手下坚定落位 5-4-1 大巴，以中路极致压缩对方空间为前提，前场放生塔马里以完全的反击单打寻找进球。",
+      "explanation": "奥地利依靠主教练朗尼克的 Gegenpressing 狂热逼抢，主打双前腰/双前锋 the 4-2-2-2 乱战阵型，追求前场断球后的3秒解决战斗。约旦则在塞拉米手下坚定落位 5-4-1 大巴，以中路小范围压缩空间为前提，反击依靠塔马里的带球反向包夹爆破。",
       "players": [
         { "x": 180, "y": 460, "num": 1, "name": "佩恩茨", "type": "home" },
         { "x": 70, "y": 390, "num": 16, "name": "姆韦内", "type": "home" },

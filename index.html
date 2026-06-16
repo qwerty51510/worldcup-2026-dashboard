@@ -592,6 +592,69 @@
         </div>
     </div>
 
+    <!-- 国家队详情弹窗模态框 -->
+    <div class="modal-overlay" id="team-modal">
+        <div class="modal-card glass-card">
+            <button class="modal-close-btn" id="team-modal-close-btn">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            
+            <div class="modal-header">
+                <div class="modal-player-title">
+                    <h2 id="modal-team-name">法国国家队</h2>
+                    <span id="modal-team-subtitle" class="text-secondary">近一年战绩: 8胜 1平 1负 (胜率 80%)</span>
+                </div>
+                <div class="modal-player-flag-wrapper">
+                    <span id="modal-team-flag" class="flag-large fra"></span>
+                </div>
+            </div>
+            
+            <div class="modal-body-split">
+                <!-- Left Column: Core Stats -->
+                <div class="modal-left-col" style="align-items: stretch;">
+                    <h3 class="modal-section-title">近一年核心团队数据统计</h3>
+                    
+                    <div class="team-stat-grid">
+                        <div class="team-stat-box">
+                            <span class="team-stat-val" id="team-stat-possession">58.5%</span>
+                            <span class="team-stat-lbl">场均控球率</span>
+                        </div>
+                        <div class="team-stat-box">
+                            <span class="team-stat-val" id="team-stat-pass">88.2%</span>
+                            <span class="team-stat-lbl">传球成功率</span>
+                        </div>
+                        <div class="team-stat-box">
+                            <span class="team-stat-val" id="team-stat-cleansheet">4次</span>
+                            <span class="team-stat-lbl">零封次数</span>
+                        </div>
+                        <div class="team-stat-box">
+                            <span class="team-stat-val text-accent" id="team-stat-conversion">12.7%</span>
+                            <span class="team-stat-lbl">射门进球转化率</span>
+                        </div>
+                    </div>
+
+                    <div class="modal-section" style="margin-top: 24px;">
+                        <h4 class="modal-section-subtitle">💡 进球效率与战术解析</h4>
+                        <p id="team-conversion-explanation" class="modal-text-desc" style="line-height: 1.6; font-size: 0.82rem; color: var(--text-secondary); margin-top: 8px;">
+                            <!-- 进球率解析文案 -->
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Right Column: Recent Matches -->
+                <div class="modal-right-col" style="align-items: stretch;">
+                    <h3 class="modal-section-title">近期战绩明细 (近4场比赛)</h3>
+                    <div class="team-matches-list" id="team-recent-matches">
+                        <!-- JS 动态生成比赛列表条目 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Script loading -->
     <script src="app.js"></script>
 </body>
