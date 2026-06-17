@@ -1123,13 +1123,21 @@ body {
     margin-left: auto;
 }
 
-/* Team-specific details-card colors */
 .fra-sen-theme .away-fill {
     background: linear-gradient(to left, rgba(16, 185, 129, 0.6), var(--accent-green)) !important;
 }
 
 .irq-nor-theme .away-fill {
     background: linear-gradient(to left, rgba(239, 68, 68, 0.6), var(--accent-red)) !important;
+}
+
+.eng-cro-theme .away-fill,
+.gha-pan-theme .away-fill {
+    background: linear-gradient(to left, rgba(239, 68, 68, 0.6), var(--accent-red)) !important;
+}
+
+.cze-rsa-theme .away-fill {
+    background: linear-gradient(to left, rgba(16, 185, 129, 0.6), var(--accent-green)) !important;
 }
 
 /* Key Player Spotlight */
@@ -1315,6 +1323,9 @@ body {
 
 .fra-sen-theme .away-text-accent { color: var(--accent-green); }
 .irq-nor-theme .away-text-accent { color: var(--accent-red); }
+.eng-cro-theme .away-text-accent,
+.gha-pan-theme .away-text-accent { color: var(--accent-red); }
+.cze-rsa-theme .away-text-accent { color: var(--accent-green); }
 
 .injury-list {
     list-style: none;
@@ -1395,6 +1406,9 @@ body {
 
 .fra-sen-theme .form-badge.away-bg { background-color: var(--accent-green); }
 .irq-nor-theme .form-badge.away-bg { background-color: var(--accent-red); }
+.eng-cro-theme .form-badge.away-bg,
+.gha-pan-theme .form-badge.away-bg { background-color: var(--accent-red); }
+.cze-rsa-theme .form-badge.away-bg { background-color: var(--accent-green); }
 
 .vs-text {
     font-size: 0.7rem;
@@ -1526,6 +1540,46 @@ body {
 
 .jor {
     background: linear-gradient(to bottom, #000000 33.3%, #ffffff 33.3%, #ffffff 66.6%, #007a3d 66.6%);
+}
+
+.por {
+    background: linear-gradient(to right, #046A38 37.5%, #DA291C 37.5%);
+}
+
+.cod {
+    background: linear-gradient(135deg, #007FFF 40%, #FFD700 40%, #FFD700 43%, #D21034 43%, #D21034 57%, #FFD700 57%, #FFD700 60%, #007FFF 60%);
+}
+
+.eng {
+    background: linear-gradient(to bottom, transparent 43%, #da291c 43%, #da291c 57%, transparent 57%), linear-gradient(to right, #ffffff 43%, #da291c 43%, #da291c 57%, #ffffff 57%);
+}
+
+.cro {
+    background: linear-gradient(to bottom, #ff0000 33.3%, #ffffff 33.3%, #ffffff 66.6%, #000080 66.6%);
+}
+
+.gha {
+    background: linear-gradient(to bottom, #e21e25 33.3%, #fdef42 33.3%, #fdef42 66.6%, #006b3f 66.6%);
+}
+
+.pan {
+    background: conic-gradient(#d21034 0deg 90deg, #ffffff 90deg 180deg, #002b66 180deg 270deg, #ffffff 270deg 360deg);
+}
+
+.uzb {
+    background: linear-gradient(to bottom, #00bfff 30%, #e21e25 30%, #e21e25 32%, #ffffff 32%, #ffffff 68%, #e21e25 68%, #e21e25 70%, #009b48 70%);
+}
+
+.col {
+    background: linear-gradient(to bottom, #fcd116 50%, #003893 50%, #003893 75%, #ce1126 75%);
+}
+
+.cze {
+    background: linear-gradient(125deg, #11457e 35%, transparent 35%), linear-gradient(55deg, #11457e 35%, transparent 35%), linear-gradient(to bottom, #ffffff 50%, #d91a24 50%);
+}
+
+.rsa {
+    background: linear-gradient(to bottom, #e51d2d 38%, #007a3d 38%, #007a3d 62%, #001489 62%);
 }
 
 /* 10. Animations */

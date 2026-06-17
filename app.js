@@ -66,12 +66,12 @@ function initializeDashboard() {
             const overviewBtn = document.getElementById('btn-overview');
             if (overviewBtn) overviewBtn.classList.add('active');
             pageTitle.innerText = '赛事综合总览';
-            pageSubtitle.innerText = '美加墨世界杯超级比赛日・4场重磅对决深度解析';
+            pageSubtitle.innerText = '美加墨世界杯超级比赛日・9场重磅对决深度解析';
         } else if (targetTabId === 'correlation') {
             const corrBtn = document.getElementById('btn-correlation');
             if (corrBtn) corrBtn.classList.add('active');
             pageTitle.innerText = '角球与进攻关联分析';
-            pageSubtitle.innerText = '基于2026周期8支球队场均数据的科学实证分析';
+            pageSubtitle.innerText = '基于2026周期18支球队场均数据的科学实证分析';
             renderCorrelationCharts();
         } else if (targetTabId === 'match-details' && matchId) {
             currentMatchId = matchId;
@@ -377,6 +377,11 @@ function initializeDashboard() {
                 else if (matchId === 'irq-nor') color = '#ef4444'; // Norway red
                 else if (matchId === 'arg-alg') color = '#f59e0b'; // Algeria yellow
                 else if (matchId === 'aut-jor') color = '#ef4444'; // Jordan red
+                else if (matchId === 'por-cod') color = '#f59e0b'; // Congo DR yellow
+                else if (matchId === 'eng-cro') color = '#ef4444'; // Croatia red
+                else if (matchId === 'gha-pan') color = '#ef4444'; // Panama red
+                else if (matchId === 'uzb-col') color = '#f59e0b'; // Colombia yellow
+                else if (matchId === 'cze-rsa') color = '#10b981'; // South Africa green
             }
 
             // Circle background
@@ -1189,6 +1194,235 @@ function initializeDashboard() {
                 runs: [
                     { name: '阿拉伯', from: { x: 180, y: 90 }, to: { x: 180, y: 120 }, duration: 800, delay: 500 },
                     { name: '阿布塔哈', from: { x: 40, y: 110 }, to: { x: 70, y: 150 }, duration: 1000, delay: 500 }
+                ]
+            }
+        },
+        'por-cod': {
+            'offense': {
+                caption: '葡萄牙 4-3-3 经典进攻演练：中路渗透与C罗终结',
+                commentary: [
+                    { time: 0, text: '【B费中圈附近拿球，送出精妙直塞给拉边的莱奥】' },
+                    { time: 1000, text: '【莱奥超速带球底线低平传中，横穿刚果金两名中卫！】' },
+                    { time: 2200, text: '【C罗拍马赶到冷静垫射破门！⚽ 葡萄牙 1-0 刚果（金）】' }
+                ],
+                players: {
+                    'B费': { x: 130, y: 280 },
+                    '莱奥': { x: 50, y: 120 },
+                    'C罗': { x: 180, y: 100 },
+                    '马苏亚库': { x: 65, y: 120 },
+                    '姆本巴': { x: 145, y: 105 },
+                    '巴图宾西卡': { x: 215, y: 110 }
+                },
+                passes: [
+                    { from: { x: 110, y: 320 }, to: { x: 50, y: 120 }, duration: 1000, delay: 0 },
+                    { from: { x: 50, y: 120 }, to: { x: 180, y: 100 }, duration: 1200, delay: 1000 },
+                    { from: { x: 180, y: 100 }, to: { x: 180, y: 15 }, duration: 500, delay: 2200 }
+                ],
+                runs: [
+                    { name: '莱奥', from: { x: 70, y: 210 }, to: { x: 50, y: 120 }, duration: 1000, delay: 0 },
+                    { name: 'C罗', from: { x: 180, y: 170 }, to: { x: 180, y: 100 }, duration: 1000, delay: 500 }
+                ]
+            },
+            'defense': {
+                caption: '刚果（金）4-2-3-1 中路关门阻断与维萨反击',
+                commentary: [
+                    { time: 0, text: '【葡萄牙中路直塞，皮克尔移动卡位完成断球】' },
+                    { time: 1000, text: '【皮克尔断球后不停球直接斜推左路空当，寻找维萨！】' },
+                    { time: 2200, text: '【维萨超速起跑带球斜插防线身后，就地发起强袭！】' }
+                ],
+                players: {
+                    '皮克尔': { x: 180, y: 185 },
+                    '维萨': { x: 70, y: 200 },
+                    '坎塞洛': { x: 90, y: 280 }
+                },
+                passes: [
+                    { from: { x: 110, y: 320 }, to: { x: 180, y: 185 }, duration: 1000, delay: 0 },
+                    { from: { x: 180, y: 185 }, to: { x: 70, y: 200 }, duration: 1000, delay: 1000 }
+                ],
+                runs: [
+                    { name: '皮克尔', from: { x: 240, y: 170 }, to: { x: 180, y: 185 }, duration: 800, delay: 0 },
+                    { name: '维萨', from: { x: 80, y: 270 }, to: { x: 70, y: 200 }, duration: 1000, delay: 1000 }
+                ]
+            }
+        },
+        'eng-cro': {
+            'offense': {
+                caption: '英格兰 4-2-3-1 肋部渗透：贝林厄姆喂饼凯恩得手',
+                commentary: [
+                    { time: 0, text: '【赖斯横敲贝林厄姆，后者持球直插克罗地亚肋部】' },
+                    { time: 1000, text: '【贝林厄姆吸引包夹送出直塞，凯恩反越位插上】' },
+                    { time: 2200, text: '【凯恩脚弓冷静推射球门死角得手！⚽ 英格兰 1-0 克罗地亚】' }
+                ],
+                players: {
+                    '贝林厄姆': { x: 200, y: 160 },
+                    '凯恩': { x: 180, y: 110 },
+                    '科瓦契奇': { x: 140, y: 160 },
+                    '苏塔洛': { x: 160, y: 115 }
+                },
+                passes: [
+                    { from: { x: 130, y: 330 }, to: { x: 200, y: 160 }, duration: 1000, delay: 0 },
+                    { from: { x: 200, y: 160 }, to: { x: 180, y: 110 }, duration: 1000, delay: 1000 },
+                    { from: { x: 180, y: 110 }, to: { x: 180, y: 15 }, duration: 500, delay: 2200 }
+                ],
+                runs: [
+                    { name: '贝林厄姆', from: { x: 180, y: 270 }, to: { x: 200, y: 160 }, duration: 1000, delay: 0 },
+                    { name: '凯恩', from: { x: 180, y: 180 }, to: { x: 180, y: 110 }, duration: 1000, delay: 500 }
+                ]
+            },
+            'defense': {
+                caption: '克罗地亚 4-3-3 经典拦截：中场绞杀洗球',
+                commentary: [
+                    { time: 0, text: '【英格兰中场传球给福登，科瓦契奇横移拦截将球破坏】' },
+                    { time: 1000, text: '【断球后顺势横敲给莫德里奇，魔笛外脚背大范围转移！】' },
+                    { time: 2200, text: '【转移准确落到左路快马克拉马里奇脚下，反击大门洞开！】' }
+                ],
+                players: {
+                    '科瓦契奇': { x: 210, y: 210 },
+                    '莫德里奇': { x: 170, y: 180 },
+                    '克拉马里奇': { x: 80, y: 200 }
+                },
+                passes: [
+                    { from: { x: 180, y: 270 }, to: { x: 210, y: 210 }, duration: 1000, delay: 0 },
+                    { from: { x: 210, y: 210 }, to: { x: 170, y: 180 }, duration: 800, delay: 1000 },
+                    { from: { x: 170, y: 180 }, to: { x: 80, y: 200 }, duration: 1200, delay: 2200 }
+                ],
+                runs: [
+                    { name: '科瓦契奇', from: { x: 120, y: 170 }, to: { x: 210, y: 210 }, duration: 800, delay: 0 },
+                    { name: '克拉马里奇', from: { x: 80, y: 270 }, to: { x: 80, y: 200 }, duration: 1000, delay: 1200 }
+                ]
+            }
+        },
+        'gha-pan': {
+            'offense': {
+                caption: '加纳 4-3-3 突破配合：库杜斯内切喂饼威廉姆斯',
+                commentary: [
+                    { time: 0, text: '【托马斯传给右肋的库杜斯，库杜斯标志性左脚带球内切】' },
+                    { time: 1000, text: '【库杜斯虚晃晃过对方边卫，横敲给中路切入的威廉姆斯】' },
+                    { time: 2200, text: '【威廉姆斯抢在三中卫封堵前推射球门远角入网！⚽ 加纳 1-0 巴拿马】' }
+                ],
+                players: {
+                    '库杜斯': { x: 270, y: 200 },
+                    '威廉姆斯': { x: 120, y: 110 },
+                    '戴维斯': { x: 80, y: 120 },
+                    '科尔多瓦': { x: 130, y: 115 }
+                },
+                passes: [
+                    { from: { x: 180, y: 320 }, to: { x: 270, y: 200 }, duration: 1000, delay: 0 },
+                    { from: { x: 270, y: 200 }, to: { x: 120, y: 110 }, duration: 1000, delay: 1000 },
+                    { from: { x: 120, y: 110 }, to: { x: 180, y: 15 }, duration: 500, delay: 2200 }
+                ],
+                runs: [
+                    { name: '库杜斯', from: { x: 250, y: 320 }, to: { x: 270, y: 200 }, duration: 1000, delay: 0 },
+                    { name: '威廉姆斯', from: { x: 70, y: 210 }, to: { x: 120, y: 110 }, duration: 1000, delay: 500 }
+                ]
+            },
+            'defense': {
+                caption: '巴拿马 5-4-1 铁血大巴：边路关门与拦截',
+                commentary: [
+                    { time: 0, text: '【加纳长传试图寻找左翼塞门约，巴拿马整体防线横移】' },
+                    { time: 1000, text: '【中卫埃斯科巴高空拦截，力压前锋头球解围！🛡️】' },
+                    { time: 2200, text: '【二点球被卡拉斯基利亚稳稳拿到，大脚开向前场发起反击】' }
+                ],
+                players: {
+                    '埃斯科巴': { x: 200, y: 120 },
+                    '卡拉斯基利亚': { x: 140, y: 180 },
+                    '科尔多瓦': { x: 125, y: 120 }
+                },
+                passes: [
+                    { from: { x: 250, y: 320 }, to: { x: 200, y: 120 }, duration: 1200, delay: 0 },
+                    { from: { x: 200, y: 120 }, to: { x: 140, y: 180 }, duration: 800, delay: 1500 }
+                ],
+                runs: [
+                    { name: '埃斯科巴', from: { x: 180, y: 90 }, to: { x: 200, y: 120 }, duration: 800, delay: 500 },
+                    { name: '卡拉斯基利亚', from: { x: 130, y: 160 }, to: { x: 140, y: 180 }, duration: 1000, delay: 500 }
+                ]
+            }
+        },
+        'uzb-col': {
+            'offense': {
+                caption: '哥伦比亚 4-3-3 边路狂飙：哈梅斯助攻迪亚斯爆破破门',
+                commentary: [
+                    { time: 0, text: '【哈梅斯前场斜塞打对方防线身后，路易斯·迪亚斯超速强突】' },
+                    { time: 1000, text: '【迪亚斯在左边路接球直接晃过防卫中卫胡桑诺夫，杀入禁区】' },
+                    { time: 2200, text: '【迪亚斯内切打门抽射远角死角入网！⚽ 哥伦比亚 1-0 乌兹别克斯坦】' }
+                ],
+                players: {
+                    '詹姆斯': { x: 220, y: 140 },
+                    'L.迪亚斯': { x: 120, y: 100 },
+                    '胡桑诺夫': { x: 220, y: 120 },
+                    '阿舒尔马托夫': { x: 130, y: 115 }
+                },
+                passes: [
+                    { from: { x: 240, y: 170 }, to: { x: 120, y: 100 }, duration: 1000, delay: 0 },
+                    { from: { x: 120, y: 100 }, to: { x: 180, y: 15 }, duration: 600, delay: 2200 }
+                ],
+                runs: [
+                    { name: '詹姆斯', from: { x: 240, y: 170 }, to: { x: 220, y: 140 }, duration: 1000, delay: 0 },
+                    { name: 'L.迪亚斯', from: { x: 80, y: 270 }, to: { x: 120, y: 100 }, duration: 1200, delay: 0 }
+                ]
+            },
+            'defense': {
+                caption: '乌兹别克斯坦 5-4-1 大巴锁死中路与解围',
+                commentary: [
+                    { time: 0, text: '【哥伦比亚尝试斜传禁区找杜兰，胡桑诺夫倒地滑铲抢断】' },
+                    { time: 1000, text: '【抢断后大脚解围长传给肖穆罗多夫，中亚狼反击第一点起航！】' },
+                    { time: 2200, text: '【肖穆罗多夫高空停球卡死防线，稳稳控制二点球】' }
+                ],
+                players: {
+                    '胡桑诺夫': { x: 190, y: 380 },
+                    '肖穆罗多夫': { x: 180, y: 230 }
+                },
+                passes: [
+                    { from: { x: 240, y: 170 }, to: { x: 190, y: 380 }, duration: 1000, delay: 0 },
+                    { from: { x: 190, y: 380 }, to: { x: 180, y: 230 }, duration: 1200, delay: 1000 }
+                ],
+                runs: [
+                    { name: '胡桑诺夫', from: { x: 250, y: 400 }, to: { x: 190, y: 380 }, duration: 800, delay: 0 },
+                    { name: '肖穆罗多夫', from: { x: 180, y: 180 }, to: { x: 180, y: 230 }, duration: 1000, delay: 500 }
+                ]
+            }
+        },
+        'cze-rsa': {
+            'offense': {
+                caption: '捷克 4-2-3-1 经典进攻：普罗沃德长传斜插找希克',
+                commentary: [
+                    { time: 0, text: '【索切克中场横传，普罗沃德带球前插斜吊禁区】' },
+                    { time: 1000, text: '【希克高高跃起泰山压顶凌空抽射打球门死角！】' },
+                    { time: 2200, text: '【希克重炮破网！⚽ 捷克 1-0 南非】' }
+                ],
+                players: {
+                    '普罗沃德': { x: 260, y: 210 },
+                    '希克': { x: 180, y: 100 },
+                    '科夸纳': { x: 150, y: 110 }
+                },
+                passes: [
+                    { from: { x: 130, y: 330 }, to: { x: 260, y: 210 }, duration: 1000, delay: 0 },
+                    { from: { x: 260, y: 210 }, to: { x: 180, y: 100 }, duration: 1000, delay: 1000 },
+                    { from: { x: 180, y: 100 }, to: { x: 180, y: 15 }, duration: 500, delay: 2200 }
+                ],
+                runs: [
+                    { name: '普罗沃德', from: { x: 230, y: 330 }, to: { x: 260, y: 210 }, duration: 1000, delay: 0 },
+                    { name: '希克', from: { x: 180, y: 180 }, to: { x: 180, y: 100 }, duration: 1000, delay: 500 }
+                ]
+            },
+            'defense': {
+                caption: '南非 4-2-3-1 经典快下：陶左翼反击单刀突袭',
+                commentary: [
+                    { time: 0, text: '【捷克进攻被南非莫科纳中场滑铲干净封堵拦截】' },
+                    { time: 1000, text: '【得球后瞬间斜塞给左翼超速插上的珀西·陶！】' },
+                    { time: 2200, text: '【陶甩开防守直插底线，南非发起闪电地面反击！】' }
+                ],
+                players: {
+                    '莫科纳': { x: 175, y: 230 },
+                    '陶': { x: 60, y: 180 }
+                },
+                passes: [
+                    { from: { x: 230, y: 330 }, to: { x: 175, y: 230 }, duration: 1000, delay: 0 },
+                    { from: { x: 175, y: 230 }, to: { x: 60, y: 180 }, duration: 1000, delay: 1000 }
+                ],
+                runs: [
+                    { name: '莫科纳', from: { x: 180, y: 200 }, to: { x: 175, y: 230 }, duration: 800, delay: 0 },
+                    { name: '陶', from: { x: 80, y: 270 }, to: { x: 60, y: 180 }, duration: 1000, delay: 1000 }
                 ]
             }
         }
