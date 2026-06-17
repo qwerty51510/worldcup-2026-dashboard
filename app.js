@@ -7,7 +7,7 @@ let matchData = {};
 
 document.addEventListener('DOMContentLoaded', () => {
     // Fetch datasets from data.json dynamically
-    fetch('data.json')
+    fetch('data.json?t=' + Date.now())
         .then(response => {
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
