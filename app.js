@@ -752,11 +752,17 @@ function initializeDashboard() {
         const distContainer = document.getElementById('modal-goal-dist');
         distContainer.innerHTML = ''; // clear
 
+        const left = parseInt(player.goalDist.leftBox) || 0;
+        const center = parseInt(player.goalDist.centerBox) || 0;
+        const right = parseInt(player.goalDist.rightBox) || 0;
+        const outside = parseInt(player.goalDist.outsideBox) || 0;
+        const total = left + center + right + outside;
+
         const distData = [
-            { label: '禁区内左侧进球', val: player.goalDist.leftBox },
-            { label: '禁区内中央进球', val: player.goalDist.centerBox },
-            { label: '禁区内右侧进球', val: player.goalDist.rightBox },
-            { label: '禁区外远射进球', val: player.goalDist.outsideBox }
+            { label: '禁区内左侧进球', val: left },
+            { label: '禁区内中央进球', val: center },
+            { label: '禁区内右侧进球', val: right },
+            { label: '禁区外远射进球', val: outside }
         ];
 
         // Determine bar color based on theme
@@ -765,8 +771,14 @@ function initializeDashboard() {
         else if (themeClass.includes('irq-nor') && teamFlag === 'nor') barColor = '#ef4444';
         else if (themeClass.includes('arg-alg') && teamFlag === 'alg') barColor = '#f59e0b';
         else if (themeClass.includes('aut-jor') && teamFlag === 'jor') barColor = '#ef4444';
+        else if (themeClass.includes('por-cod') && teamFlag === 'cod') barColor = '#f59e0b';
+        else if (themeClass.includes('eng-cro') && teamFlag === 'cro') barColor = '#ef4444';
+        else if (themeClass.includes('gha-pan') && teamFlag === 'pan') barColor = '#ef4444';
+        else if (themeClass.includes('uzb-col') && teamFlag === 'col') barColor = '#f59e0b';
+        else if (themeClass.includes('cze-rsa') && teamFlag === 'rsa') barColor = '#10b981';
 
         distData.forEach(item => {
+            const pct = total > 0 ? (item.val / total * 100) : 0;
             const row = document.createElement('div');
             row.className = 'g-dist-row';
             row.innerHTML = `
@@ -774,13 +786,13 @@ function initializeDashboard() {
                 <div class="g-dist-track">
                     <div class="g-dist-bar" style="width: 0%; background-color: ${barColor}"></div>
                 </div>
-                <span class="g-dist-val">${item.val}</span>
+                <span class="g-dist-val">${item.val} 球</span>
             `;
             distContainer.appendChild(row);
             
             // Trigger transition animation in next tick
             setTimeout(() => {
-                row.querySelector('.g-dist-bar').style.width = item.val;
+                row.querySelector('.g-dist-bar').style.width = `${pct}%`;
             }, 100);
         });
 

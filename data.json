@@ -309,10 +309,10 @@
             88
           ],
           "goalDist": {
-            "leftBox": "20%",
-            "centerBox": "65%",
-            "rightBox": "10%",
-            "outsideBox": "5%",
+            "leftBox": 26,
+            "centerBox": 84,
+            "rightBox": 13,
+            "outsideBox": 7,
             "conversion": "24.5%"
           },
           "defenseDefense": "基本不参与防守，前场就地高位逼抢，定位球防守时是禁区内的重要防空大闸。",
@@ -334,10 +334,10 @@
             75
           ],
           "goalDist": {
-            "leftBox": "15%",
-            "centerBox": "25%",
-            "rightBox": "30%",
-            "outsideBox": "30%",
+            "leftBox": 3,
+            "centerBox": 6,
+            "rightBox": 7,
+            "outsideBox": 7,
             "conversion": "17.8%"
           },
           "defenseDefense": "奔跑覆盖极其勤勉，擅长在高位实施逼抢与延缓，落位时到位率极高。",
@@ -359,10 +359,10 @@
             82
           ],
           "goalDist": {
-            "leftBox": "50%",
-            "centerBox": "30%",
-            "rightBox": "10%",
-            "outsideBox": "10%",
+            "leftBox": 2,
+            "centerBox": 2,
+            "rightBox": 0,
+            "outsideBox": 0,
             "conversion": "15.2%"
           },
           "defenseDefense": "回防战术意识一般，主要停留在前场随时准备策动反击，对抗硬度中等。",
@@ -384,10 +384,10 @@
             88
           ],
           "goalDist": {
-            "leftBox": "5%",
-            "centerBox": "90%",
-            "rightBox": "5%",
-            "outsideBox": "0%",
+            "leftBox": 0,
+            "centerBox": 3,
+            "rightBox": 0,
+            "outsideBox": 0,
             "conversion": "8.5%"
           },
           "defenseDefense": "单防能力卓越，禁区内防空铁闸。铲断时机把握极佳，擅长身体对抗与门前解围。",
@@ -411,10 +411,10 @@
             76
           ],
           "goalDist": {
-            "leftBox": "45%",
-            "centerBox": "40%",
-            "rightBox": "10%",
-            "outsideBox": "5%",
+            "leftBox": 2,
+            "centerBox": 2,
+            "rightBox": 1,
+            "outsideBox": 0,
             "conversion": "18.5%"
           },
           "defenseDefense": "前场反抢积极，能深度回追协助左后卫防守，在反击转换时能够瞬间前插起步。",
@@ -436,10 +436,10 @@
             85
           ],
           "goalDist": {
-            "leftBox": "10%",
-            "centerBox": "80%",
-            "rightBox": "10%",
-            "outsideBox": "0%",
+            "leftBox": 1,
+            "centerBox": 4,
+            "rightBox": 1,
+            "outsideBox": 0,
             "conversion": "11.2%"
           },
           "defenseDefense": "抢断卡位极其精准，在禁区内防空扫荡效果极佳，身体对抗硬朗，封堵射门坚决。",
@@ -461,10 +461,10 @@
             76
           ],
           "goalDist": {
-            "leftBox": "20%",
-            "centerBox": "30%",
-            "rightBox": "10%",
-            "outsideBox": "40%",
+            "leftBox": 0,
+            "centerBox": 1,
+            "rightBox": 0,
+            "outsideBox": 1,
             "conversion": "10.0%"
           },
           "defenseDefense": "防守风格硬朗，铲断凶狠。回防速度快，善于封堵对方的内切与传中通道。",
@@ -486,10 +486,10 @@
             70
           ],
           "goalDist": {
-            "leftBox": "10%",
-            "centerBox": "35%",
-            "rightBox": "40%",
-            "outsideBox": "15%",
+            "leftBox": 0,
+            "centerBox": 2,
+            "rightBox": 1,
+            "outsideBox": 0,
             "conversion": "14.0%"
           },
           "defenseDefense": "边路纠缠式反抢，防守主要在前半场，擅于封堵对方边后卫的起步推进。",
@@ -813,10 +813,10 @@
             86
           ],
           "goalDist": {
-            "leftBox": "15%",
-            "centerBox": "70%",
-            "rightBox": "10%",
-            "outsideBox": "5%",
+            "leftBox": 10,
+            "centerBox": 46,
+            "rightBox": 7,
+            "outsideBox": 3,
             "conversion": "21.6%"
           },
           "defenseDefense": "高位第一线防御，定位球防守时负责在前点防空解围，拼抢对抗态度积极。",
@@ -838,10 +838,10 @@
             88
           ],
           "goalDist": {
-            "leftBox": "25%",
-            "centerBox": "55%",
-            "rightBox": "15%",
-            "outsideBox": "5%",
+            "leftBox": 1,
+            "centerBox": 3,
+            "rightBox": 1,
+            "outsideBox": 0,
             "conversion": "18.2%"
           },
           "defenseDefense": "中场高强度逼抢器，拥有极强的身体缠斗与铲断拦截能力，防守意愿极强。",
@@ -863,10 +863,10 @@
             76
           ],
           "goalDist": {
-            "leftBox": "10%",
-            "centerBox": "35%",
-            "rightBox": "45%",
-            "outsideBox": "10%",
+            "leftBox": 1,
+            "centerBox": 5,
+            "rightBox": 5,
+            "outsideBox": 1,
             "conversion": "15.8%"
           },
           "defenseDefense": "能深度落位协同沃克限制对方边卫套边，反抢迅速且拼抢作风硬朗。",
@@ -888,10 +888,10 @@
             86
           ],
           "goalDist": {
-            "leftBox": "10%",
-            "centerBox": "30%",
-            "rightBox": "20%",
-            "outsideBox": "40%",
+            "leftBox": 0,
+            "centerBox": 1,
+            "rightBox": 1,
+            "outsideBox": 1,
             "conversion": "9.5%"
           },
           "defenseDefense": "中轴扫荡领袖，拥有顶级的选位预判与拦截能力，滑铲坚决且正面防守极难被打穿。",
@@ -915,10 +915,10 @@
             68
           ],
           "goalDist": {
-            "leftBox": "15%",
-            "centerBox": "20%",
-            "rightBox": "30%",
-            "outsideBox": "35%",
+            "leftBox": 4,
+            "centerBox": 5,
+            "rightBox": 8,
+            "outsideBox": 9,
             "conversion": "14.8%"
           },
           "defenseDefense": "高位选位防守，在中前场主要通过准确的断球和卡位拦截对方传球线，跑动极其聪明。",
@@ -940,10 +940,10 @@
             80
           ],
           "goalDist": {
-            "leftBox": "20%",
-            "centerBox": "30%",
-            "rightBox": "20%",
-            "outsideBox": "30%",
+            "leftBox": 1,
+            "centerBox": 1,
+            "rightBox": 1,
+            "outsideBox": 2,
             "conversion": "11.2%"
           },
           "defenseDefense": "中场绞杀主力，拼抢硬朗，奔跑范围覆盖广，能及时干扰对手中场接球人。",
@@ -965,10 +965,10 @@
             88
           ],
           "goalDist": {
-            "leftBox": "40%",
-            "centerBox": "40%",
-            "rightBox": "10%",
-            "outsideBox": "10%",
+            "leftBox": 1,
+            "centerBox": 1,
+            "rightBox": 0,
+            "outsideBox": 0,
             "conversion": "10.5%"
           },
           "defenseDefense": "身体强壮，对抗防空顶级，单防英格兰右路时极具侵略性，回追纠缠防守效率极高。",
@@ -990,10 +990,10 @@
             76
           ],
           "goalDist": {
-            "leftBox": "25%",
-            "centerBox": "50%",
-            "rightBox": "20%",
-            "outsideBox": "5%",
+            "leftBox": 7,
+            "centerBox": 15,
+            "rightBox": 6,
+            "outsideBox": 1,
             "conversion": "17.0%"
           },
           "defenseDefense": "前场零星逼抢，回防落位一般，主要留在危险区域等待莫德里奇的致命斜塞。",
@@ -1312,10 +1312,10 @@
             80
           ],
           "goalDist": {
-            "leftBox": "15%",
-            "centerBox": "30%",
-            "rightBox": "40%",
-            "outsideBox": "15%",
+            "leftBox": 2,
+            "centerBox": 3,
+            "rightBox": 4,
+            "outsideBox": 2,
             "conversion": "18.0%"
           },
           "defenseDefense": "拼抢积极，在高位防区丢球后能就地展开强烈干扰，但回防深度一般。",
@@ -1337,10 +1337,10 @@
             86
           ],
           "goalDist": {
-            "leftBox": "20%",
-            "centerBox": "50%",
-            "rightBox": "25%",
-            "outsideBox": "5%",
+            "leftBox": 0,
+            "centerBox": 1,
+            "rightBox": 1,
+            "outsideBox": 0,
             "conversion": "14.5%"
           },
           "defenseDefense": "前场第一道压迫防线，大范围跑动干扰对方后卫从容出球，反抢意愿强烈。",
@@ -1362,10 +1362,10 @@
             85
           ],
           "goalDist": {
-            "leftBox": "10%",
-            "centerBox": "20%",
-            "rightBox": "20%",
-            "outsideBox": "50%",
+            "leftBox": 1,
+            "centerBox": 2,
+            "rightBox": 3,
+            "outsideBox": 7,
             "conversion": "11.5%"
           },
           "defenseDefense": "中后场拦截支柱，选位极佳，擅于利用身体切断对方直传线路，拦截效率很高。",
@@ -1387,10 +1387,10 @@
             85
           ],
           "goalDist": {
-            "leftBox": "30%",
-            "centerBox": "40%",
-            "rightBox": "25%",
-            "outsideBox": "5%",
+            "leftBox": 1,
+            "centerBox": 2,
+            "rightBox": 1,
+            "outsideBox": 0,
             "conversion": "15.0%"
           },
           "defenseDefense": "回防拼抢很积极，在中前场拼抢头球，反抢断球到位率高。",
@@ -1414,10 +1414,10 @@
             80
           ],
           "goalDist": {
-            "leftBox": "15%",
-            "centerBox": "70%",
-            "rightBox": "10%",
-            "outsideBox": "5%",
+            "leftBox": 2,
+            "centerBox": 7,
+            "rightBox": 1,
+            "outsideBox": 1,
             "conversion": "16.5%"
           },
           "defenseDefense": "负责前场的第一道压迫干扰，利用积极的滑跑消耗加纳中后卫的体能，回防一般。",
@@ -1439,10 +1439,10 @@
             74
           ],
           "goalDist": {
-            "leftBox": "35%",
-            "centerBox": "30%",
-            "rightBox": "20%",
-            "outsideBox": "15%",
+            "leftBox": 3,
+            "centerBox": 3,
+            "rightBox": 2,
+            "outsideBox": 1,
             "conversion": "11.8%"
           },
           "defenseDefense": "回防积极，能大范围奔跑封堵对方边路起球，落位极深，拼抢习惯非常扎实。",
@@ -1464,10 +1464,10 @@
             82
           ],
           "goalDist": {
-            "leftBox": "10%",
-            "centerBox": "30%",
-            "rightBox": "20%",
-            "outsideBox": "40%",
+            "leftBox": 0,
+            "centerBox": 1,
+            "rightBox": 0,
+            "outsideBox": 1,
             "conversion": "10.2%"
           },
           "defenseDefense": "中圈绞杀机器，擅于通过聪明的卡位与滑铲破坏对方的地面推进，防守端不知疲倦。",
@@ -1489,10 +1489,10 @@
             80
           ],
           "goalDist": {
-            "leftBox": "5%",
-            "centerBox": "35%",
-            "rightBox": "45%",
-            "outsideBox": "15%",
+            "leftBox": 0,
+            "centerBox": 3,
+            "rightBox": 4,
+            "outsideBox": 1,
             "conversion": "12.0%"
           },
           "defenseDefense": "右路防线骨干，单防身体对抗性极佳，擅于在边路利用爆发力进行贴身封堵与回追断球。",
@@ -1811,10 +1811,10 @@
             88
           ],
           "goalDist": {
-            "leftBox": "20%",
-            "centerBox": "60%",
-            "rightBox": "15%",
-            "outsideBox": "5%",
+            "leftBox": 8,
+            "centerBox": 25,
+            "rightBox": 6,
+            "outsideBox": 2,
             "conversion": "19.5%"
           },
           "defenseDefense": "作为前场高大肉盾，防守时深度回追定位球，为防线提供高空防空扫荡作用。",
@@ -1836,10 +1836,10 @@
             70
           ],
           "goalDist": {
-            "leftBox": "40%",
-            "centerBox": "25%",
-            "rightBox": "20%",
-            "outsideBox": "15%",
+            "leftBox": 5,
+            "centerBox": 3,
+            "rightBox": 2,
+            "outsideBox": 2,
             "conversion": "12.8%"
           },
           "defenseDefense": "大范围折返奔跑协助防守，擅长通过选位切断对方右后卫穆尼奥斯的插上助攻路线。",
@@ -1861,10 +1861,10 @@
             85
           ],
           "goalDist": {
-            "leftBox": "15%",
-            "centerBox": "35%",
-            "rightBox": "45%",
-            "outsideBox": "5%",
+            "leftBox": 1,
+            "centerBox": 3,
+            "rightBox": 3,
+            "outsideBox": 0,
             "conversion": "15.6%"
           },
           "defenseDefense": "右翼强力逼抢点，通过身体冲撞实施就地纠缠反抢，跑动能力强劲。",
@@ -1886,10 +1886,10 @@
             82
           ],
           "goalDist": {
-            "leftBox": "10%",
-            "centerBox": "20%",
-            "rightBox": "20%",
-            "outsideBox": "50%",
+            "leftBox": 1,
+            "centerBox": 1,
+            "rightBox": 1,
+            "outsideBox": 4,
             "conversion": "10.0%"
           },
           "defenseDefense": "中圈绞杀领袖，大范围拦截纠缠对方中前场出球，能够有效压缩禁区前沿直塞空间。",
@@ -1913,10 +1913,10 @@
             81
           ],
           "goalDist": {
-            "leftBox": "45%",
-            "centerBox": "35%",
-            "rightBox": "10%",
-            "outsideBox": "10%",
+            "leftBox": 5,
+            "centerBox": 5,
+            "rightBox": 1,
+            "outsideBox": 1,
             "conversion": "16.8%"
           },
           "defenseDefense": "高位压迫反抢极其凶悍，回追边路封堵对方边后卫压上，反抢拦截率非常高。",
@@ -1938,10 +1938,10 @@
             70
           ],
           "goalDist": {
-            "leftBox": "15%",
-            "centerBox": "25%",
-            "rightBox": "30%",
-            "outsideBox": "30%",
+            "leftBox": 4,
+            "centerBox": 7,
+            "rightBox": 9,
+            "outsideBox": 9,
             "conversion": "18.5%"
           },
           "defenseDefense": "前场通过聪明的站位干扰对方后场出球，拼抢力度中等，依靠防守选位抢下二点球权。",
@@ -1963,10 +1963,10 @@
             90
           ],
           "goalDist": {
-            "leftBox": "10%",
-            "centerBox": "75%",
-            "rightBox": "10%",
-            "outsideBox": "5%",
+            "leftBox": 0,
+            "centerBox": 2,
+            "rightBox": 0,
+            "outsideBox": 0,
             "conversion": "19.0%"
           },
           "defenseDefense": "锋线肉盾压迫者，在第一线实施猛烈的身体冲撞与逼抢，定位球防守时是首要争顶解围点。",
@@ -1988,10 +1988,10 @@
             75
           ],
           "goalDist": {
-            "leftBox": "10%",
-            "centerBox": "35%",
-            "rightBox": "45%",
-            "outsideBox": "10%",
+            "leftBox": 0,
+            "centerBox": 2,
+            "rightBox": 1,
+            "outsideBox": 0,
             "conversion": "14.2%"
           },
           "defenseDefense": "中前场奔跑极其勤勉，能大范围回追包夹防守，封堵对方左路推进，反抢效率极高。",
@@ -2310,10 +2310,10 @@
             86
           ],
           "goalDist": {
-            "leftBox": "20%",
-            "centerBox": "65%",
-            "rightBox": "10%",
-            "outsideBox": "5%",
+            "leftBox": 4,
+            "centerBox": 13,
+            "rightBox": 2,
+            "outsideBox": 1,
             "conversion": "20.2%"
           },
           "defenseDefense": "第一线前压反抢干扰，回防深度偏浅，主要利用身高争夺定位球落点解围。",
@@ -2335,10 +2335,10 @@
             92
           ],
           "goalDist": {
-            "leftBox": "10%",
-            "centerBox": "60%",
-            "rightBox": "20%",
-            "outsideBox": "10%",
+            "leftBox": 1,
+            "centerBox": 8,
+            "rightBox": 3,
+            "outsideBox": 1,
             "conversion": "15.0%"
           },
           "defenseDefense": "中圈硬朗的防守大闸，铲断拦截十分坚决，防空能力卓越，防线前方的第一道铜墙铁壁。",
@@ -2360,10 +2360,10 @@
             85
           ],
           "goalDist": {
-            "leftBox": "10%",
-            "centerBox": "40%",
-            "rightBox": "30%",
-            "outsideBox": "20%",
+            "leftBox": 0,
+            "centerBox": 1,
+            "rightBox": 1,
+            "outsideBox": 0,
             "conversion": "9.0%"
           },
           "defenseDefense": "落位防守扎实，对抗硬朗，拦截对方地面直传球效果好，补位意识极其出色。",
@@ -2385,10 +2385,10 @@
             78
           ],
           "goalDist": {
-            "leftBox": "30%",
-            "centerBox": "30%",
-            "rightBox": "15%",
-            "outsideBox": "25%",
+            "leftBox": 1,
+            "centerBox": 1,
+            "rightBox": 0,
+            "outsideBox": 1,
             "conversion": "13.6%"
           },
           "defenseDefense": "协助边路和中路防守回追，跑动积极且善于就地纠缠拦截，回防落位率比较高。",
@@ -2412,10 +2412,10 @@
             70
           ],
           "goalDist": {
-            "leftBox": "45%",
-            "centerBox": "35%",
-            "rightBox": "15%",
-            "outsideBox": "5%",
+            "leftBox": 7,
+            "centerBox": 5,
+            "rightBox": 2,
+            "outsideBox": 1,
             "conversion": "15.4%"
           },
           "defenseDefense": "前场通过超速折返干扰对方出球，高位零星逼抢，不参与深度落位防御。",
@@ -2437,10 +2437,10 @@
             68
           ],
           "goalDist": {
-            "leftBox": "15%",
-            "centerBox": "40%",
-            "rightBox": "30%",
-            "outsideBox": "15%",
+            "leftBox": 2,
+            "centerBox": 4,
+            "rightBox": 4,
+            "outsideBox": 2,
             "conversion": "16.8%"
           },
           "defenseDefense": "前中场通过极富智慧的防守站位断取二点传球，拼抢力度偏弱但选位非常灵敏。",
@@ -2462,10 +2462,10 @@
             83
           ],
           "goalDist": {
-            "leftBox": "10%",
-            "centerBox": "25%",
-            "rightBox": "25%",
-            "outsideBox": "40%",
+            "leftBox": 1,
+            "centerBox": 1,
+            "rightBox": 2,
+            "outsideBox": 2,
             "conversion": "11.5%"
           },
           "defenseDefense": "体力怪兽，防守扫荡覆盖极广，擅长通过高频贴身逼抢和干净铲断破坏对方中场出球。",
@@ -2487,10 +2487,10 @@
             78
           ],
           "goalDist": {
-            "leftBox": "5%",
-            "centerBox": "30%",
-            "rightBox": "50%",
-            "outsideBox": "15%",
+            "leftBox": 0,
+            "centerBox": 0,
+            "rightBox": 1,
+            "outsideBox": 0,
             "conversion": "8.0%"
           },
           "defenseDefense": "单防能力优秀，回追纠缠快速坚决。擅长在右路防守对抗中利用爆发力贴身截断球权。",
