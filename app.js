@@ -66,12 +66,12 @@ function initializeDashboard() {
             const overviewBtn = document.getElementById('btn-overview');
             if (overviewBtn) overviewBtn.classList.add('active');
             pageTitle.innerText = '赛事综合总览';
-            pageSubtitle.innerText = '美加墨世界杯超级比赛日・9场重磅对决深度解析';
+            pageSubtitle.innerText = '美加墨世界杯超级比赛日・5场重磅对决深度解析';
         } else if (targetTabId === 'correlation') {
             const corrBtn = document.getElementById('btn-correlation');
             if (corrBtn) corrBtn.classList.add('active');
             pageTitle.innerText = '角球与进攻关联分析';
-            pageSubtitle.innerText = '基于2026周期18支球队场均数据的科学实证分析';
+            pageSubtitle.innerText = '基于2026周期10支球队场均数据的科学实证分析';
             renderCorrelationCharts();
         } else if (targetTabId === 'match-details' && matchId) {
             currentMatchId = matchId;
