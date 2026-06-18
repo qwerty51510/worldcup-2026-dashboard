@@ -362,9 +362,9 @@
                                             </div>
                                         </td>
                                         <td><span class="score-badge badge-blue">3 - 1</span></td>
-                                        <td><span class="score-badge badge-green">2 - 1</span></td>
-                                        <td><span class="diff-badge badge-green">基本吻合 (-1球 / 双方进球)</span></td>
-                                        <td><strong>预测方向正确（命中葡萄牙取胜且双方均进球）。</strong> C罗打入一记点球，刚果（金）维萨在72分钟利用反击速度撕破葡萄牙高位防线偷袭一球，正如预测模型所警示。</td>
+                                        <td><span class="score-badge badge-red">1 - 1</span></td>
+                                        <td><span class="diff-badge badge-red">偏离 (预测取胜 / 实际平局)</span></td>
+                                        <td><strong>预测方向偏离。</strong> 葡萄牙虽有B费和C罗掌控局面且由C罗点射取得领先，但后防对刚果（金）前锋维萨的防守不力，在72分钟反击中被维萨超速突破打门得手。葡萄牙终结效率欠佳，最终1-1爆冷被逼平。</td>
                                     </tr>
                                     <tr>
                                         <td>
@@ -373,9 +373,9 @@
                                             </div>
                                         </td>
                                         <td><span class="score-badge badge-blue">2 - 1</span></td>
-                                        <td><span class="score-badge badge-red">1 - 1</span></td>
-                                        <td><span class="diff-badge badge-red">偏离 (未能胜出 / 平局)</span></td>
-                                        <td><strong>预测方向偏离。</strong> 模型严重低估了克罗地亚莫德里奇领衔的中场“铁三角”极强的出球和控场坚韧度。英格兰锋线突进被拦，凯恩被孤立，克罗地亚下半场角球二点乱战扳平比分。</td>
+                                        <td><span class="score-badge badge-green">4 - 2</span></td>
+                                        <td><span class="diff-badge badge-yellow">基本吻合 (方向正确 / 进球大开)</span></td>
+                                        <td><strong>预测方向正确（命中英格兰胜出）。</strong> 凯恩独中两元，贝林厄姆和拉什福德也各入一球，英格兰以4-2的大比分战胜克罗地亚。虽然因轮换防守不专注被克罗地亚依靠角球二点扳回两球，但无法动摇大局。</td>
                                     </tr>
                                     <tr>
                                         <td>
@@ -395,9 +395,9 @@
                                             </div>
                                         </td>
                                         <td><span class="score-badge badge-blue">0 - 2</span></td>
-                                        <td><span class="score-badge badge-green">0 - 2</span></td>
-                                        <td><span class="diff-badge badge-green">精准吻合 (完全命中比分)</span></td>
-                                        <td><strong>预测完全精准（命中零封与具体比分）。</strong> 哥伦比亚中场核心詹姆斯·罗德里格斯的定位球直塞与左路路易斯·迪亚斯的超速突破单防生吃，如期将乌兹别克斯坦的深层防线撕裂。</td>
+                                        <td><span class="score-badge badge-green">1 - 3</span></td>
+                                        <td><span class="diff-badge badge-yellow">基本吻合 (+1球 / 双方进球)</span></td>
+                                        <td><strong>预测方向正确（命中哥伦比亚大胜）。</strong> 哥伦比亚场上进攻火力全开，哈梅斯梳理流畅，迪亚斯、穆尼奥斯和坎帕斯各入一球，3-1完胜。虽防守端被乌兹别克斯坦利用低位反击打入一记定位球折损零封，但实力压制非常明显。</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -412,7 +412,7 @@
                                 <span>数据模型自我检讨与优化方案</span>
                             </div>
                             <p class="critique-text">
-                                <strong>检讨：</strong> 在昨日的预测中，法国和挪威两场比赛均出现失球，未能实现零封预测。这表明模型在评估“强弱悬殊对局”时，<strong>过度依赖了防守历史场均数据，而低估了弱队利用犀利反击/定位球乱战的破门概率</strong>。尤其是忽视了主力中后卫伤停（如法国队萨利巴的隐患）或大比分领先时防守专注度下滑（如挪威队）对防线稳固度的折损。
+                                <strong>检讨：</strong> 在最近两日首轮小组赛的预测中，法国、挪威、哥伦比亚、英格兰等传统强队虽然均顺利拿下三分，但均出现失球，未能成功实现零封；而葡萄牙更是爆冷与刚果（金）打平。这表明模型在评估“强弱悬殊对局”时，<strong>过度依赖了防守历史场均数据和零封率，严重低估了弱队或坚韧中游队伍利用极速反击/定位球乱战的破门概率</strong>。尤其是忽视了大比分领先或换人轮换时防守专注度下滑（如英格兰队、挪威队）对防线的折损。
                             </p>
                             <p class="critique-solution">
                                 <strong>优化建议：</strong> 后续预测中，我们将引入<strong>“预期进球 (xG)”</strong>和<strong>“伤病防线价值折损指数”</strong>作为硬核参数，并加入<strong>历史交锋 (H2H)</strong> 胜率，以纠正一味依赖零封场次的刻板偏见，使胜负预测逻辑更加严密。
