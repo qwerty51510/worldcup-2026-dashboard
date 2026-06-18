@@ -1140,6 +1140,15 @@ body {
     background: linear-gradient(to left, rgba(16, 185, 129, 0.6), var(--accent-green)) !important;
 }
 
+.sui-bih-theme .away-fill {
+    background: linear-gradient(to left, rgba(245, 158, 11, 0.6), var(--accent-yellow)) !important;
+}
+
+.can-qat-theme .away-fill,
+.mex-kor-theme .away-fill {
+    background: linear-gradient(to left, rgba(239, 68, 68, 0.6), var(--accent-red)) !important;
+}
+
 /* Key Player Spotlight */
 .players-spotlight-wrapper {
     display: flex;
@@ -1190,6 +1199,22 @@ body {
 }
 
 .irq-nor-theme .away-player .player-photo-placeholder {
+    border-color: var(--accent-red);
+    box-shadow: 0 0 15px rgba(239, 68, 68, 0.2);
+}
+
+.cze-rsa-theme .away-player .player-photo-placeholder {
+    border-color: var(--accent-green);
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.2);
+}
+
+.sui-bih-theme .away-player .player-photo-placeholder {
+    border-color: var(--accent-yellow);
+    box-shadow: 0 0 15px rgba(245, 158, 11, 0.2);
+}
+
+.can-qat-theme .away-player .player-photo-placeholder,
+.mex-kor-theme .away-player .player-photo-placeholder {
     border-color: var(--accent-red);
     box-shadow: 0 0 15px rgba(239, 68, 68, 0.2);
 }
@@ -1326,6 +1351,9 @@ body {
 .eng-cro-theme .away-text-accent,
 .gha-pan-theme .away-text-accent { color: var(--accent-red); }
 .cze-rsa-theme .away-text-accent { color: var(--accent-green); }
+.sui-bih-theme .away-text-accent { color: var(--accent-yellow); }
+.can-qat-theme .away-text-accent,
+.mex-kor-theme .away-text-accent { color: var(--accent-red); }
 
 .injury-list {
     list-style: none;
@@ -1409,6 +1437,9 @@ body {
 .eng-cro-theme .form-badge.away-bg,
 .gha-pan-theme .form-badge.away-bg { background-color: var(--accent-red); }
 .cze-rsa-theme .form-badge.away-bg { background-color: var(--accent-green); }
+.sui-bih-theme .form-badge.away-bg { background-color: var(--accent-yellow); }
+.can-qat-theme .form-badge.away-bg,
+.mex-kor-theme .form-badge.away-bg { background-color: var(--accent-red); }
 
 .vs-text {
     font-size: 0.7rem;
@@ -1481,6 +1512,7 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.1);
     background-size: cover;
     background-position: center;
+    overflow: hidden;
 }
 
 .flag-large {
@@ -1662,6 +1694,98 @@ body {
     height: 6px;
     background: linear-gradient(to bottom, #cd2e3a 50%, #0047a0 50%);
     border-radius: 50%;
+}
+
+.sui {
+    background: #da291c;
+    position: relative;
+}
+
+.sui::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 15%;
+    right: 15%;
+    height: 20%;
+    transform: translateY(-50%);
+    background-color: #ffffff;
+}
+
+.sui::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 15%;
+    bottom: 15%;
+    width: 20%;
+    transform: translateX(-50%);
+    background-color: #ffffff;
+}
+
+.bih {
+    background: #002f6c;
+    position: relative;
+}
+
+.bih::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 10%;
+    width: 50%;
+    height: 100%;
+    background: #fec524;
+    clip-path: polygon(0 0, 100% 0, 100% 100%);
+}
+
+.can {
+    background: linear-gradient(to right, #ff0000 25%, #ffffff 25%, #ffffff 75%, #ff0000 75%);
+    position: relative;
+}
+
+.can::after {
+    content: '🍁';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ff0000;
+    line-height: 1;
+}
+
+.flag-large.can::after {
+    font-size: 16px;
+}
+
+.flag-dot.can::after {
+    font-size: 8px;
+}
+
+.qat {
+    background: linear-gradient(to right, #ffffff 30%, #8a1538 30%);
+}
+
+.mex {
+    background: linear-gradient(to right, #006847 33.3%, #ffffff 33.3%, #ffffff 66.6%, #c8102e 66.6%);
+    position: relative;
+}
+
+.mex::after {
+    content: '🦅';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 1;
+}
+
+.flag-large.mex::after {
+    font-size: 10px;
+}
+
+.flag-dot.mex::after {
+    font-size: 6px;
 }
 
 /* 10. Animations */

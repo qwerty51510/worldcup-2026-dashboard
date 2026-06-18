@@ -788,6 +788,9 @@ function initializeDashboard() {
         else if (themeClass.includes('ita-crc') && teamFlag === 'crc') barColor = '#ef4444';
         else if (themeClass.includes('uru-kor') && teamFlag === 'uru') barColor = '#3b82f6';
         else if (themeClass.includes('uru-kor') && teamFlag === 'kor') barColor = '#ef4444';
+        else if (themeClass.includes('sui-bih') && teamFlag === 'bih') barColor = '#f59e0b';
+        else if (themeClass.includes('can-qat') && teamFlag === 'qat') barColor = '#ef4444';
+        else if (themeClass.includes('mex-kor') && teamFlag === 'kor') barColor = '#ef4444';
 
         distData.forEach(item => {
             const pct = total > 0 ? (item.val / total * 100) : 0;
@@ -1447,6 +1450,140 @@ function initializeDashboard() {
                 runs: [
                     { name: '莫科纳', from: { x: 180, y: 200 }, to: { x: 175, y: 230 }, duration: 800, delay: 0 },
                     { name: '陶', from: { x: 80, y: 270 }, to: { x: 60, y: 180 }, duration: 1000, delay: 1000 }
+                ]
+            }
+        },
+        'sui-bih': {
+            'offense': {
+                caption: '瑞士 3-4-3 进攻：扎卡中枢妙传起动，恩博洛快速插上推射破网',
+                commentary: [
+                    { time: 0, text: '【阿坎吉后场起动，精准短传给扎卡】' },
+                    { time: 1000, text: '【扎卡中圈停球一记致命直塞，撕破波黑防线！】' },
+                    { time: 2200, text: '【恩博洛超速前插单刀直入，冷静推射远角破门！⚽ 瑞士 1-0 波黑】' }
+                ],
+                players: {
+                    '阿坎吉': { x: 180, y: 380 },
+                    '扎卡': { x: 130, y: 270 },
+                    '恩博洛': { x: 180, y: 150 },
+                    '科拉希纳茨': { x: 60, y: 110 },
+                    '卡蒂奇': { x: 220, y: 110 }
+                },
+                passes: [
+                    { from: { x: 180, y: 380 }, to: { x: 130, y: 270 }, duration: 1000, delay: 0 },
+                    { from: { x: 130, y: 270 }, to: { x: 180, y: 150 }, duration: 1200, delay: 1000 },
+                    { from: { x: 180, y: 150 }, to: { x: 180, y: 15 }, duration: 500, delay: 2200 }
+                ],
+                runs: [
+                    { name: '扎卡', from: { x: 130, y: 320 }, to: { x: 130, y: 270 }, duration: 1000, delay: 0 },
+                    { name: '恩博洛', from: { x: 180, y: 200 }, to: { x: 180, y: 150 }, duration: 1000, delay: 800 }
+                ]
+            },
+            'defense': {
+                caption: '波黑 4-2-3-1 经典防反：哲科中前场背身拿球，胸部做球发起攻势',
+                commentary: [
+                    { time: 0, text: '【瑞士前场沙奇里横敲，被波黑中场拦截截断】' },
+                    { time: 1000, text: '【波黑后腰大脚找到哲科，哲科胸部停球倚住阿坎吉！】' },
+                    { time: 2200, text: '【哲科侧身分球给边路快速插上的队友，反击展开！】' }
+                ],
+                players: {
+                    '阿坎吉': { x: 180, y: 380 },
+                    '哲科': { x: 180, y: 240 }
+                },
+                passes: [
+                    { from: { x: 180, y: 380 }, to: { x: 180, y: 240 }, duration: 1000, delay: 0 }
+                ],
+                runs: [
+                    { name: '哲科', from: { x: 180, y: 150 }, to: { x: 180, y: 240 }, duration: 1000, delay: 0 }
+                ]
+            }
+        },
+        'can-qat': {
+            'offense': {
+                caption: '加拿大 4-4-2 边路爆破：戴维斯中场抢断连过两人，超速内切突防',
+                commentary: [
+                    { time: 0, text: '【阿方索·戴维斯中圈铲断对方传球，得球直接沿左路突击】' },
+                    { time: 1000, text: '【凭借超强爆发力生吃卡塔尔右后卫，内切切入大禁区！】' },
+                    { time: 2200, text: '【戴维斯起脚重炮轰击近门死角！球进了！⚽ 加拿大 1-0 卡塔尔】' }
+                ],
+                players: {
+                    '戴维斯': { x: 80, y: 130 },
+                    '戴维': { x: 180, y: 100 },
+                    '阿菲夫': { x: 180, y: 240 }
+                },
+                passes: [
+                    { from: { x: 180, y: 240 }, to: { x: 80, y: 130 }, duration: 1000, delay: 0 },
+                    { from: { x: 80, y: 130 }, to: { x: 180, y: 15 }, duration: 500, delay: 2200 }
+                ],
+                runs: [
+                    { name: '戴维斯', from: { x: 60, y: 260 }, to: { x: 80, y: 130 }, duration: 1000, delay: 0 },
+                    { name: '戴维', from: { x: 180, y: 180 }, to: { x: 180, y: 100 }, duration: 1000, delay: 0 }
+                ]
+            },
+            'defense': {
+                caption: '卡塔尔 4-2-3-1 经典防反：阿菲夫致命直塞连线阿里单刀突袭',
+                commentary: [
+                    { time: 0, text: '【加拿大前场尤斯塔基奥横传被断，卡塔尔就地快速出球】' },
+                    { time: 1000, text: '【阿菲夫前腰位脚背外脚背精妙塞入防线身后！】' },
+                    { time: 2200, text: '【阿里长驱直入反越位，加拿大门前风声鹤唳！】' }
+                ],
+                players: {
+                    '阿菲夫': { x: 180, y: 220 },
+                    '阿里': { x: 120, y: 100 },
+                    '米勒': { x: 160, y: 120 }
+                },
+                passes: [
+                    { from: { x: 160, y: 350 }, to: { x: 180, y: 220 }, duration: 1000, delay: 0 },
+                    { from: { x: 180, y: 220 }, to: { x: 120, y: 100 }, duration: 1200, delay: 1000 }
+                ],
+                runs: [
+                    { name: '阿菲夫', from: { x: 180, y: 300 }, to: { x: 180, y: 220 }, duration: 1000, delay: 0 },
+                    { name: '阿里', from: { x: 120, y: 210 }, to: { x: 120, y: 100 }, duration: 1200, delay: 1000 }
+                ]
+            }
+        },
+        'mex-kor': {
+            'offense': {
+                caption: '墨西哥 4-3-3 压迫进攻：阿尔瓦雷斯中圈精准调度，基尼奥内斯破网',
+                commentary: [
+                    { time: 0, text: '【阿尔瓦雷斯中场逼抢断下韩国出球，长传精准斜吊禁区】' },
+                    { time: 1000, text: '【基尼奥内斯内插反越位，卸球突入禁区闪开防守！】' },
+                    { time: 2200, text: '【基尼奥内斯起脚凌空垫射，直挂死角！⚽ 墨西哥 1-0 韩国】' }
+                ],
+                players: {
+                    '阿尔瓦雷斯': { x: 180, y: 280 },
+                    '基尼奥内斯': { x: 80, y: 120 },
+                    '金珍洙': { x: 60, y: 150 },
+                    '金玟哉': { x: 140, y: 130 }
+                },
+                passes: [
+                    { from: { x: 180, y: 280 }, to: { x: 80, y: 120 }, duration: 1000, delay: 0 },
+                    { from: { x: 80, y: 120 }, to: { x: 180, y: 15 }, duration: 500, delay: 2200 }
+                ],
+                runs: [
+                    { name: '基尼奥内斯', from: { x: 80, y: 220 }, to: { x: 80, y: 120 }, duration: 1000, delay: 0 }
+                ]
+            },
+            'defense': {
+                caption: '韩国 4-2-3-1 经典快反：中场黄仁范扫荡，李刚仁精妙挑传连线孙兴慜',
+                commentary: [
+                    { time: 0, text: '【墨西哥围攻被封堵，黄仁范断球大脚斜塞给李刚仁】' },
+                    { time: 1000, text: '【李刚仁得球弧线球挑传身后，孙兴慜快马加鞭反越位插上！】' },
+                    { time: 2200, text: '【孙兴慜高速带球杀入禁区抽射偏出，反击速度极其惊人！】' }
+                ],
+                players: {
+                    '黄仁范': { x: 230, y: 260 },
+                    '李刚仁': { x: 280, y: 200 },
+                    '孙兴慜': { x: 80, y: 100 },
+                    '加利亚多': { x: 50, y: 140 },
+                    '巴斯克斯': { x: 130, y: 120 }
+                },
+                passes: [
+                    { from: { x: 230, y: 260 }, to: { x: 280, y: 200 }, duration: 1000, delay: 0 },
+                    { from: { x: 280, y: 200 }, to: { x: 80, y: 100 }, duration: 1200, delay: 1000 }
+                ],
+                runs: [
+                    { name: '李刚仁', from: { x: 280, y: 250 }, to: { x: 280, y: 200 }, duration: 800, delay: 0 },
+                    { name: '孙兴慜', from: { x: 80, y: 220 }, to: { x: 80, y: 100 }, duration: 1200, delay: 800 }
                 ]
             }
         }
