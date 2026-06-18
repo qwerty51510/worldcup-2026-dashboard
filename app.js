@@ -1628,6 +1628,183 @@ function initializeDashboard() {
     updateClock();
     setInterval(updateClock, 60000);
 
+    // --- New Feature: Core Players goals leaderboard ---
+    function renderPlayersGoalsTable() {
+        const tbody = document.getElementById('players-goals-tbody');
+        const searchInput = document.getElementById('player-search');
+        const positionFilter = document.getElementById('player-position-filter');
+        const countText = document.getElementById('table-record-count');
+        if (!tbody) return;
+
+        // 1. Gather all players from active matchData
+        let players = [];
+        Object.keys(matchData).forEach(matchId => {
+            const m = matchData[matchId];
+            if (m.squadPlayers) {
+                // home team players
+                if (Array.isArray(m.squadPlayers.home)) {
+                    m.squadPlayers.home.forEach(p => {
+                        const left = parseInt(p.goalDist.leftBox) || 0;
+                        const center = parseInt(p.goalDist.centerBox) || 0;
+                        const right = parseInt(p.goalDist.rightBox) || 0;
+                        const outside = parseInt(p.goalDist.outsideBox) || 0;
+                        const totalGoals = left + center + right + outside;
+                        players.push({
+                            originalData: p,
+                            name: p.name,
+                            age: p.age,
+                            position: p.position,
+                            form: p.form,
+                            left,
+                            center,
+                            right,
+                            outside,
+                            totalGoals,
+                            teamName: m.teams.home.name,
+                            teamFlag: m.teams.home.flag,
+                            themeClass: m.themeClass
+                        });
+                    });
+                }
+                // away team players
+                if (Array.isArray(m.squadPlayers.away)) {
+                    m.squadPlayers.away.forEach(p => {
+                        const left = parseInt(p.goalDist.leftBox) || 0;
+                        const center = parseInt(p.goalDist.centerBox) || 0;
+                        const right = parseInt(p.goalDist.rightBox) || 0;
+                        const outside = parseInt(p.goalDist.outsideBox) || 0;
+                        const totalGoals = left + center + right + outside;
+                        players.push({
+                            originalData: p,
+                            name: p.name,
+                            age: p.age,
+                            position: p.position,
+                            form: p.form,
+                            left,
+                            center,
+                            right,
+                            outside,
+                            totalGoals,
+                            teamName: m.teams.away.name,
+                            teamFlag: m.teams.away.flag,
+                            themeClass: m.themeClass
+                        });
+                    });
+                }
+            }
+        });
+
+        // 2. Sort by totalGoals descending
+        players.sort((a, b) => b.totalGoals - a.totalGoals);
+
+        // 3. Define the filtering and rendering function
+        function filterAndRender() {
+            const query = searchInput ? searchInput.value.toLowerCase().trim() : '';
+            const posVal = positionFilter ? positionFilter.value : 'all';
+
+            // Filter
+            const filteredPlayers = players.filter(p => {
+                // Search query matching name or team
+                const matchesQuery = p.name.toLowerCase().includes(query) || p.teamName.toLowerCase().includes(query);
+                
+                // Position matching
+                let matchesPos = false;
+                if (posVal === 'all') {
+                    matchesPos = true;
+                } else if (posVal === 'forward') {
+                    matchesPos = p.position.includes('前锋') || p.position.includes('中锋') || p.position.includes('翼锋');
+                } else if (posVal === 'midfielder') {
+                    matchesPos = p.position.includes('中场') || p.position.includes('前腰') || p.position.includes('后腰');
+                } else if (posVal === 'defender') {
+                    matchesPos = p.position.includes('后卫') || p.position.includes('边后卫');
+                }
+
+                return matchesQuery && matchesPos;
+            });
+
+            // Render Tbody
+            tbody.innerHTML = '';
+            if (filteredPlayers.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="8" style="text-align: center; color: var(--text-muted); padding: 30px;">未找到符合条件的球员</td></tr>`;
+            } else {
+                filteredPlayers.forEach((p, idx) => {
+                    const tr = document.createElement('tr');
+                    
+                    // Rank Class and Badge
+                    let rankClass = 'rank-other';
+                    let rankText = idx + 1;
+                    if (idx === 0) rankClass = 'rank-1';
+                    else if (idx === 1) rankClass = 'rank-2';
+                    else if (idx === 2) rankClass = 'rank-3';
+
+                    // Position Tag Class
+                    let posClass = 'tag-goalkeeper';
+                    if (p.position.includes('前锋') || p.position.includes('中锋') || p.position.includes('翼锋')) {
+                        posClass = 'tag-forward';
+                    } else if (p.position.includes('中场') || p.position.includes('前腰') || p.position.includes('后腰')) {
+                        posClass = 'tag-midfielder';
+                    } else if (p.position.includes('后卫') || p.position.includes('边后卫')) {
+                        posClass = 'tag-defender';
+                    }
+
+                    tr.innerHTML = `
+                        <td><span class="rank-badge ${rankClass}">${rankText}</span></td>
+                        <td>
+                            <div class="player-name-cell">
+                                <span class="flag-dot ${p.teamFlag}"></span>
+                                <span>${p.name}</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="player-team-cell">
+                                <span>${p.teamName}</span>
+                            </div>
+                        </td>
+                        <td style="text-align: center;">${p.age}</td>
+                        <td style="text-align: center;"><span class="player-pos-tag ${posClass}">${p.position}</span></td>
+                        <td style="text-align: center;"><span class="player-form-tag form-val-${p.form}">${p.form}</span></td>
+                        <td>
+                            <div class="goals-dist-mini-bar">
+                                <span class="dist-pill" title="禁区内左侧进球">左 <span>${p.left}</span></span>
+                                <span class="dist-pill" title="禁区内中央进球">中 <span>${p.center}</span></span>
+                                <span class="dist-pill" title="禁区内右侧进球">右 <span>${p.right}</span></span>
+                                <span class="dist-pill" title="禁区外远射进球">外 <span>${p.outside}</span></span>
+                            </div>
+                        </td>
+                        <td style="text-align: right;" class="total-goals-cell">${p.totalGoals} 球</td>
+                    `;
+
+                    // Add click handler to launch modal
+                    tr.addEventListener('click', () => {
+                        openPlayerModal(p.originalData, p.teamName, p.teamFlag, p.themeClass);
+                    });
+
+                    tbody.appendChild(tr);
+                });
+            }
+
+            // Update Counter
+            if (countText) {
+                countText.innerText = `筛选出 ${filteredPlayers.length} 名球员 / 共 ${players.length} 名`;
+            }
+        }
+
+        // 4. Bind events (avoid multiple event handlers if called multiple times)
+        if (searchInput && !searchInput.dataset.bound) {
+            searchInput.addEventListener('input', filterAndRender);
+            searchInput.dataset.bound = 'true';
+        }
+        if (positionFilter && !positionFilter.dataset.bound) {
+            positionFilter.addEventListener('change', filterAndRender);
+            positionFilter.dataset.bound = 'true';
+        }
+
+        // 5. Initial render
+        filterAndRender();
+    }
+
+    renderPlayersGoalsTable();
+
     // Initial state: show overview
     switchTab('overview');
 }
