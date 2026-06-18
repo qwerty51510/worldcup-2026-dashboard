@@ -382,6 +382,10 @@ function initializeDashboard() {
                 else if (matchId === 'gha-pan') color = '#ef4444'; // Panama red
                 else if (matchId === 'uzb-col') color = '#f59e0b'; // Colombia yellow
                 else if (matchId === 'cze-rsa') color = '#10b981'; // South Africa green
+                else if (matchId === 'esp-jpn') color = '#3b82f6'; // Japan blue
+                else if (matchId === 'mar-aus') color = '#fbbf24'; // Australia yellow/gold
+                else if (matchId === 'ita-crc') color = '#ef4444'; // Costa Rica red
+                else if (matchId === 'uru-kor') color = '#ef4444'; // South Korea red
             }
 
             // Circle background
@@ -776,6 +780,14 @@ function initializeDashboard() {
         else if (themeClass.includes('gha-pan') && teamFlag === 'pan') barColor = '#ef4444';
         else if (themeClass.includes('uzb-col') && teamFlag === 'col') barColor = '#f59e0b';
         else if (themeClass.includes('cze-rsa') && teamFlag === 'rsa') barColor = '#10b981';
+        else if (themeClass.includes('esp-jpn') && teamFlag === 'esp') barColor = '#ef4444';
+        else if (themeClass.includes('esp-jpn') && teamFlag === 'jpn') barColor = '#3b82f6';
+        else if (themeClass.includes('mar-aus') && teamFlag === 'mar') barColor = '#ef4444';
+        else if (themeClass.includes('mar-aus') && teamFlag === 'aus') barColor = '#fbbf24';
+        else if (themeClass.includes('ita-crc') && teamFlag === 'ita') barColor = '#3b82f6';
+        else if (themeClass.includes('ita-crc') && teamFlag === 'crc') barColor = '#ef4444';
+        else if (themeClass.includes('uru-kor') && teamFlag === 'uru') barColor = '#3b82f6';
+        else if (themeClass.includes('uru-kor') && teamFlag === 'kor') barColor = '#ef4444';
 
         distData.forEach(item => {
             const pct = total > 0 ? (item.val / total * 100) : 0;
@@ -1475,7 +1487,71 @@ function initializeDashboard() {
         const ball = document.getElementById('pitch-animation-ball');
         if (ball) ball.style.display = 'none';
 
-        const drill = TACTICAL_DRILLS[matchId] ? TACTICAL_DRILLS[matchId][type] : null;
+        let drill = TACTICAL_DRILLS[matchId] ? TACTICAL_DRILLS[matchId][type] : null;
+        if (!drill) {
+            // Dynamically construct a high-quality drill for any new match!
+            const match = matchData[matchId];
+            if (match) {
+                const homePlayers = match.tactics.players.filter(p => p.type === 'home');
+                const awayPlayers = match.tactics.players.filter(p => p.type === 'away');
+                if (homePlayers.length >= 11 && awayPlayers.length >= 11) {
+                    const homeMid = homePlayers[6] ? homePlayers[6].name : homePlayers[5].name;
+                    const homeFwd = homePlayers[9] ? homePlayers[9].name : homePlayers[8].name;
+                    const awayDef = awayPlayers[2] ? awayPlayers[2].name : awayPlayers[3].name;
+
+                    if (type === 'offense') {
+                        drill = {
+                            caption: `${match.teams.home.name} ${match.tactics.homeForm} 经典进攻：${homeMid}长传斜插找${homeFwd}`,
+                            commentary: [
+                                { time: 0, text: `【${homeMid}中场拿球，精准直塞穿透防线！】` },
+                                { time: 1000, text: `【${homeFwd}超速插上，迎球大力推射远角！】` },
+                                { time: 2200, text: `【球进啦！⚽ ${match.teams.home.name} 攻破 ${match.teams.away.name} 球门！】` }
+                            ],
+                            players: {
+                                [homeMid]: { x: 260, y: 210 },
+                                [homeFwd]: { x: 180, y: 100 },
+                                [awayDef]: { x: 150, y: 110 }
+                            },
+                            passes: [
+                                { from: { x: 180, y: 320 }, to: { x: 260, y: 210 }, duration: 1000, delay: 0 },
+                                { from: { x: 260, y: 210 }, to: { x: 180, y: 100 }, duration: 1000, delay: 1000 },
+                                { from: { x: 180, y: 100 }, to: { x: 180, y: 15 }, duration: 500, delay: 2200 }
+                            ],
+                            runs: [
+                                { name: homeMid, from: { x: 230, y: 320 }, to: { x: 260, y: 210 }, duration: 1000, delay: 0 },
+                                { name: homeFwd, from: { x: 180, y: 180 }, to: { x: 180, y: 100 }, duration: 1000, delay: 500 }
+                            ]
+                        };
+                    } else {
+                        // defense drill (away attack)
+                        const awayMid = awayPlayers[6] ? awayPlayers[6].name : awayPlayers[5].name;
+                        const awayFwd = awayPlayers[9] ? awayPlayers[9].name : awayPlayers[8].name;
+                        const homeDef = homePlayers[2] ? homePlayers[2].name : homePlayers[3].name;
+                        drill = {
+                            caption: `${match.teams.away.name} ${match.tactics.awayForm} 快速反击：${awayMid}斜传连线${awayFwd}`,
+                            commentary: [
+                                { time: 0, text: `【${match.teams.home.name}在前场丢球，${awayMid}中场滑铲拦截！】` },
+                                { time: 1000, text: `【得球后瞬间斜塞给左翼超速插上的${awayFwd}！】` },
+                                { time: 2200, text: `【${awayFwd}甩开防守直插底线，${match.teams.away.name}发起闪电反击！】` }
+                            ],
+                            players: {
+                                [awayMid]: { x: 175, y: 230 },
+                                [awayFwd]: { x: 60, y: 180 },
+                                [homeDef]: { x: 100, y: 200 }
+                            },
+                            passes: [
+                                { from: { x: 180, y: 150 }, to: { x: 175, y: 230 }, duration: 1000, delay: 0 },
+                                { from: { x: 175, y: 230 }, to: { x: 60, y: 180 }, duration: 1000, delay: 1000 }
+                            ],
+                            runs: [
+                                { name: awayMid, from: { x: 175, y: 180 }, to: { x: 175, y: 230 }, duration: 1000, delay: 0 },
+                                { name: awayFwd, from: { x: 60, y: 300 }, to: { x: 60, y: 180 }, duration: 1000, delay: 500 }
+                            ]
+                        };
+                    }
+                }
+            }
+        }
         if (!drill) return;
 
         const captionContainer = document.getElementById('tactics-live-caption');

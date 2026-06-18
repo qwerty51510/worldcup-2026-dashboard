@@ -1582,6 +1582,88 @@ body {
     background: linear-gradient(to bottom, #e51d2d 38%, #007a3d 38%, #007a3d 62%, #001489 62%);
 }
 
+.esp {
+    background: linear-gradient(to bottom, #c60b1e 25%, #ffc400 25%, #ffc400 75%, #c60b1e 75%);
+}
+
+.jpn {
+    background: #ffffff;
+    position: relative;
+}
+
+.jpn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 6px;
+    height: 6px;
+    background-color: #bc002d;
+    border-radius: 50%;
+}
+
+.mar {
+    background: #c1272d;
+    position: relative;
+}
+
+.mar::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 4px;
+    height: 4px;
+    background-color: #006233;
+    border-radius: 50%;
+}
+
+.aus {
+    background: #00205b;
+    position: relative;
+}
+
+.aus::after {
+    content: '★';
+    position: absolute;
+    top: 25%;
+    right: 20%;
+    font-size: 5px;
+    color: #ffffff;
+    line-height: 1;
+}
+
+.ita {
+    background: linear-gradient(to right, #009246 33.3%, #ffffff 33.3%, #ffffff 66.6%, #ce2b37 66.6%);
+}
+
+.crc {
+    background: linear-gradient(to bottom, #002b7f 17%, #ffffff 17%, #ffffff 33%, #ce1126 33%, #ce1126 67%, #ffffff 67%, #ffffff 83%, #002b7f 83%);
+}
+
+.uru {
+    background: linear-gradient(to bottom, #ffffff 11.1%, #0081c6 11.1%, #0081c6 22.2%, #ffffff 22.2%, #ffffff 33.3%, #0081c6 33.3%, #0081c6 44.4%, #ffffff 44.4%, #ffffff 55.5%, #0081c6 55.5%, #0081c6 66.6%, #ffffff 66.6%, #ffffff 77.7%, #0081c6 77.7%, #0081c6 88.8%, #ffffff 88.8%);
+}
+
+.kor {
+    background: #ffffff;
+    position: relative;
+}
+
+.kor::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 6px;
+    height: 6px;
+    background: linear-gradient(to bottom, #cd2e3a 50%, #0047a0 50%);
+    border-radius: 50%;
+}
+
 /* 10. Animations */
 @keyframes pulse {
     0% { opacity: 0.6; box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4); }
@@ -2489,7 +2571,7 @@ body {
 }
 
 .players-goals-table th {
-    background: rgba(255, 255, 255, 0.03);
+    background: #111928; /* Solid dark background to prevent scrolled rows from overlapping */
     padding: 14px 16px;
     font-weight: 700;
     color: var(--text-secondary);

@@ -2498,5 +2498,1899 @@
         }
       ]
     }
+  },
+  "esp-jpn": {
+    "themeClass": "esp-jpn-theme",
+    "group": "B 组第一轮焦点战",
+    "timeLoc": "北京时间 6月19日 02:30 | 莫霍克球场",
+    "teams": {
+      "home": {
+        "name": "西班牙",
+        "flag": "esp",
+        "goals": 2.1,
+        "shots": 15.8,
+        "sot": 6.2,
+        "sOff": 9.6,
+        "corners": 6.2,
+        "history": {
+          "record1Year": "8胜 1平 1负 (胜率 80%)",
+          "possession": "64.2%",
+          "passAccuracy": "90.1%",
+          "cleanSheets": "5次",
+          "shotConversion": "13.3%",
+          "conversionExplanation": "西班牙追求极致的控球与高位压迫，在中场具备统治级的调度能力，但面对坚固低位防线时常陷入传控泥潭。",
+          "recentMatches": [
+            {
+              "opponent": "安道尔",
+              "score": "5 - 0",
+              "type": "友谊赛",
+              "date": "2026-06"
+            },
+            {
+              "opponent": "北爱尔兰",
+              "score": "5 - 1",
+              "type": "友谊赛",
+              "date": "2026-06"
+            },
+            {
+              "opponent": "巴西",
+              "score": "3 - 3",
+              "type": "友谊赛",
+              "date": "2026-03"
+            }
+          ]
+        }
+      },
+      "away": {
+        "name": "日本",
+        "flag": "jpn",
+        "goals": 1.85,
+        "shots": 12.4,
+        "sot": 5.1,
+        "sOff": 7.3,
+        "corners": 4.8,
+        "history": {
+          "record1Year": "7胜 1平 2负 (胜率 70%)",
+          "possession": "52.3%",
+          "passAccuracy": "83.5%",
+          "cleanSheets": "4次",
+          "shotConversion": "14.9%",
+          "conversionExplanation": "日本凭借极快的边路转换和整体防守弹性克制强敌，前场逼抢强度极高，转换得分效率优秀。",
+          "recentMatches": [
+            {
+              "opponent": "叙利亚",
+              "score": "5 - 0",
+              "type": "世预赛",
+              "date": "2026-06"
+            },
+            {
+              "opponent": "缅甸",
+              "score": "5 - 0",
+              "type": "世预赛",
+              "date": "2026-06"
+            },
+            {
+              "opponent": "朝鲜",
+              "score": "1 - 0",
+              "type": "世预赛",
+              "date": "2026-03"
+            }
+          ]
+        }
+      }
+    },
+    "playerDuel": {
+      "home": {
+        "name": "阿尔瓦罗·莫拉塔",
+        "jersey": "7",
+        "club": "马德里竞技",
+        "role": "中锋/队长",
+        "color": "#ef4444",
+        "details": "西班牙的锋线核心与队长（生涯36球），擅长在反击中插上和在禁区内争顶头球。"
+      },
+      "away": {
+        "name": "久保建英",
+        "jersey": "20",
+        "club": "皇家社会",
+        "role": "右翼锋/前腰",
+        "color": "#3b82f6",
+        "details": "日本队的中前场灵性突破口，脚下技术细腻，具备极强的内切远射和精妙塞球能力。"
+      },
+      "description": "西班牙极致传控战术中的中锋终结，与日本队灵巧边翼转换进攻的直接博弈。莫拉塔将直面日本中卫的贴身盯防，而久保建英与三笘薰在两翼的超速反击也是西班牙高位防线的巨大考验。"
+    },
+    "injuries": {
+      "home": [
+        {
+          "name": "加维",
+          "desc": "膝盖韧带术后恢复中，无缘小组赛首战",
+          "status": "danger"
+        }
+      ],
+      "away": [
+        {
+          "name": "富安健洋",
+          "desc": "小腿肌肉紧绷，首战出战存疑",
+          "status": "warning"
+        }
+      ]
+    },
+    "tactics": {
+      "homeForm": "4-3-3",
+      "awayForm": "4-2-3-1",
+      "explanation": "西班牙主打 4-3-3 控制足球，罗德里居中调度发牌，两翼尼科·威廉姆斯与亚马尔边路撕扯，莫拉塔负责中路吃饼。日本采用 4-2-3-1 阵型，中场远藤航扫荡，得球后迅速连线前场的久保建英与三笘薰进行两翼反击。",
+      "players": [
+        {
+          "x": 180,
+          "y": 460,
+          "num": 1,
+          "name": "拉亚",
+          "type": "home"
+        },
+        {
+          "x": 70,
+          "y": 390,
+          "num": 2,
+          "name": "卡瓦哈尔",
+          "type": "home"
+        },
+        {
+          "x": 140,
+          "y": 400,
+          "num": 3,
+          "name": "勒诺尔芒",
+          "type": "home"
+        },
+        {
+          "x": 220,
+          "y": 400,
+          "num": 14,
+          "name": "拉波尔特",
+          "type": "home"
+        },
+        {
+          "x": 290,
+          "y": 390,
+          "num": 24,
+          "name": "库库雷利亚",
+          "type": "home"
+        },
+        {
+          "x": 180,
+          "y": 320,
+          "num": 16,
+          "name": "罗德里",
+          "type": "home"
+        },
+        {
+          "x": 110,
+          "y": 300,
+          "num": 8,
+          "name": "法比安",
+          "type": "home"
+        },
+        {
+          "x": 250,
+          "y": 300,
+          "num": 20,
+          "name": "佩德里",
+          "type": "home"
+        },
+        {
+          "x": 70,
+          "y": 210,
+          "num": 17,
+          "name": "威廉姆斯",
+          "type": "home"
+        },
+        {
+          "x": 290,
+          "y": 210,
+          "num": 19,
+          "name": "亚马尔",
+          "type": "home"
+        },
+        {
+          "x": 180,
+          "y": 170,
+          "num": 7,
+          "name": "莫拉塔",
+          "type": "home"
+        },
+        {
+          "x": 180,
+          "y": 40,
+          "num": 23,
+          "name": "铃木彩艳",
+          "type": "away"
+        },
+        {
+          "x": 70,
+          "y": 100,
+          "num": 22,
+          "name": "中山雄太",
+          "type": "away"
+        },
+        {
+          "x": 140,
+          "y": 110,
+          "num": 3,
+          "name": "谷口彰悟",
+          "type": "away"
+        },
+        {
+          "x": 220,
+          "y": 110,
+          "num": 4,
+          "name": "板仓滉",
+          "type": "away"
+        },
+        {
+          "x": 300,
+          "y": 100,
+          "num": 16,
+          "name": "每熊晟矢",
+          "type": "away"
+        },
+        {
+          "x": 140,
+          "y": 180,
+          "num": 6,
+          "name": "远藤航",
+          "type": "away"
+        },
+        {
+          "x": 220,
+          "y": 180,
+          "num": 5,
+          "name": "守田英正",
+          "type": "away"
+        },
+        {
+          "x": 180,
+          "y": 240,
+          "num": 8,
+          "name": "南野拓实",
+          "type": "away"
+        },
+        {
+          "x": 70,
+          "y": 260,
+          "num": 7,
+          "name": "三笘薰",
+          "type": "away"
+        },
+        {
+          "x": 290,
+          "y": 260,
+          "num": 20,
+          "name": "久保建英",
+          "type": "away"
+        },
+        {
+          "x": 180,
+          "y": 310,
+          "num": 9,
+          "name": "上田绮世",
+          "type": "away"
+        }
+      ]
+    },
+    "verdict": {
+      "score": "2 - 1",
+      "text": "西班牙整体传控技术更为细腻纯熟，中场罗德里的控制力能有效扼杀日本队的出球线路。日本两翼的突击速度虽快，但在西班牙高压下难以获得长距离冲刺空间。预计西班牙将通过围攻，以 2-1 险胜日本取胜。"
+    },
+    "squadPlayers": {
+      "home": [
+        {
+          "name": "阿尔瓦罗·莫拉塔",
+          "age": 33,
+          "position": "中锋",
+          "stats": "预选赛4球0助 | 国家队生涯累计80场36球",
+          "role": "西班牙锋线领袖，拥有出色的跑位、头球抢点与大门终结能力。",
+          "form": "良好",
+          "ratings": [
+            82,
+            85,
+            75,
+            80,
+            45,
+            78
+          ],
+          "goalDist": {
+            "leftBox": 8,
+            "centerBox": 22,
+            "rightBox": 5,
+            "outsideBox": 1,
+            "conversion": "14.5%"
+          },
+          "defenseDefense": "前场实施第一道逼抢，定位球防守时积极回到禁区协助解围。",
+          "defenseWarnings": "严禁给其大禁区内的无球包抄空间，注意限制其第一落点争顶。"
+        },
+        {
+          "name": "罗德里",
+          "age": 29,
+          "position": "防守中场",
+          "stats": "预选赛2球1助 | 国家队生涯累计50场8球",
+          "role": "中场节拍器与屏障，具备顶级的长传调度、防守拦截与远射重炮属性。",
+          "form": "极佳",
+          "ratings": [
+            95,
+            80,
+            88,
+            92,
+            85,
+            90
+          ],
+          "goalDist": {
+            "leftBox": 1,
+            "centerBox": 2,
+            "rightBox": 1,
+            "outsideBox": 4,
+            "conversion": "11.2%"
+          },
+          "defenseDefense": "中后场的防守屏障，负责正面拦截、二点球回收以及战术犯规阻断。",
+          "defenseWarnings": "大禁区前沿需要重点封堵其起脚远射，注意压制其后插上头球。"
+        },
+        {
+          "name": "佩德里",
+          "age": 23,
+          "position": "前腰",
+          "stats": "预选赛1球3助 | 国家队生涯累计28场6球",
+          "role": "进攻核心指挥官，擅长小范围绣花与精妙直塞直传。",
+          "form": "极佳",
+          "ratings": [
+            88,
+            82,
+            90,
+            85,
+            65,
+            80
+          ],
+          "goalDist": {
+            "leftBox": 1,
+            "centerBox": 2,
+            "rightBox": 2,
+            "outsideBox": 1,
+            "conversion": "13.6%"
+          },
+          "defenseDefense": "配合罗德里进行中场横向跑动封线，丢球后就地高强度反抢。",
+          "defenseWarnings": "注意对其持球反切的包夹，切断其肋部送往莫拉塔身后的塞球线路。"
+        },
+        {
+          "name": "尼科·威廉姆斯",
+          "age": 23,
+          "position": "左翼锋",
+          "stats": "预选赛2球2助 | 国家队生涯累计20场4球",
+          "role": "左路超级爆破手，速度极快，具备超强的边路强突及传中能力。",
+          "form": "良好",
+          "ratings": [
+            80,
+            88,
+            80,
+            78,
+            40,
+            72
+          ],
+          "goalDist": {
+            "leftBox": 1,
+            "centerBox": 1,
+            "rightBox": 1,
+            "outsideBox": 1,
+            "conversion": "12.0%"
+          },
+          "defenseDefense": "回撤深度参与左路防守，协助库库雷利亚包夹对方右边路。",
+          "defenseWarnings": "严禁给其大跨步的一对一强突空间，需限制其下底传中的脚法起手。"
+        }
+      ],
+      "away": [
+        {
+          "name": "久保建英",
+          "age": 25,
+          "position": "右翼锋",
+          "stats": "预选赛3球4助 | 国家队生涯累计35场8球",
+          "role": "日本右翼进攻大脑，擅长狭小空间的细密内切带球与斜传致命球。",
+          "form": "极佳",
+          "ratings": [
+            80,
+            85,
+            82,
+            78,
+            45,
+            76
+          ],
+          "goalDist": {
+            "leftBox": 3,
+            "centerBox": 2,
+            "rightBox": 1,
+            "outsideBox": 2,
+            "conversion": "15.4%"
+          },
+          "defenseDefense": "中前场的横向防守封阻，边路反击时的第一出球点。",
+          "defenseWarnings": "注意限制其左脚内切的远射角度，肋部必须随时配备协防人员阻断其直传。"
+        },
+        {
+          "name": "三笘薰",
+          "age": 29,
+          "position": "左翼锋",
+          "stats": "预选赛2球3助 | 国家队生涯累计32场9球",
+          "role": "左路单兵突破利刃，拥有独特的节奏感变速生吃和底线内切造杀伤能力。",
+          "form": "良好",
+          "ratings": [
+            82,
+            86,
+            78,
+            80,
+            40,
+            75
+          ],
+          "goalDist": {
+            "leftBox": 4,
+            "centerBox": 3,
+            "rightBox": 1,
+            "outsideBox": 1,
+            "conversion": "16.1%"
+          },
+          "defenseDefense": "积极回防沉入后场协助中山雄太，在中场阻断反击第一线路。",
+          "defenseWarnings": "一对一单防时防其右侧突进变线，尽量避免在中场直接出脚以防被其节奏过人。"
+        },
+        {
+          "name": "远藤航",
+          "age": 33,
+          "position": "防守中场",
+          "stats": "预选赛0球1助 | 国家队生涯累计60场3球",
+          "role": "队长与中场大闸，抢断凶狠，拦截预判能力极强，是攻防转换核心枢纽。",
+          "form": "极佳",
+          "ratings": [
+            85,
+            70,
+            85,
+            80,
+            88,
+            82
+          ],
+          "goalDist": {
+            "leftBox": 0,
+            "centerBox": 1,
+            "rightBox": 1,
+            "outsideBox": 1,
+            "conversion": "6.8%"
+          },
+          "defenseDefense": "中场的扫荡与对抗核心，负责拦截对方前腰，为后防线排雷。",
+          "defenseWarnings": "拼抢硬朗，注意防范其身体对抗时的断球转换，需在中场进行多人倒脚避开其拦截区。"
+        },
+        {
+          "name": "南野拓实",
+          "age": 31,
+          "position": "前腰",
+          "stats": "预选赛4球2助 | 国家队生涯累计58场20球",
+          "role": "前场游弋终结者，门前嗅觉极其敏锐，无球包抄及乱战得分效率惊人。",
+          "form": "良好",
+          "ratings": [
+            78,
+            80,
+            82,
+            76,
+            50,
+            78
+          ],
+          "goalDist": {
+            "leftBox": 4,
+            "centerBox": 10,
+            "rightBox": 4,
+            "outsideBox": 2,
+            "conversion": "18.2%"
+          },
+          "defenseDefense": "前场就地高位反抢，在弧顶及大禁区前沿构筑第一道拦截防线。",
+          "defenseWarnings": "严密盯防其第二落点的包抄补射，注意他在大禁区内的无球斜插跑位。"
+        }
+      ]
+    }
+  },
+  "mar-aus": {
+    "themeClass": "mar-aus-theme",
+    "group": "B 组第一轮焦点战",
+    "timeLoc": "北京时间 6月19日 05:30 | 联邦球场",
+    "teams": {
+      "home": {
+        "name": "摩洛哥",
+        "flag": "mar",
+        "goals": 1.6,
+        "shots": 11.2,
+        "sot": 4.5,
+        "sOff": 6.7,
+        "corners": 5.1,
+        "history": {
+          "record1Year": "6胜 3平 1负 (胜率 60%)",
+          "possession": "54.8%",
+          "passAccuracy": "84.2%",
+          "cleanSheets": "6次",
+          "shotConversion": "12.5%",
+          "conversionExplanation": "摩洛哥打法沉稳，坚守反击，阿什拉夫在右翼的超速推进是进攻核心手段，防守极其稳固。",
+          "recentMatches": [
+            {
+              "opponent": "赞比亚",
+              "score": "2 - 1",
+              "type": "世预赛",
+              "date": "2026-06"
+            },
+            {
+              "opponent": "刚果",
+              "score": "6 - 0",
+              "type": "世预赛",
+              "date": "2026-06"
+            }
+          ]
+        }
+      },
+      "away": {
+        "name": "澳大利亚",
+        "flag": "aus",
+        "goals": 1.7,
+        "shots": 12.8,
+        "sot": 4.8,
+        "sOff": 8,
+        "corners": 6.8,
+        "history": {
+          "record1Year": "7胜 2平 1负 (胜率 70%)",
+          "possession": "58.1%",
+          "passAccuracy": "81.0%",
+          "cleanSheets": "5次",
+          "shotConversion": "11.1%",
+          "conversionExplanation": "澳大利亚风格硬朗，强调高空球和定位球头球，大门攻坚依靠苏塔尔及杜克等高塔高空压制。",
+          "recentMatches": [
+            {
+              "opponent": "巴勒斯坦",
+              "score": "5 - 0",
+              "type": "世预赛",
+              "date": "2026-06"
+            },
+            {
+              "opponent": "孟加拉国",
+              "score": "2 - 0",
+              "type": "世预赛",
+              "date": "2026-06"
+            }
+          ]
+        }
+      }
+    },
+    "playerDuel": {
+      "home": {
+        "name": "阿什拉夫·哈基米",
+        "jersey": "2",
+        "club": "巴黎圣日耳曼",
+        "role": "右后卫/飞翼",
+        "color": "#ef4444",
+        "details": "世界顶尖右后卫，带球起步爆发力极强，是摩洛哥右路进攻起手的绝对引擎（国家队9球）。"
+      },
+      "away": {
+        "name": "哈里·苏塔尔",
+        "jersey": "19",
+        "club": "莱斯特城",
+        "role": "中后卫/空霸",
+        "color": "#fbbf24",
+        "details": "身高2米00的钢铁高塔，防守正面拦截极其扎实，同时在角球定位球战术中是破门利刃。"
+      },
+      "description": "哈基米领衔的右翼超速爆破强突，与澳大利亚高空钢铁大巴的经典较量。哈基米的快下带球传中将对澳大利亚后防侧翼施加巨大压力，而苏塔尔的空中绝对控制力则是澳大利亚在阵地防守及定位球反攻时的绝对底牌。"
+    },
+    "injuries": {
+      "home": [
+        {
+          "name": "马兹拉维",
+          "desc": "腿部肌肉轻度拉伤，首发待定",
+          "status": "warning"
+        }
+      ],
+      "away": []
+    },
+    "tactics": {
+      "homeForm": "4-1-4-1",
+      "awayForm": "4-4-2",
+      "explanation": "摩洛哥采用 4-1-4-1，阿姆拉巴特拖后拦截，中场齐耶赫和阿什拉夫在右侧连线狂飙，恩内斯里突前。澳大利亚使用 4-4-2 铁血平行阵线，依靠两翼长传高球找杜克进行头球摆渡，由中场欧文后插上争抢第二点破门。",
+      "players": [
+        {
+          "x": 180,
+          "y": 460,
+          "num": 1,
+          "name": "布努",
+          "type": "home"
+        },
+        {
+          "x": 70,
+          "y": 390,
+          "num": 2,
+          "name": "阿什拉夫",
+          "type": "home"
+        },
+        {
+          "x": 140,
+          "y": 400,
+          "num": 5,
+          "name": "阿格德",
+          "type": "home"
+        },
+        {
+          "x": 220,
+          "y": 400,
+          "num": 6,
+          "name": "赛斯",
+          "type": "home"
+        },
+        {
+          "x": 290,
+          "y": 390,
+          "num": 25,
+          "name": "阿拉",
+          "type": "home"
+        },
+        {
+          "x": 180,
+          "y": 340,
+          "num": 4,
+          "name": "阿姆拉巴特",
+          "type": "home"
+        },
+        {
+          "x": 110,
+          "y": 280,
+          "num": 8,
+          "name": "奥纳西",
+          "type": "home"
+        },
+        {
+          "x": 250,
+          "y": 280,
+          "num": 14,
+          "name": "阿马拉",
+          "type": "home"
+        },
+        {
+          "x": 70,
+          "y": 220,
+          "num": 17,
+          "name": "布法尔",
+          "type": "home"
+        },
+        {
+          "x": 290,
+          "y": 220,
+          "num": 7,
+          "name": "齐耶赫",
+          "type": "home"
+        },
+        {
+          "x": 180,
+          "y": 160,
+          "num": 19,
+          "name": "恩内斯里",
+          "type": "home"
+        },
+        {
+          "x": 180,
+          "y": 40,
+          "num": 12,
+          "name": "瑞安",
+          "type": "away"
+        },
+        {
+          "x": 70,
+          "y": 100,
+          "num": 16,
+          "name": "贝希奇",
+          "type": "away"
+        },
+        {
+          "x": 140,
+          "y": 110,
+          "num": 19,
+          "name": "苏塔尔",
+          "type": "away"
+        },
+        {
+          "x": 220,
+          "y": 110,
+          "num": 4,
+          "name": "罗尔斯",
+          "type": "away"
+        },
+        {
+          "x": 300,
+          "y": 100,
+          "num": 3,
+          "name": "阿特金森",
+          "type": "away"
+        },
+        {
+          "x": 80,
+          "y": 180,
+          "num": 23,
+          "name": "古德温",
+          "type": "away"
+        },
+        {
+          "x": 140,
+          "y": 180,
+          "num": 22,
+          "name": "欧文",
+          "type": "away"
+        },
+        {
+          "x": 220,
+          "y": 180,
+          "num": 8,
+          "name": "麦格里",
+          "type": "away"
+        },
+        {
+          "x": 280,
+          "y": 180,
+          "num": 7,
+          "name": "莱基",
+          "type": "away"
+        },
+        {
+          "x": 130,
+          "y": 270,
+          "num": 15,
+          "name": "杜克",
+          "type": "away"
+        },
+        {
+          "x": 230,
+          "y": 270,
+          "num": 9,
+          "name": "博雷洛",
+          "type": "away"
+        }
+      ]
+    },
+    "verdict": {
+      "score": "1 - 0",
+      "text": "摩洛哥在防守细节和个人爆发力上占据主动。澳大利亚高空轰炸虽然极具力量威胁，但阿格德与赛斯的防空组合十分默契，不易在阵地防守中失误。预计摩洛哥将通过阿什拉夫策动的右路反击，以 1-0 闷签取胜。"
+    },
+    "squadPlayers": {
+      "home": [
+        {
+          "name": "恩内斯里",
+          "age": 29,
+          "position": "中锋",
+          "stats": "预选赛3球0助 | 国家队生涯累计70场24球",
+          "role": "突前中锋，高空轰炸能力极强，抢点头球效率在非洲独步天下。",
+          "form": "良好",
+          "ratings": [
+            80,
+            82,
+            70,
+            75,
+            50,
+            78
+          ],
+          "goalDist": {
+            "leftBox": 4,
+            "centerBox": 16,
+            "rightBox": 3,
+            "outsideBox": 1,
+            "conversion": "15.0%"
+          },
+          "defenseDefense": "在前场压迫中路，防守定位球时积极沉入禁区发挥防空支柱作用。",
+          "defenseWarnings": "后防线严防其定位球头球抢点，盯防人员需随时紧贴起跳阻挡。"
+        },
+        {
+          "name": "齐耶赫",
+          "age": 33,
+          "position": "右翼锋",
+          "stats": "预选赛2球4助 | 国家队生涯累计62场22球",
+          "role": "右路发动机，脚法精湛，具备顶级的弧线传中、直塞球与定位球重炮射门技术。",
+          "form": "良好",
+          "ratings": [
+            78,
+            84,
+            85,
+            78,
+            40,
+            76
+          ],
+          "goalDist": {
+            "leftBox": 2,
+            "centerBox": 6,
+            "rightBox": 4,
+            "outsideBox": 10,
+            "conversion": "13.4%"
+          },
+          "defenseDefense": "配合右路防守，在丢球后第一跑位阻断对手边后卫起步。",
+          "defenseWarnings": "严防其在大禁区角上的斜向内切传中，不可轻易给其左脚舒展的传球空隙。"
+        },
+        {
+          "name": "阿什拉夫·哈基米",
+          "age": 27,
+          "position": "边后卫",
+          "stats": "预选赛1球3助 | 国家队生涯累计75场9球",
+          "role": "世界级右路飞翼，带球反击爆发力恐怖，具备极强的无球内切切入能力。",
+          "form": "极佳",
+          "ratings": [
+            88,
+            82,
+            84,
+            86,
+            75,
+            80
+          ],
+          "goalDist": {
+            "leftBox": 1,
+            "centerBox": 2,
+            "rightBox": 4,
+            "outsideBox": 2,
+            "conversion": "10.5%"
+          },
+          "defenseDefense": "右路防守大闸，凭借速度进行中后场单防缠斗与高空球协击。",
+          "defenseWarnings": "防守端切忌给其套边插上冲锋的跑道空间，需由左边卫协同后腰进行深度包夹。"
+        },
+        {
+          "name": "阿姆拉巴特",
+          "age": 29,
+          "position": "防守中场",
+          "stats": "预选赛0球0助 | 国家队生涯累计55场0球",
+          "role": "中后防线前铁血扫荡中场，拼抢硬朗，具备无出其右的对抗纠缠防守能力。",
+          "form": "良好",
+          "ratings": [
+            84,
+            60,
+            80,
+            78,
+            90,
+            85
+          ],
+          "goalDist": {
+            "leftBox": 0,
+            "centerBox": 0,
+            "rightBox": 0,
+            "outsideBox": 0,
+            "conversion": "0%"
+          },
+          "defenseDefense": "防守基石，覆盖中路正面所有拦截盲区，干各种防守脏活累活。",
+          "defenseWarnings": "拦截硬朗，在传球时应尽量避免进入其中圈弧顶的对抗拦截范围。"
+        }
+      ],
+      "away": [
+        {
+          "name": "米切尔·杜克",
+          "age": 35,
+          "position": "中锋",
+          "stats": "预选赛4球1助 | 国家队生涯累计42场12球",
+          "role": "战术桥头堡，身体强壮，支点做球能力突出，在高空争顶上有核心压制力。",
+          "form": "良好",
+          "ratings": [
+            75,
+            78,
+            65,
+            72,
+            60,
+            74
+          ],
+          "goalDist": {
+            "leftBox": 2,
+            "centerBox": 8,
+            "rightBox": 2,
+            "outsideBox": 0,
+            "conversion": "14.1%"
+          },
+          "defenseDefense": "中锋压迫防线出球，防守角球时回到禁区充当高空球第一解围点。",
+          "defenseWarnings": "防范其第一落点的回敲摆渡，需中卫在中路利用身体强行阻挡干扰其做球。"
+        },
+        {
+          "name": "克雷格·古德温",
+          "age": 34,
+          "position": "左翼锋",
+          "stats": "预选赛3球5助 | 国家队生涯累计30场7球",
+          "role": "边路突击与定位球手，传中精度极高，具备顶级的定位球起手喂饼能力。",
+          "form": "良好",
+          "ratings": [
+            74,
+            78,
+            80,
+            75,
+            50,
+            72
+          ],
+          "goalDist": {
+            "leftBox": 2,
+            "centerBox": 3,
+            "rightBox": 1,
+            "outsideBox": 1,
+            "conversion": "11.6%"
+          },
+          "defenseDefense": "深潜保护左翼防区，配合贝希奇拦截对方右路的狂飙攻势。",
+          "defenseWarnings": "限制其下底起脚角度，阻断其与苏塔尔在定位球传球路线上的高度连线。"
+        },
+        {
+          "name": "杰克逊·欧文",
+          "age": 33,
+          "position": "中场",
+          "stats": "预选赛2球2助 | 国家队生涯累计65场11球",
+          "role": "铁血工兵中场，跑动大范围覆盖，防守覆盖面广，擅长后插上头球攻门。",
+          "form": "良好",
+          "ratings": [
+            78,
+            76,
+            75,
+            78,
+            80,
+            82
+          ],
+          "goalDist": {
+            "leftBox": 2,
+            "centerBox": 7,
+            "rightBox": 1,
+            "outsideBox": 1,
+            "conversion": "12.2%"
+          },
+          "defenseDefense": "中场的拼抢大闸，负责二点球争抢、大范围侧面压迫与反击推进拦截。",
+          "defenseWarnings": "小心其插上禁区争抢杜克头球摆渡的第二落点，需中场球员随其同步回防。"
+        },
+        {
+          "name": "哈里·苏塔尔",
+          "age": 27,
+          "position": "后卫",
+          "stats": "预选赛3球0助 | 国家队生涯累计30场11球",
+          "role": "防空巨塔，制空权绝对第一，正面防守拦截稳固，定位球进攻的核心得分手。",
+          "form": "极佳",
+          "ratings": [
+            82,
+            70,
+            60,
+            72,
+            88,
+            85
+          ],
+          "goalDist": {
+            "leftBox": 1,
+            "centerBox": 9,
+            "rightBox": 1,
+            "outsideBox": 0,
+            "conversion": "16.8%"
+          },
+          "defenseDefense": "防线核心柱，负责正面高空解围、长传球拦截以及第一战术站位卡位。",
+          "defenseWarnings": "澳大利亚的定位球杀招，定位球防守中必须派专人死贴并合力进行起跳干扰。"
+        }
+      ]
+    }
+  },
+  "ita-crc": {
+    "themeClass": "ita-crc-theme",
+    "group": "C 组第一轮焦点战",
+    "timeLoc": "北京时间 6月19日 08:30 | 牛仔体育场",
+    "teams": {
+      "home": {
+        "name": "意大利",
+        "flag": "ita",
+        "goals": 1.7,
+        "shots": 14.1,
+        "sot": 5.4,
+        "sOff": 8.7,
+        "corners": 5.9,
+        "history": {
+          "record1Year": "7胜 2平 1负 (胜率 70%)",
+          "possession": "59.5%",
+          "passAccuracy": "87.8%",
+          "cleanSheets": "6次",
+          "shotConversion": "12.1%",
+          "conversionExplanation": "意大利战术纪律严明，讲求整体传跑配合，两边翼卫深度插上，依靠巴雷拉的中场穿插梳理和雷特吉的锋线抢点推进。",
+          "recentMatches": [
+            {
+              "opponent": "波黑",
+              "score": "1 - 0",
+              "type": "友谊赛",
+              "date": "2026-06"
+            },
+            {
+              "opponent": "土耳其",
+              "score": "0 - 0",
+              "type": "友谊赛",
+              "date": "2026-06"
+            }
+          ]
+        }
+      },
+      "away": {
+        "name": "哥斯达黎加",
+        "flag": "crc",
+        "goals": 1.2,
+        "shots": 8.9,
+        "sot": 3.1,
+        "sOff": 5.8,
+        "corners": 3.7,
+        "history": {
+          "record1Year": "5胜 3平 2负 (胜率 50%)",
+          "possession": "43.5%",
+          "passAccuracy": "78.2%",
+          "cleanSheets": "4次",
+          "shotConversion": "13.5%",
+          "conversionExplanation": "哥斯达黎加踢法非常实用，防守时全员退防大禁区，反击依靠坎贝尔的速度和乌加尔德的前插牵制。",
+          "recentMatches": [
+            {
+              "opponent": "格林纳达",
+              "score": "3 - 0",
+              "type": "世预赛",
+              "date": "2026-06"
+            },
+            {
+              "opponent": "圣基茨和尼维斯",
+              "score": "4 - 0",
+              "type": "世预赛",
+              "date": "2026-06"
+            }
+          ]
+        }
+      }
+    },
+    "playerDuel": {
+      "home": {
+        "name": "尼科洛·巴雷拉",
+        "jersey": "18",
+        "club": "国际米兰",
+        "role": "中场/全能",
+        "color": "#3b82f6",
+        "details": "全能中场悍将（生涯10球），覆盖全场，拥有卓越的插上突进、斜传调度与拦截大局观。"
+      },
+      "away": {
+        "name": "约埃尔·坎贝尔",
+        "jersey": "12",
+        "club": "阿拉胡埃伦斯",
+        "role": "边锋/老将",
+        "color": "#ef4444",
+        "details": "国家队百战功勋老将（生涯27球），大赛经验极其丰富，擅长反击中的带球单兵强突。"
+      },
+      "description": "巴雷拉掌控的中场高速倒脚调度，与坎贝尔领衔的反击快马的博弈。巴雷拉的前插接应将是意大利敲开大巴大门的核心爆破力，而坎贝尔在反击时的强突能力也是意大利防线身后的重要威胁。"
+    },
+    "injuries": {
+      "home": [
+        {
+          "name": "阿切尔比",
+          "desc": "因伤落选世界杯大名单，意大利后防损失防空铁闸",
+          "status": "danger"
+        }
+      ],
+      "away": []
+    },
+    "tactics": {
+      "homeForm": "3-4-2-1",
+      "awayForm": "5-4-1",
+      "explanation": "意大利主打 3-4-2-1，两翼迪马尔科和贝拉诺瓦疯狂插上，巴雷拉与若日尼奥坐镇中场，雷特吉锋线突前。哥斯达黎加采用 5-4-1 低位大巴，防线极其紧凑收缩，反击时直接长传寻找边路的坎贝尔或中路突前的乌加尔德。",
+      "players": [
+        {
+          "x": 180,
+          "y": 460,
+          "num": 1,
+          "name": "多纳鲁马",
+          "type": "home"
+        },
+        {
+          "x": 110,
+          "y": 400,
+          "num": 3,
+          "name": "达米安",
+          "type": "home"
+        },
+        {
+          "x": 180,
+          "y": 410,
+          "num": 4,
+          "name": "巴斯托尼",
+          "type": "home"
+        },
+        {
+          "x": 250,
+          "y": 400,
+          "num": 13,
+          "name": "布翁焦尔诺",
+          "type": "home"
+        },
+        {
+          "x": 50,
+          "y": 280,
+          "num": 3,
+          "name": "迪马尔科",
+          "type": "home"
+        },
+        {
+          "x": 140,
+          "y": 320,
+          "num": 8,
+          "name": "若日尼奥",
+          "type": "home"
+        },
+        {
+          "x": 220,
+          "y": 320,
+          "num": 18,
+          "name": "巴雷拉",
+          "type": "home"
+        },
+        {
+          "x": 310,
+          "y": 280,
+          "num": 25,
+          "name": "贝拉诺瓦",
+          "type": "home"
+        },
+        {
+          "x": 130,
+          "y": 230,
+          "num": 10,
+          "name": "佩莱格里尼",
+          "type": "home"
+        },
+        {
+          "x": 230,
+          "y": 230,
+          "num": 14,
+          "name": "基耶萨",
+          "type": "home"
+        },
+        {
+          "x": 180,
+          "y": 160,
+          "num": 9,
+          "name": "雷特吉",
+          "type": "home"
+        },
+        {
+          "x": 180,
+          "y": 40,
+          "num": 23,
+          "name": "莫雷拉",
+          "type": "away"
+        },
+        {
+          "x": 180,
+          "y": 100,
+          "num": 15,
+          "name": "卡尔沃",
+          "type": "away"
+        },
+        {
+          "x": 110,
+          "y": 105,
+          "num": 3,
+          "name": "米切尔",
+          "type": "away"
+        },
+        {
+          "x": 250,
+          "y": 105,
+          "num": 4,
+          "name": "瓦尔加斯",
+          "type": "away"
+        },
+        {
+          "x": 50,
+          "y": 130,
+          "num": 22,
+          "name": "基罗斯",
+          "type": "away"
+        },
+        {
+          "x": 310,
+          "y": 130,
+          "num": 2,
+          "name": "泰勒",
+          "type": "away"
+        },
+        {
+          "x": 140,
+          "y": 180,
+          "num": 10,
+          "name": "卡斯特罗",
+          "type": "away"
+        },
+        {
+          "x": 220,
+          "y": 180,
+          "num": 13,
+          "name": "布兰科",
+          "type": "away"
+        },
+        {
+          "x": 80,
+          "y": 240,
+          "num": 12,
+          "name": "坎贝尔",
+          "type": "away"
+        },
+        {
+          "x": 280,
+          "y": 240,
+          "num": 21,
+          "name": "阿奎莱拉",
+          "type": "away"
+        },
+        {
+          "x": 180,
+          "y": 280,
+          "num": 9,
+          "name": "乌加尔德",
+          "type": "away"
+        }
+      ]
+    },
+    "verdict": {
+      "score": "2 - 0",
+      "text": "意大利战术层次和整体配合远强于哥斯达黎加。哥斯达黎加 5-4-1 纯防守大巴虽在美洲区防守稳健，但在意式立体攻势下，两翼极难阻挡迪马尔科的精准起球，巴雷拉的插上射门也有致命威胁。预计意大利 2-0 完胜。"
+    },
+    "squadPlayers": {
+      "home": [
+        {
+          "name": "马特奥·雷特吉",
+          "age": 27,
+          "position": "中锋",
+          "stats": "预选赛5球0助 | 国家队生涯累计16场6球",
+          "role": "抢点型中锋，射门果断，擅长门前抢点与利用身体撞击卡位得分。",
+          "form": "极佳",
+          "ratings": [
+            78,
+            82,
+            68,
+            75,
+            45,
+            76
+          ],
+          "goalDist": {
+            "leftBox": 1,
+            "centerBox": 4,
+            "rightBox": 1,
+            "outsideBox": 0,
+            "conversion": "16.5%"
+          },
+          "defenseDefense": "锋线第一道拼抢阻线，防守端协助压迫对手出球中卫。",
+          "defenseWarnings": "严密防范其在小禁区前的垫射与头球撞射，盯防需加强贴身卡位。"
+        },
+        {
+          "name": "尼科洛·巴雷拉",
+          "age": 29,
+          "position": "中场",
+          "stats": "预选赛2球3助 | 国家队生涯累计57场10球",
+          "role": "全能B2B核心，跑动无穷无尽，兼具中场反抢硬度与锋线无球后插上得分属性。",
+          "form": "极佳",
+          "ratings": [
+            88,
+            80,
+            85,
+            88,
+            82,
+            86
+          ],
+          "goalDist": {
+            "leftBox": 2,
+            "centerBox": 4,
+            "rightBox": 2,
+            "outsideBox": 2,
+            "conversion": "11.9%"
+          },
+          "defenseDefense": "中场的全能拦截者，负责横向补防、缠斗拼抢与二点球回传防守。",
+          "defenseWarnings": "注意盯防其前插大禁区前沿的二次进攻，防范其外围冷射射门。"
+        },
+        {
+          "name": "费德里科·基耶萨",
+          "age": 28,
+          "position": "左翼锋",
+          "stats": "预选赛3球1助 | 国家队生涯累计48场7球",
+          "role": "边路爆破突击手，第一步启动速度极快，内切撕扯防线与冷射得分极具杀伤力。",
+          "form": "良好",
+          "ratings": [
+            80,
+            84,
+            78,
+            80,
+            45,
+            74
+          ],
+          "goalDist": {
+            "leftBox": 2,
+            "centerBox": 3,
+            "rightBox": 1,
+            "outsideBox": 1,
+            "conversion": "12.8%"
+          },
+          "defenseDefense": "在边路阻断对方出球，协助边后卫迪马尔科包夹对方飞翼。",
+          "defenseWarnings": "一对防守严禁给其起跑空间，封锁其右脚内切的推射远角路线。"
+        },
+        {
+          "name": "费德里科·迪马尔科",
+          "age": 28,
+          "position": "边后卫",
+          "stats": "预选赛1球4助 | 国家队生涯累计25场3球",
+          "role": "左翼利刃，拥有顶级的左脚斜传球传中、远射和任意球技术，套边插上战术价值极高。",
+          "form": "极佳",
+          "ratings": [
+            82,
+            80,
+            86,
+            82,
+            70,
+            78
+          ],
+          "goalDist": {
+            "leftBox": 1,
+            "centerBox": 0,
+            "rightBox": 1,
+            "outsideBox": 1,
+            "conversion": "10.0%"
+          },
+          "defenseDefense": "左翼防区的第一负责人，防守端以拦截对方边路起球和横向跑动滑铲为主。",
+          "defenseWarnings": "高度封堵其左侧起脚传中的弧线，避免其在左路大禁区外轻松起球。"
+        }
+      ],
+      "away": [
+        {
+          "name": "约埃尔·坎贝尔",
+          "age": 33,
+          "position": "翼锋",
+          "stats": "预选赛2球3助 | 国家队生涯累计130场27球",
+          "role": "边路突击手，突破技巧丰富，能在狭小空间内转身摆脱，是哥队反击第一出球点。",
+          "form": "良好",
+          "ratings": [
+            72,
+            75,
+            76,
+            70,
+            40,
+            70
+          ],
+          "goalDist": {
+            "leftBox": 6,
+            "centerBox": 15,
+            "rightBox": 4,
+            "outsideBox": 2,
+            "conversion": "13.9%"
+          },
+          "defenseDefense": "反击时留在高位，阵地防守时积极回撤至边中场位置干扰传球。",
+          "defenseWarnings": "提防其在一对一时利用假动作晃开传球空间，需防守人贴身封死其突破路线。"
+        },
+        {
+          "name": "曼弗雷德·乌加尔德",
+          "age": 24,
+          "position": "中锋",
+          "stats": "预选赛3球1助 | 国家队生涯累计12场3球",
+          "role": "灵活小个中锋，跑位活跃，前插嗅觉敏锐，能在反击中迅速撕扯中卫空当。",
+          "form": "良好",
+          "ratings": [
+            74,
+            76,
+            68,
+            72,
+            45,
+            72
+          ],
+          "goalDist": {
+            "leftBox": 0,
+            "centerBox": 2,
+            "rightBox": 1,
+            "outsideBox": 0,
+            "conversion": "15.0%"
+          },
+          "defenseDefense": "袭扰对方中卫出球，第一道防线在对方半场开始施压。",
+          "defenseWarnings": "严密贴身，防范其在大禁区线上的接球转身，避免其前插直接面对守门员。"
+        },
+        {
+          "name": "亚历杭德罗·卡斯特罗",
+          "age": 25,
+          "position": "中场",
+          "stats": "预选赛1球1助 | 国家队生涯累计15场2球",
+          "role": "拼抢型中场，中路大范围折返扫荡，具备快速出球与拼抢防守意识。",
+          "form": "一般",
+          "ratings": [
+            70,
+            72,
+            74,
+            70,
+            65,
+            70
+          ],
+          "goalDist": {
+            "leftBox": 0,
+            "centerBox": 1,
+            "rightBox": 0,
+            "outsideBox": 1,
+            "conversion": "8.5%"
+          },
+          "defenseDefense": "中圈正面屏障，拦截对方前腰，积极包夹传球点。",
+          "defenseWarnings": "注意防范其拦截后的长传找锋线身后，需压制其反抢后的出球速度。"
+        },
+        {
+          "name": "弗朗西斯科·卡尔沃",
+          "age": 33,
+          "position": "后卫",
+          "stats": "预选赛2球0助 | 国家队生涯累计95场12球",
+          "role": "铁血队长中卫，正面防守对抗强悍，补位快速，是哥队后防线的绝对精神领袖。",
+          "form": "良好",
+          "ratings": [
+            75,
+            68,
+            60,
+            70,
+            82,
+            78
+          ],
+          "goalDist": {
+            "leftBox": 2,
+            "centerBox": 8,
+            "rightBox": 2,
+            "outsideBox": 0,
+            "conversion": "11.1%"
+          },
+          "defenseDefense": "防线总指挥官，负责门前补位封堵、封锁射门以及大门头球防空。",
+          "defenseWarnings": "澳大利亚式的高空球争抢核心，在防守任意球时必须对其紧密顶防。"
+        }
+      ]
+    }
+  },
+  "uru-kor": {
+    "themeClass": "uru-kor-theme",
+    "group": "C 组第一轮焦点战",
+    "timeLoc": "北京时间 6月19日 22:30 | 大都会人寿体育场",
+    "teams": {
+      "home": {
+        "name": "乌拉圭",
+        "flag": "uru",
+        "goals": 1.95,
+        "shots": 13.9,
+        "sot": 5.2,
+        "sOff": 8.7,
+        "corners": 5.6,
+        "history": {
+          "record1Year": "8胜 0平 2负 (胜率 80%)",
+          "possession": "56.4%",
+          "passAccuracy": "84.5%",
+          "cleanSheets": "5次",
+          "shotConversion": "14.0%",
+          "conversionExplanation": "乌拉圭在贝尔萨执教下崇尚疯狂的高位逼抢和直传突击，巴尔韦德在中场的覆盖和努涅斯在锋线的暴力冲击是杀招。",
+          "recentMatches": [
+            {
+              "opponent": "墨西哥",
+              "score": "4 - 0",
+              "type": "友谊赛",
+              "date": "2026-06"
+            },
+            {
+              "opponent": "巴斯克",
+              "score": "1 - 1",
+              "type": "友谊赛",
+              "date": "2026-03"
+            }
+          ]
+        }
+      },
+      "away": {
+        "name": "韩国",
+        "flag": "kor",
+        "goals": 1.75,
+        "shots": 11.8,
+        "sot": 4.5,
+        "sOff": 7.3,
+        "corners": 4.5,
+        "history": {
+          "record1Year": "7胜 1平 2负 (胜率 70%)",
+          "possession": "53.2%",
+          "passAccuracy": "82.8%",
+          "cleanSheets": "4次",
+          "shotConversion": "14.8%",
+          "conversionExplanation": "韩国队在中前场实力强劲，孙兴慜的边路冲击力世界级，李刚仁在右路的内切和传中是主要发动机。",
+          "recentMatches": [
+            {
+              "opponent": "中国",
+              "score": "1 - 0",
+              "type": "世预赛",
+              "date": "2026-06"
+            },
+            {
+              "opponent": "新加坡",
+              "score": "7 - 0",
+              "type": "世预赛",
+              "date": "2026-06"
+            }
+          ]
+        }
+      }
+    },
+    "playerDuel": {
+      "home": {
+        "name": "达尔文·努涅斯",
+        "jersey": "19",
+        "club": "利物浦",
+        "role": "中锋/爆破",
+        "color": "#3b82f6",
+        "details": "预选赛头号杀手（8球2助），冲击力极强，无球跑位诡异，脚下爆发力恐怖。"
+      },
+      "away": {
+        "name": "孙兴慜",
+        "jersey": "7",
+        "club": "托特纳姆热刺",
+        "role": "翼锋/队长",
+        "color": "#ef4444",
+        "details": "亚洲天王，国家队48球领袖，双足均衡，拥有顶级的超速单兵突袭和内切兜射死角能力。"
+      },
+      "description": "贝尔萨高压逼抢下的强力利刃努涅斯，与亚洲天王孙兴慜反击致命一击的极限对话。努涅斯将不断用身体冲击韩国的防线中路，而孙兴慜的超凡速度与终结力也是乌拉圭高位防线必须面临的生死大考。"
+    },
+    "injuries": {
+      "home": [],
+      "away": [
+        {
+          "name": "曹圭成",
+          "desc": "半月板磨损手术恢复中，缺席本轮小组赛",
+          "status": "danger"
+        }
+      ]
+    },
+    "tactics": {
+      "homeForm": "4-3-3",
+      "awayForm": "4-2-3-1",
+      "explanation": "乌拉圭主打 4-3-3 窒息压迫，中场巴尔韦德和德拉克鲁斯实施强力扫荡并快速出球，两翼突击找努涅斯终结。韩国主打 4-2-3-1 快速转换，黄仁范和李在成梳理中场，李刚仁右翼斜塞组织，孙兴慜左路内切伺机完成重炮。",
+      "players": [
+        {
+          "x": 180,
+          "y": 460,
+          "num": 1,
+          "name": "罗切特",
+          "type": "home"
+        },
+        {
+          "x": 70,
+          "y": 390,
+          "num": 8,
+          "name": "南德斯",
+          "type": "home"
+        },
+        {
+          "x": 140,
+          "y": 400,
+          "num": 4,
+          "name": "阿劳霍",
+          "type": "home"
+        },
+        {
+          "x": 220,
+          "y": 400,
+          "num": 2,
+          "name": "吉梅内斯",
+          "type": "home"
+        },
+        {
+          "x": 290,
+          "y": 390,
+          "num": 16,
+          "name": "奥利维拉",
+          "type": "home"
+        },
+        {
+          "x": 180,
+          "y": 320,
+          "num": 5,
+          "name": "乌加特",
+          "type": "home"
+        },
+        {
+          "x": 110,
+          "y": 300,
+          "num": 15,
+          "name": "巴尔韦德",
+          "type": "home"
+        },
+        {
+          "x": 250,
+          "y": 300,
+          "num": 7,
+          "name": "德拉克鲁斯",
+          "type": "home"
+        },
+        {
+          "x": 70,
+          "y": 210,
+          "num": 11,
+          "name": "佩利斯特里",
+          "type": "home"
+        },
+        {
+          "x": 290,
+          "y": 210,
+          "num": 20,
+          "name": "阿劳霍M",
+          "type": "home"
+        },
+        {
+          "x": 180,
+          "y": 170,
+          "num": 19,
+          "name": "努涅斯",
+          "type": "home"
+        },
+        {
+          "x": 180,
+          "y": 40,
+          "num": 21,
+          "name": "赵贤祐",
+          "type": "away"
+        },
+        {
+          "x": 70,
+          "y": 100,
+          "num": 22,
+          "name": "薛英佑",
+          "type": "away"
+        },
+        {
+          "x": 140,
+          "y": 110,
+          "num": 4,
+          "name": "金玟哉",
+          "type": "away"
+        },
+        {
+          "x": 220,
+          "y": 110,
+          "num": 15,
+          "name": "权敬原",
+          "type": "away"
+        },
+        {
+          "x": 300,
+          "y": 100,
+          "num": 23,
+          "name": "金珍洙",
+          "type": "away"
+        },
+        {
+          "x": 140,
+          "y": 180,
+          "num": 6,
+          "name": "黄仁范",
+          "type": "away"
+        },
+        {
+          "x": 220,
+          "y": 180,
+          "num": 5,
+          "name": "郑又荣",
+          "type": "away"
+        },
+        {
+          "x": 180,
+          "y": 240,
+          "num": 10,
+          "name": "李在成",
+          "type": "away"
+        },
+        {
+          "x": 70,
+          "y": 260,
+          "num": 7,
+          "name": "孙兴慜",
+          "type": "away"
+        },
+        {
+          "x": 290,
+          "y": 260,
+          "num": 18,
+          "name": "李刚仁",
+          "type": "away"
+        },
+        {
+          "x": 180,
+          "y": 310,
+          "num": 11,
+          "name": "黄喜灿",
+          "type": "away"
+        }
+      ]
+    },
+    "verdict": {
+      "score": "2 - 1",
+      "text": "乌拉圭在整体逼抢的侵略性和高强度冲击上略占优势，巴尔韦德的重炮和努涅斯的强突极具杀伤力。但韩国中前场转换也极度犀利，金玟哉的贴身单防能制造很大困难，孙兴慜也有机会在反击中进球。预计乌拉圭 2-1 险胜。"
+    },
+    "squadPlayers": {
+      "home": [
+        {
+          "name": "达尔文·努涅斯",
+          "age": 26,
+          "position": "中锋",
+          "stats": "预选赛8球2助 | 国家队生涯累计30场15球",
+          "role": "冲击型锋线中锋，擅长强力突破、接直传推射，爆发力在美洲区顶级。",
+          "form": "极佳",
+          "ratings": [
+            82,
+            88,
+            70,
+            80,
+            50,
+            78
+          ],
+          "goalDist": {
+            "leftBox": 3,
+            "centerBox": 10,
+            "rightBox": 2,
+            "outsideBox": 0,
+            "conversion": "15.8%"
+          },
+          "defenseDefense": "贝尔萨式前场就地高强度压迫中卫，极力阻断对方后场组织路线。",
+          "defenseWarnings": "小心其利用速度和身体强行冲击中后卫身后空间，盯防需深度保护。"
+        },
+        {
+          "name": "费德里科·巴尔韦德",
+          "age": 27,
+          "position": "中场",
+          "stats": "预选赛3球2助 | 国家队生涯累计60场8球",
+          "role": "中场动力核心，覆盖面积惊人，带球推进与大禁区外起脚远射具备致命威胁。",
+          "form": "极佳",
+          "ratings": [
+            92,
+            84,
+            86,
+            90,
+            82,
+            88
+          ],
+          "goalDist": {
+            "leftBox": 1,
+            "centerBox": 2,
+            "rightBox": 1,
+            "outsideBox": 4,
+            "conversion": "12.0%"
+          },
+          "defenseDefense": "中场的强力扫荡机器，丢球后快速回防封锁中圈和肋部出球线路。",
+          "defenseWarnings": "必须重点封堵其禁区前沿起手远射，防止其带球中路直接摆脱起跑。"
+        },
+        {
+          "name": "罗纳德·阿劳霍",
+          "age": 27,
+          "position": "后卫",
+          "stats": "预选赛1球0助 | 国家队生涯累计22场1球",
+          "role": "防线铁闸，身体强壮，对抗极其硬朗，回追补防速度惊人，擅长一对一盯防。",
+          "form": "极佳",
+          "ratings": [
+            85,
+            65,
+            68,
+            72,
+            92,
+            88
+          ],
+          "goalDist": {
+            "leftBox": 0,
+            "centerBox": 1,
+            "rightBox": 0,
+            "outsideBox": 0,
+            "conversion": "4.5%"
+          },
+          "defenseDefense": "防线核心单防人，负责拦截对方飞翼，门前争顶抢断与补位卡位。",
+          "defenseWarnings": "抢断干净，反击进攻时需尽量避开其防区进行配合突破。"
+        },
+        {
+          "name": "尼古拉斯·德拉克鲁斯",
+          "age": 29,
+          "position": "前腰",
+          "stats": "预选赛4球3助 | 国家队生涯累计28场5球",
+          "role": "前场进攻发动机，擅长快速横向转移、直塞与任意球定位球输送战术。",
+          "form": "良好",
+          "ratings": [
+            80,
+            78,
+            84,
+            80,
+            60,
+            76
+          ],
+          "goalDist": {
+            "leftBox": 1,
+            "centerBox": 2,
+            "rightBox": 1,
+            "outsideBox": 1,
+            "conversion": "11.1%"
+          },
+          "defenseDefense": "协同中场进行高位压迫，拼抢和丢球后的回防速度十分敏捷。",
+          "defenseWarnings": "限制其前场肋部斜塞，注意防范其定位球的精准脚法传中。"
+        }
+      ],
+      "away": [
+        {
+          "name": "孙兴慜",
+          "age": 33,
+          "position": "翼锋",
+          "stats": "预选赛7球2助 | 国家队生涯累计125场48球",
+          "role": "领袖与绝对终结者，双足均衡，速度极其恐怖，内切兜射死角是标志性杀招。",
+          "form": "极佳",
+          "ratings": [
+            84,
+            90,
+            82,
+            84,
+            45,
+            80
+          ],
+          "goalDist": {
+            "leftBox": 12,
+            "centerBox": 18,
+            "rightBox": 8,
+            "outsideBox": 10,
+            "conversion": "19.5%"
+          },
+          "defenseDefense": "留在中前场高位准备反击，阵地防守时回退封阻对方边卫套边线。",
+          "defenseWarnings": "严禁给其大门对角线上的内切起脚空间，需边后卫同后腰随时包夹防范。"
+        },
+        {
+          "name": "黄喜灿",
+          "age": 30,
+          "position": "左翼锋",
+          "stats": "预选赛3球1助 | 国家队生涯累计62场14球",
+          "role": "强力爆破边翼，带球冲击力强，擅长禁区肋部内切做球和接球后强力打门。",
+          "form": "良好",
+          "ratings": [
+            78,
+            82,
+            72,
+            76,
+            50,
+            75
+          ],
+          "goalDist": {
+            "leftBox": 3,
+            "centerBox": 8,
+            "rightBox": 2,
+            "outsideBox": 1,
+            "conversion": "13.8%"
+          },
+          "defenseDefense": "积极回追，在左翼协同薛英佑防范对手前插飞翼的传中线路。",
+          "defenseWarnings": "注意防范其在大禁区内的横向带球冲撞，不可轻易给其起跑空间。"
+        },
+        {
+          "name": "李刚仁",
+          "age": 25,
+          "position": "前腰",
+          "stats": "预选赛4球5助 | 国家队生涯累计30场8球",
+          "role": "右路传中与组织大脑，任意球技术高超，斜传致命球直插禁区是进攻主要法宝。",
+          "form": "极佳",
+          "ratings": [
+            82,
+            80,
+            88,
+            82,
+            55,
+            76
+          ],
+          "goalDist": {
+            "leftBox": 2,
+            "centerBox": 3,
+            "rightBox": 1,
+            "outsideBox": 2,
+            "conversion": "14.8%"
+          },
+          "defenseDefense": "中前场横向封堵，丢球后迅速回防中场防线进行第一道纠缠。",
+          "defenseWarnings": "封死其左脚传中角度，防止其在右路肋部送出直塞穿透中路。"
+        },
+        {
+          "name": "金玟哉",
+          "age": 29,
+          "position": "后卫",
+          "stats": "预选赛1球0助 | 国家队生涯累计65场4球",
+          "role": "后防钢铁巨闸，防守选位顶级，预判精准，具备极强的对抗和防线补防能力。",
+          "form": "极佳",
+          "ratings": [
+            88,
+            68,
+            70,
+            78,
+            92,
+            86
+          ],
+          "goalDist": {
+            "leftBox": 0,
+            "centerBox": 4,
+            "rightBox": 0,
+            "outsideBox": 0,
+            "conversion": "8.0%"
+          },
+          "defenseDefense": "后防线领袖，负责门前补位、滑铲封阻对方前插前锋、拦截高空起球球线。",
+          "defenseWarnings": "上抢精准度极高，尽量避免与其正面一顶一身体缠斗，通过快速导脚打其身后。"
+        }
+      ]
+    }
   }
 }
