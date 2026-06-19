@@ -1149,6 +1149,17 @@ body {
     background: linear-gradient(to left, rgba(239, 68, 68, 0.6), var(--accent-red)) !important;
 }
 
+.usa-aus-theme .away-fill {
+    background: linear-gradient(to left, rgba(245, 158, 11, 0.6), var(--accent-yellow)) !important;
+}
+.sco-mar-theme .away-fill {
+    background: linear-gradient(to left, rgba(16, 185, 129, 0.6), var(--accent-green)) !important;
+}
+.bra-hai-theme .away-fill,
+.tur-par-theme .away-fill {
+    background: linear-gradient(to left, rgba(239, 68, 68, 0.6), var(--accent-red)) !important;
+}
+
 /* Key Player Spotlight */
 .players-spotlight-wrapper {
     display: flex;
@@ -1215,6 +1226,20 @@ body {
 
 .can-qat-theme .away-player .player-photo-placeholder,
 .mex-kor-theme .away-player .player-photo-placeholder {
+    border-color: var(--accent-red);
+    box-shadow: 0 0 15px rgba(239, 68, 68, 0.2);
+}
+
+.usa-aus-theme .away-player .player-photo-placeholder {
+    border-color: var(--accent-yellow);
+    box-shadow: 0 0 15px rgba(245, 158, 11, 0.2);
+}
+.sco-mar-theme .away-player .player-photo-placeholder {
+    border-color: var(--accent-green);
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.2);
+}
+.bra-hai-theme .away-player .player-photo-placeholder,
+.tur-par-theme .away-player .player-photo-placeholder {
     border-color: var(--accent-red);
     box-shadow: 0 0 15px rgba(239, 68, 68, 0.2);
 }
@@ -1355,6 +1380,11 @@ body {
 .can-qat-theme .away-text-accent,
 .mex-kor-theme .away-text-accent { color: var(--accent-red); }
 
+.usa-aus-theme .away-text-accent { color: var(--accent-yellow); }
+.sco-mar-theme .away-text-accent { color: var(--accent-green); }
+.bra-hai-theme .away-text-accent,
+.tur-par-theme .away-text-accent { color: var(--accent-red); }
+
 .injury-list {
     list-style: none;
     display: flex;
@@ -1440,6 +1470,11 @@ body {
 .sui-bih-theme .form-badge.away-bg { background-color: var(--accent-yellow); }
 .can-qat-theme .form-badge.away-bg,
 .mex-kor-theme .form-badge.away-bg { background-color: var(--accent-red); }
+
+.usa-aus-theme .form-badge.away-bg { background-color: var(--accent-yellow); }
+.sco-mar-theme .form-badge.away-bg { background-color: var(--accent-green); }
+.bra-hai-theme .form-badge.away-bg,
+.tur-par-theme .form-badge.away-bg { background-color: var(--accent-red); }
 
 .vs-text {
     font-size: 0.7rem;
@@ -1786,6 +1821,109 @@ body {
 
 .flag-dot.mex::after {
     font-size: 6px;
+}
+
+/* USA Flag */
+.usa {
+    background: linear-gradient(to bottom, #bd3d44 7.7%, #ffffff 7.7%, #ffffff 15.4%, #bd3d44 15.4%, #bd3d44 23%, #ffffff 23%, #ffffff 30.7%, #bd3d44 30.7%, #bd3d44 38.4%, #ffffff 38.4%, #ffffff 46.1%, #bd3d44 46.1%, #bd3d44 53.8%, #ffffff 53.8%, #ffffff 61.5%, #bd3d44 61.5%, #bd3d44 69.2%, #ffffff 69.2%, #ffffff 76.9%, #bd3d44 76.9%, #bd3d44 84.6%, #ffffff 84.6%, #ffffff 92.3%, #bd3d44 92.3%);
+    position: relative;
+}
+.usa::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 45%;
+    height: 53.8%;
+    background-color: #192f5d;
+}
+
+/* Scotland Flag */
+.sco {
+    background: #0065bf;
+    position: relative;
+}
+.sco::before, .sco::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #ffffff;
+}
+.sco::before {
+    transform: translateY(-50%) rotate(30deg);
+}
+.sco::after {
+    transform: translateY(-50%) rotate(-30deg);
+}
+
+/* Brazil Flag */
+.bra {
+    background: #009c3b;
+    position: relative;
+}
+.bra::before {
+    content: '';
+    position: absolute;
+    top: 15%;
+    bottom: 15%;
+    left: 15%;
+    right: 15%;
+    background: #ffdf00;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+.bra::after {
+    content: '';
+    position: absolute;
+    top: 35%;
+    bottom: 35%;
+    left: 35%;
+    right: 35%;
+    background: #002244;
+    border-radius: 50%;
+}
+
+/* Haiti Flag */
+.hai {
+    background: linear-gradient(to bottom, #00209f 50%, #d21034 50%);
+    position: relative;
+}
+.hai::after {
+    content: '';
+    position: absolute;
+    top: 35%;
+    left: 35%;
+    width: 30%;
+    height: 30%;
+    background: #ffffff;
+}
+
+/* Turkey Flag */
+.tur {
+    background: #e30a17;
+    position: relative;
+}
+.tur::after {
+    content: '🌙';
+    position: absolute;
+    top: 50%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    line-height: 1;
+}
+.flag-large.tur::after {
+    font-size: 14px;
+}
+.flag-dot.tur::after {
+    font-size: 6px;
+}
+
+/* Paraguay Flag */
+.par {
+    background: linear-gradient(to bottom, #d1121d 33.3%, #ffffff 33.3%, #ffffff 66.6%, #003893 66.6%);
 }
 
 /* 10. Animations */

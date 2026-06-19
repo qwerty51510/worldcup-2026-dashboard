@@ -386,6 +386,13 @@ function initializeDashboard() {
                 else if (matchId === 'mar-aus') color = '#fbbf24'; // Australia yellow/gold
                 else if (matchId === 'ita-crc') color = '#ef4444'; // Costa Rica red
                 else if (matchId === 'uru-kor') color = '#ef4444'; // South Korea red
+                else if (matchId === 'sui-bih') color = '#f59e0b'; // Bosnia yellow
+                else if (matchId === 'can-qat') color = '#ef4444'; // Qatar red
+                else if (matchId === 'mex-kor') color = '#ef4444'; // Korea red
+                else if (matchId === 'usa-aus') color = '#fbbf24'; // Australia yellow/gold
+                else if (matchId === 'sco-mar') color = '#10b981'; // Morocco green
+                else if (matchId === 'bra-hai') color = '#ef4444'; // Haiti red
+                else if (matchId === 'tur-par') color = '#ef4444'; // Paraguay red
             }
 
             // Circle background
@@ -791,6 +798,10 @@ function initializeDashboard() {
         else if (themeClass.includes('sui-bih') && teamFlag === 'bih') barColor = '#f59e0b';
         else if (themeClass.includes('can-qat') && teamFlag === 'qat') barColor = '#ef4444';
         else if (themeClass.includes('mex-kor') && teamFlag === 'kor') barColor = '#ef4444';
+        else if (themeClass.includes('usa-aus') && teamFlag === 'aus') barColor = '#fbbf24';
+        else if (themeClass.includes('sco-mar') && teamFlag === 'mar') barColor = '#10b981';
+        else if (themeClass.includes('bra-hai') && teamFlag === 'hai') barColor = '#ef4444';
+        else if (themeClass.includes('tur-par') && teamFlag === 'par') barColor = '#ef4444';
 
         distData.forEach(item => {
             const pct = total > 0 ? (item.val / total * 100) : 0;
@@ -1584,6 +1595,184 @@ function initializeDashboard() {
                 runs: [
                     { name: '李刚仁', from: { x: 280, y: 250 }, to: { x: 280, y: 200 }, duration: 800, delay: 0 },
                     { name: '孙兴慜', from: { x: 80, y: 220 }, to: { x: 80, y: 100 }, duration: 1200, delay: 800 }
+                ]
+            }
+        },
+        'usa-aus': {
+            'offense': {
+                caption: '美国 4-3-3 边路渗透：麦肯尼大范围调度，普利西奇横传助攻巴洛贡破网',
+                commentary: [
+                    { time: 0, text: '【麦肯尼中场得球，挑传斜斜吊向左侧】' },
+                    { time: 1000, text: '【普利西奇高速插上卸下皮球，底线倒三角横敲门前！】' },
+                    { time: 2200, text: '【巴洛贡冷静推射右下角破网！⚽ 美国 1-0 澳大利亚】' }
+                ],
+                players: {
+                    '麦肯尼': { x: 120, y: 250 },
+                    '普利西奇': { x: 70, y: 140 },
+                    '巴洛贡': { x: 180, y: 100 },
+                    '阿特金森': { x: 310, y: 230 },
+                    '苏塔尔': { x: 180, y: 280 }
+                },
+                passes: [
+                    { from: { x: 120, y: 250 }, to: { x: 70, y: 140 }, duration: 1000, delay: 0 },
+                    { from: { x: 70, y: 140 }, to: { x: 180, y: 100 }, duration: 1200, delay: 1000 },
+                    { from: { x: 180, y: 100 }, to: { x: 180, y: 15 }, duration: 500, delay: 2200 }
+                ],
+                runs: [
+                    { name: '普利西奇', from: { x: 70, y: 220 }, to: { x: 70, y: 140 }, duration: 1000, delay: 0 },
+                    { name: '巴洛贡', from: { x: 180, y: 170 }, to: { x: 180, y: 100 }, duration: 1000, delay: 1000 }
+                ]
+            },
+            'defense': {
+                caption: '澳大利亚 4-4-2 定位球轰炸：苏塔尔禁区头球摆渡，莱基抢点绝杀',
+                commentary: [
+                    { time: 0, text: '【澳大利亚前场右路获得角球，博伊尔大脚开入禁区】' },
+                    { time: 1000, text: '【高塔苏塔尔禁区内力压理查兹，将头球顶向后点！】' },
+                    { time: 2200, text: '【莱基反越位拍马赶到垫射空门得手！⚽ 美国 0-1 澳大利亚】' }
+                ],
+                players: {
+                    '博伊尔': { x: 270, y: 140 },
+                    '苏塔尔': { x: 180, y: 280 },
+                    '理查兹': { x: 180, y: 380 },
+                    '莱基': { x: 210, y: 80 }
+                },
+                passes: [
+                    { from: { x: 270, y: 140 }, to: { x: 180, y: 280 }, duration: 1000, delay: 0 },
+                    { from: { x: 180, y: 280 }, to: { x: 210, y: 80 }, duration: 1200, delay: 1000 },
+                    { from: { x: 210, y: 80 }, to: { x: 180, y: 15 }, duration: 500, delay: 2200 }
+                ],
+                runs: [
+                    { name: '苏塔尔', from: { x: 220, y: 250 }, to: { x: 180, y: 280 }, duration: 1000, delay: 0 },
+                    { name: '莱基', from: { x: 250, y: 120 }, to: { x: 210, y: 80 }, duration: 1000, delay: 1000 }
+                ]
+            }
+        },
+        'sco-mar': {
+            'offense': {
+                caption: '苏格兰 3-5-2 左翼飞翼：罗伯逊精准传中，麦克托米奈泰山压顶头球破网',
+                commentary: [
+                    { time: 0, text: '【蒂尔尼后场出球，罗伯逊左侧底线处稳稳接球】' },
+                    { time: 1000, text: '【罗伯逊不停球直接弧线斜吊禁区中路！】' },
+                    { time: 2200, text: '【麦克托米奈从弧顶高速前插力压防守，冲顶进网！⚽ 苏格兰 1-0 摩洛哥】' }
+                ],
+                players: {
+                    '罗伯逊': { x: 60, y: 260 },
+                    '麦克托米奈': { x: 230, y: 180 },
+                    '阿格尔德': { x: 150, y: 280 }
+                },
+                passes: [
+                    { from: { x: 110, y: 380 }, to: { x: 60, y: 260 }, duration: 1000, delay: 0 },
+                    { from: { x: 60, y: 260 }, to: { x: 230, y: 180 }, duration: 1200, delay: 1000 },
+                    { from: { x: 230, y: 180 }, to: { x: 180, y: 15 }, duration: 500, delay: 2200 }
+                ],
+                runs: [
+                    { name: '罗伯逊', from: { x: 60, y: 350 }, to: { x: 60, y: 260 }, duration: 1000, delay: 0 },
+                    { name: '麦克托米奈', from: { x: 230, y: 260 }, to: { x: 230, y: 180 }, duration: 1000, delay: 1000 }
+                ]
+            },
+            'defense': {
+                caption: '摩洛哥 4-3-3 极速突防：齐耶赫挑传调度，哈基米右路奔袭单刀横扫',
+                commentary: [
+                    { time: 0, text: '【中场阿姆拉巴特铲断得球，推传给右侧齐耶赫】' },
+                    { time: 1000, text: '【齐耶赫得球金左脚精妙挑传，阿什拉夫插身后超速生吃防线！】' },
+                    { time: 2200, text: '【阿什拉夫带球直奔禁区抽射死角！球进了！⚽ 苏格兰 0-1 摩洛哥】' }
+                ],
+                players: {
+                    '齐耶赫': { x: 280, y: 90 },
+                    '阿什拉夫': { x: 280, y: 220 },
+                    '汉利': { x: 180, y: 380 }
+                },
+                passes: [
+                    { from: { x: 180, y: 190 }, to: { x: 280, y: 90 }, duration: 1000, delay: 0 },
+                    { from: { x: 280, y: 90 }, to: { x: 280, y: 220 }, duration: 1200, delay: 1000 },
+                    { from: { x: 280, y: 220 }, to: { x: 180, y: 15 }, duration: 500, delay: 2200 }
+                ],
+                runs: [
+                    { name: '阿什拉夫', from: { x: 280, y: 300 }, to: { x: 280, y: 220 }, duration: 1200, delay: 800 }
+                ]
+            }
+        },
+        'bra-hai': {
+            'offense': {
+                caption: '巴西 4-2-3-1 桑巴舞蹈：吉马良斯中圈直塞，维尼修斯彩虹晃人推远角',
+                commentary: [
+                    { time: 0, text: '【吉马良斯接应，精准地面低平球直塞穿透两道防线】' },
+                    { time: 1000, text: '【维尼修斯左侧底线得球，假动作晃翻海地守卫强切入禁区！】' },
+                    { time: 2200, text: '【维尼修斯门前轻巧挑射破门！⚽ 巴西 1-0 海地】' }
+                ],
+                players: {
+                    '吉马良斯': { x: 150, y: 240 },
+                    '维尼修斯': { x: 80, y: 140 },
+                    '阿尔库斯': { x: 230, y: 290 }
+                },
+                passes: [
+                    { from: { x: 150, y: 240 }, to: { x: 80, y: 140 }, duration: 1000, delay: 0 },
+                    { from: { x: 80, y: 140 }, to: { x: 180, y: 15 }, duration: 500, delay: 2200 }
+                ],
+                runs: [
+                    { name: '维尼修斯', from: { x: 80, y: 240 }, to: { x: 80, y: 140 }, duration: 1000, delay: 0 }
+                ]
+            },
+            'defense': {
+                caption: '海地 5-4-1 空中攻势：格里尔后场长传，佩罗特胸部停球抽射大门',
+                commentary: [
+                    { time: 0, text: '【格里尔抢断巴西拉菲尼亚，大脚向前开到前场】' },
+                    { time: 1000, text: '【佩罗特胸部停球，倚住加布里埃尔后半转身凌空打门！】' },
+                    { time: 2200, text: '【皮球炮弹般飞向近角！巴西大门受到严峻考验！】' }
+                ],
+                players: {
+                    '格里尔': { x: 80, y: 250 },
+                    '佩罗特': { x: 180, y: 80 },
+                    '加布里埃尔': { x: 210, y: 380 }
+                },
+                passes: [
+                    { from: { x: 80, y: 250 }, to: { x: 180, y: 80 }, duration: 1000, delay: 0 }
+                ],
+                runs: [
+                    { name: '佩罗特', from: { x: 180, y: 150 }, to: { x: 180, y: 80 }, duration: 1000, delay: 0 }
+                ]
+            }
+        },
+        'tur-par': {
+            'offense': {
+                caption: '土耳其 4-2-3-1 核心调度：恰尔汗奥卢精准大长传，阿尔佩尔垫射破门',
+                commentary: [
+                    { time: 0, text: '【恰尔汗奥卢中场拿球观察，送出一记30米精准空中长传】' },
+                    { time: 1000, text: '【伊尔马兹左侧跑位卸下皮球，倒三角敲向门前！】' },
+                    { time: 2200, text: '【阿尔佩尔迎球直接垫射入死角！⚽ 土耳其 1-0 巴拉圭】' }
+                ],
+                players: {
+                    '恰尔汗奥卢': { x: 150, y: 240 },
+                    '伊尔马兹': { x: 80, y: 140 },
+                    '巴尔武埃纳': { x: 210, y: 280 }
+                },
+                passes: [
+                    { from: { x: 150, y: 240 }, to: { x: 80, y: 140 }, duration: 1000, delay: 0 },
+                    { from: { x: 80, y: 140 }, to: { x: 180, y: 15 }, duration: 500, delay: 2200 }
+                ],
+                runs: [
+                    { name: '伊尔马兹', from: { x: 80, y: 230 }, to: { x: 80, y: 140 }, duration: 1000, delay: 0 }
+                ]
+            },
+            'defense': {
+                caption: '巴拉圭 4-3-3 快速闪电反击：恩西索直塞，阿尔米隆长驱直入劲射破门',
+                commentary: [
+                    { time: 0, text: '【中场拦截断下土耳其球权，恩西索得球不停顿瞬间直塞】' },
+                    { time: 1000, text: '【阿尔米隆右翼反越位连过两人，高速切入大禁区！】' },
+                    { time: 2200, text: '【阿尔米隆冷静推射远角得手！⚽ 土耳其 0-1 巴拉圭】' }
+                ],
+                players: {
+                    '恩西索': { x: 80, y: 90 },
+                    '阿尔米隆': { x: 280, y: 90 },
+                    '卡迪奥卢': { x: 80, y: 320 }
+                },
+                passes: [
+                    { from: { x: 80, y: 130 }, to: { x: 80, y: 90 }, duration: 1000, delay: 0 },
+                    { from: { x: 80, y: 90 }, to: { x: 280, y: 90 }, duration: 1200, delay: 1000 },
+                    { from: { x: 280, y: 90 }, to: { x: 180, y: 15 }, duration: 500, delay: 2200 }
+                ],
+                runs: [
+                    { name: '阿尔米隆', from: { x: 280, y: 200 }, to: { x: 280, y: 90 }, duration: 1200, delay: 800 }
                 ]
             }
         }
