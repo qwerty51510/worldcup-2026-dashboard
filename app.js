@@ -393,6 +393,10 @@ function initializeDashboard() {
                 else if (matchId === 'sco-mar') color = '#10b981'; // Morocco green
                 else if (matchId === 'bra-hai') color = '#ef4444'; // Haiti red
                 else if (matchId === 'tur-par') color = '#ef4444'; // Paraguay red
+                else if (matchId === 'ger-civ') color = '#10b981'; // Cote d'Ivoire green
+                else if (matchId === 'ned-swe') color = '#fbbf24'; // Sweden yellow
+                else if (matchId === 'ecu-cur') color = '#fbbf24'; // Curacao yellow
+                else if (matchId === 'tun-jpn') color = '#3b82f6'; // Japan blue
             }
 
             // Circle background
@@ -802,6 +806,10 @@ function initializeDashboard() {
         else if (themeClass.includes('sco-mar') && teamFlag === 'mar') barColor = '#10b981';
         else if (themeClass.includes('bra-hai') && teamFlag === 'hai') barColor = '#ef4444';
         else if (themeClass.includes('tur-par') && teamFlag === 'par') barColor = '#ef4444';
+        else if (themeClass.includes('ger-civ') && teamFlag === 'civ') barColor = '#10b981';
+        else if (themeClass.includes('ned-swe') && teamFlag === 'swe') barColor = '#fbbf24';
+        else if (themeClass.includes('ecu-cur') && teamFlag === 'cur') barColor = '#fbbf24';
+        else if (themeClass.includes('tun-jpn') && teamFlag === 'jpn') barColor = '#3b82f6';
 
         distData.forEach(item => {
             const pct = total > 0 ? (item.val / total * 100) : 0;
@@ -1773,6 +1781,198 @@ function initializeDashboard() {
                 ],
                 runs: [
                     { name: '阿尔米隆', from: { x: 280, y: 200 }, to: { x: 280, y: 90 }, duration: 1200, delay: 800 }
+                ]
+            }
+        },
+        'ger-civ': {
+            'offense': {
+                caption: '德国 4-2-3-1 经典前场渗透：双子星肋部配合与哈弗茨抢点',
+                commentary: [
+                    { time: 0, text: '【克罗斯中场左侧拿球，大范围低平球斜传右路肋部】' },
+                    { time: 1000, text: '【维尔茨右路突破吸引包夹，横传中路给穆西亚拉】' },
+                    { time: 2200, text: '【穆西亚拉脚后跟轻巧挑传禁区，哈弗茨门前冷静推射入网！⚽ 德国 1-0 科特迪瓦】' }
+                ],
+                players: {
+                    '克罗斯': { x: 130, y: 280 },
+                    '维尔茨': { x: 270, y: 140 },
+                    '穆西亚拉': { x: 180, y: 180 },
+                    '哈弗茨': { x: 180, y: 90 },
+                    '恩迪卡': { x: 140, y: 290 },
+                    '科索努': { x: 220, y: 290 }
+                },
+                passes: [
+                    { from: { x: 130, y: 280 }, to: { x: 270, y: 140 }, duration: 1000, delay: 0 },
+                    { from: { x: 270, y: 140 }, to: { x: 180, y: 180 }, duration: 800, delay: 1000 },
+                    { from: { x: 180, y: 180 }, to: { x: 180, y: 90 }, duration: 400, delay: 1800 },
+                    { from: { x: 180, y: 90 }, to: { x: 180, y: 15 }, duration: 400, delay: 2200 }
+                ],
+                runs: [
+                    { name: '维尔茨', from: { x: 270, y: 200 }, to: { x: 270, y: 140 }, duration: 1000, delay: 0 },
+                    { name: '穆西亚拉', from: { x: 90, y: 140 }, to: { x: 180, y: 180 }, duration: 1000, delay: 500 },
+                    { name: '哈弗茨', from: { x: 180, y: 140 }, to: { x: 180, y: 90 }, duration: 600, delay: 1600 }
+                ]
+            },
+            'defense': {
+                caption: '科特迪瓦 4-3-3 深度防守阻断与阿丁格拉快速突击',
+                commentary: [
+                    { time: 0, text: '【德国队维尔茨在右侧肋部斜传，尝试寻找禁区内的哈弗茨】' },
+                    { time: 1000, text: '【科特迪瓦后腰凯西飞身铲截，精准断下球权！🛡️】' },
+                    { time: 2200, text: '【得球后凯西送出长距离斜塞，阿丁格拉高速沿右翼插上突防！】' }
+                ],
+                players: {
+                    '维尔茨': { x: 270, y: 140 },
+                    '哈弗茨': { x: 180, y: 90 },
+                    '凯西': { x: 130, y: 160 },
+                    '阿丁格拉': { x: 90, y: 110 },
+                    '劳姆': { x: 70, y: 360 }
+                },
+                passes: [
+                    { from: { x: 270, y: 140 }, to: { x: 180, y: 90 }, duration: 1000, delay: 0 },
+                    { from: { x: 130, y: 160 }, to: { x: 90, y: 110 }, duration: 1200, delay: 1000 }
+                ],
+                runs: [
+                    { name: '凯西', from: { x: 180, y: 210 }, to: { x: 130, y: 160 }, duration: 800, delay: 200 },
+                    { name: '阿丁格拉', from: { x: 90, y: 240 }, to: { x: 90, y: 110 }, duration: 1200, delay: 1000 }
+                ]
+            }
+        },
+        'ned-swe': {
+            'offense': {
+                caption: '荷兰 4-3-3 经典进攻配合：德容发牌与加克波标志性内切',
+                commentary: [
+                    { time: 0, text: '【德容在中场底线得球转身，送出精准弧线斜塞】' },
+                    { time: 1000, text: '【加克波左侧接应，盘带大步内切晃开瑞典右后卫】' },
+                    { time: 2200, text: '【加克波在大禁区边缘右脚抽射死角入球门！⚽ 荷兰 1-0 瑞典】' }
+                ],
+                players: {
+                    '德容': { x: 180, y: 280 },
+                    '加克波': { x: 70, y: 140 },
+                    '克拉夫特': { x: 280, y: 240 },
+                    '林德洛夫': { x: 140, y: 290 }
+                },
+                passes: [
+                    { from: { x: 180, y: 280 }, to: { x: 70, y: 140 }, duration: 1000, delay: 0 },
+                    { from: { x: 70, y: 140 }, to: { x: 180, y: 15 }, duration: 500, delay: 2200 }
+                ],
+                runs: [
+                    { name: '加克波', from: { x: 70, y: 220 }, to: { x: 70, y: 140 }, duration: 1000, delay: 0 }
+                ]
+            },
+            'defense': {
+                caption: '瑞典 4-4-2 深度防空与约克雷斯野兽推进反击',
+                commentary: [
+                    { time: 0, text: '【荷兰队邓弗里斯在右路高空起球传中】' },
+                    { time: 1000, text: '【瑞典队长林德洛夫禁区内抢点大脚解围！🛡️】' },
+                    { time: 2200, text: '【中圈附近约克雷斯抢下第二落点，用身体硬抗范戴克，强行生吃劲射破门！】' }
+                ],
+                players: {
+                    '邓弗里斯': { x: 290, y: 350 },
+                    '林德洛夫': { x: 140, y: 290 },
+                    '约克雷斯': { x: 210, y: 80 },
+                    '范戴克': { x: 140, y: 380 }
+                },
+                passes: [
+                    { from: { x: 290, y: 350 }, to: { x: 140, y: 290 }, duration: 1000, delay: 0 },
+                    { from: { x: 140, y: 290 }, to: { x: 210, y: 80 }, duration: 1200, delay: 1000 },
+                    { from: { x: 210, y: 80 }, to: { x: 180, y: 15 }, duration: 500, delay: 2200 }
+                ],
+                runs: [
+                    { name: '约克雷斯', from: { x: 210, y: 190 }, to: { x: 210, y: 80 }, duration: 1200, delay: 1000 }
+                ]
+            }
+        },
+        'ecu-cur': {
+            'offense': {
+                caption: '厄瓜多尔 4-2-3-1 侧翼压迫与瓦伦西亚头槌轰门',
+                commentary: [
+                    { time: 0, text: '【凯塞多中路大脚分给左翼，埃斯图皮尼安高速前插】' },
+                    { time: 1000, text: '【埃斯图皮尼安下底扣过防守队员，起脚斜传禁区前点】' },
+                    { time: 2200, text: '【老将瓦伦西亚高高跃起，强力头槌砸入网窝！⚽ 厄瓜多尔 1-0 库拉索】' }
+                ],
+                players: {
+                    '凯塞多': { x: 130, y: 280 },
+                    '帕乔': { x: 70, y: 350 },
+                    '瓦伦西亚': { x: 180, y: 90 },
+                    '玛蒂娜': { x: 130, y: 290 }
+                },
+                passes: [
+                    { from: { x: 130, y: 280 }, to: { x: 70, y: 350 }, duration: 1000, delay: 0 },
+                    { from: { x: 70, y: 350 }, to: { x: 180, y: 90 }, duration: 1200, delay: 1000 },
+                    { from: { x: 180, y: 90 }, to: { x: 180, y: 15 }, duration: 500, delay: 2200 }
+                ],
+                runs: [
+                    { name: '瓦伦西亚', from: { x: 180, y: 150 }, to: { x: 180, y: 90 }, duration: 1000, delay: 800 }
+                ]
+            },
+            'defense': {
+                caption: '库拉索 5-4-1 极密铁桶防守与庄奴闪电单骑反击',
+                commentary: [
+                    { time: 0, text: '【厄瓜多尔派斯直塞禁区，玛蒂娜精准将球滑铲截断！🛡️】' },
+                    { time: 1000, text: '【鲁姆得球大脚传给中圈附近，巴库纳头球摆渡】' },
+                    { time: 2200, text: '【前锋庄奴接球大步趟过厄瓜多尔因卡皮耶，单刀冷静推射得分！】' }
+                ],
+                players: {
+                    '派斯': { x: 180, y: 180 },
+                    '玛蒂娜': { x: 130, y: 290 },
+                    '鲁姆': { x: 180, y: 350 },
+                    'J.巴库纳': { x: 270, y: 130 },
+                    '庄奴': { x: 180, y: 80 }
+                },
+                passes: [
+                    { from: { x: 180, y: 180 }, to: { x: 130, y: 290 }, duration: 800, delay: 0 },
+                    { from: { x: 130, y: 290 }, to: { x: 270, y: 130 }, duration: 1200, delay: 800 },
+                    { from: { x: 270, y: 130 }, to: { x: 180, y: 80 }, duration: 1000, delay: 2000 }
+                ],
+                runs: [
+                    { name: '庄奴', from: { x: 180, y: 180 }, to: { x: 180, y: 80 }, duration: 1200, delay: 1800 }
+                ]
+            }
+        },
+        'tun-jpn': {
+            'offense': {
+                caption: '日本 4-2-3-1 极致传切：远藤航发点与三笘薰爆破内切',
+                commentary: [
+                    { time: 0, text: '【日本队长远藤航中圈断球摆脱斯希里，斜塞左侧】' },
+                    { time: 1000, text: '【三笘薰左翼狂飚强突德里格，趟球闪入底线横传门前】' },
+                    { time: 2200, text: '【久保建英拍马赶到，迎球铲射得手！⚽ 突尼斯 0-1 日本】' }
+                ],
+                players: {
+                    '远藤航': { x: 140, y: 200 },
+                    '斯希里': { x: 130, y: 270 },
+                    '三笘薰': { x: 80, y: 100 },
+                    '久保建英': { x: 280, y: 100 },
+                    '德里格': { x: 60, y: 340 }
+                },
+                passes: [
+                    { from: { x: 140, y: 200 }, to: { x: 80, y: 100 }, duration: 1000, delay: 0 },
+                    { from: { x: 80, y: 100 }, to: { x: 280, y: 100 }, duration: 1200, delay: 1000 },
+                    { from: { x: 280, y: 100 }, to: { x: 180, y: 15 }, duration: 500, delay: 2200 }
+                ],
+                runs: [
+                    { name: '三笘薰', from: { x: 80, y: 200 }, to: { x: 80, y: 100 }, duration: 1000, delay: 0 },
+                    { name: '久保建英', from: { x: 280, y: 180 }, to: { x: 280, y: 100 }, duration: 1200, delay: 800 }
+                ]
+            },
+            'defense': {
+                caption: '突尼斯 5-4-1 密集防守拦截与斯希里扫荡阻断',
+                commentary: [
+                    { time: 0, text: '【日本队久保建英前沿盘带直塞，试图寻找南野拓实】' },
+                    { time: 1000, text: '【突尼斯核心斯希里强硬卡位将直塞球稳稳断下！🛡️】' },
+                    { time: 2200, text: '【断球后斯希里一脚长传斜挑右侧，拉菲亚胸部停球发起突袭！】' }
+                ],
+                players: {
+                    '久保建英': { x: 280, y: 100 },
+                    '南野拓实': { x: 180, y: 140 },
+                    '斯希里': { x: 130, y: 270 },
+                    '拉菲亚': { x: 90, y: 210 }
+                },
+                passes: [
+                    { from: { x: 280, y: 100 }, to: { x: 180, y: 140 }, duration: 1000, delay: 0 },
+                    { from: { x: 130, y: 270 }, to: { x: 90, y: 210 }, duration: 1200, delay: 1000 }
+                ],
+                runs: [
+                    { name: '斯希里', from: { x: 180, y: 270 }, to: { x: 130, y: 270 }, duration: 800, delay: 200 },
+                    { name: '拉菲亚', from: { x: 90, y: 310 }, to: { x: 90, y: 210 }, duration: 1200, delay: 1000 }
                 ]
             }
         }
