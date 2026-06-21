@@ -395,6 +395,19 @@ function initializeDashboard() {
             }
         }
 
+        // Betting predictions rendering
+        const bettingContainer = document.getElementById('market-betting-container');
+        if (bettingContainer) {
+            if (data.bettingPrediction) {
+                bettingContainer.style.display = 'block';
+                document.getElementById('bet-handicap-val').innerText = data.bettingPrediction.handicap;
+                document.getElementById('bet-totals-val').innerText = data.bettingPrediction.totals;
+                document.getElementById('bet-recommend-text').innerHTML = `<strong>${data.bettingPrediction.recommendation}</strong><br><span style="font-size:0.7rem; color:var(--text-muted);">${data.bettingPrediction.reason}</span>`;
+            } else {
+                bettingContainer.style.display = 'none';
+            }
+        }
+
         // Tactical Formations and Pitch SVGs
         document.getElementById('form-badge-home').innerText = data.tactics.homeForm;
         document.getElementById('form-badge-away').innerText = data.tactics.awayForm;

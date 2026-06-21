@@ -768,6 +768,25 @@
                                         <p class="verdict-text" id="verdict-paragraph">
                                             正在加载 AI 数据研判预测中，请稍候...
                                         </p>
+
+                                        <!-- Betting predictions container -->
+                                        <div class="market-betting-container" id="market-betting-container" style="display: none; margin-top: 14px; padding: 14px; background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-color); border-radius: 10px; backdrop-filter: blur(8px); text-align: left;">
+                                            <div class="betting-title" style="font-size: 0.78rem; font-weight: 700; color: var(--text-primary); margin-bottom: 8px; display: flex; align-items: center; gap: 6px;">🎯 让分与大小球决策参考</div>
+                                            <div class="betting-grid" style="display: flex; gap: 10px; margin-bottom: 8px;">
+                                                <div class="betting-card" style="flex: 1; background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 6px; padding: 8px 10px; display: flex; flex-direction: column; gap: 4px;">
+                                                    <span class="betting-label" style="font-size: 0.68rem; color: var(--text-muted);">让分方向 (Handicap)</span>
+                                                    <span class="betting-value" id="bet-handicap-val" style="font-size: 0.8rem; font-weight: 700; color: #60a5fa;">--</span>
+                                                </div>
+                                                <div class="betting-card" style="flex: 1; background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 6px; padding: 8px 10px; display: flex; flex-direction: column; gap: 4px;">
+                                                    <span class="betting-label" style="font-size: 0.68rem; color: var(--text-muted);">进球大小 (Over/Under)</span>
+                                                    <span class="betting-value" id="bet-totals-val" style="font-size: 0.8rem; font-weight: 700; color: #34d399;">--</span>
+                                                 </div>
+                                            </div>
+                                            <div class="betting-recommendation" style="background: rgba(59, 130, 246, 0.05); border: 1px solid rgba(59, 130, 246, 0.15); border-radius: 6px; padding: 8px 10px; display: flex; flex-direction: column; gap: 4px;">
+                                                <div class="recommend-badge" style="font-size: 0.68rem; font-weight: 700; color: #fbbf24; display: flex; align-items: center; gap: 4px;">🌟 胜率最高推荐</div>
+                                                <div class="recommend-text" id="bet-recommend-text" style="font-size: 0.72rem; color: var(--text-secondary); line-height: 1.4;">正在分析推荐方案...</div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
