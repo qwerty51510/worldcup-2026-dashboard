@@ -356,6 +356,45 @@ function initializeDashboard() {
         document.getElementById('pred-score-val').innerText = data.verdict.score;
         document.getElementById('verdict-paragraph').innerText = data.verdict.text;
 
+        // Polymarket Predictions
+        const marketOddsContainer = document.querySelector('.market-odds-container');
+        if (marketOddsContainer) {
+            if (data.marketPrediction) {
+                marketOddsContainer.style.display = 'block';
+                const homePred = data.marketPrediction.polymarketOdds.homeWin;
+                const drawPred = data.marketPrediction.polymarketOdds.draw;
+                const awayPred = data.marketPrediction.polymarketOdds.awayWin;
+
+                // Animate or set widths with a small timeout for render registration
+                setTimeout(() => {
+                    document.getElementById('odds-home-bar').style.width = `${homePred}%`;
+                    document.getElementById('odds-draw-bar').style.width = `${drawPred}%`;
+                    document.getElementById('odds-away-bar').style.width = `${awayPred}%`;
+                }, 50);
+
+                // Set labels
+                document.getElementById('odds-home-lbl').innerText = `主胜: ${homePred}%`;
+                document.getElementById('odds-draw-lbl').innerText = `平局: ${drawPred}%`;
+                document.getElementById('odds-away-lbl').innerText = `客胜: ${awayPred}%`;
+
+                // Set Sentiment
+                const sentimentEl = document.getElementById('market-sentiment-val');
+                if (sentimentEl) {
+                    if (data.marketPrediction.marketSentiment) {
+                        sentimentEl.style.display = 'block';
+                        sentimentEl.innerHTML = `<strong>🗣️ 资金情绪：</strong>${data.marketPrediction.marketSentiment}`;
+                    } else {
+                        sentimentEl.style.display = 'none';
+                    }
+                }
+            } else {
+                marketOddsContainer.style.display = 'none';
+                document.getElementById('odds-home-bar').style.width = `0%`;
+                document.getElementById('odds-draw-bar').style.width = `0%`;
+                document.getElementById('odds-away-bar').style.width = `0%`;
+            }
+        }
+
         // Tactical Formations and Pitch SVGs
         document.getElementById('form-badge-home').innerText = data.tactics.homeForm;
         document.getElementById('form-badge-away').innerText = data.tactics.awayForm;
@@ -397,6 +436,10 @@ function initializeDashboard() {
                 else if (matchId === 'ned-swe') color = '#fbbf24'; // Sweden yellow
                 else if (matchId === 'ecu-cur') color = '#fbbf24'; // Curacao yellow
                 else if (matchId === 'tun-jpn') color = '#3b82f6'; // Japan blue
+                else if (matchId === 'esp-sau') color = '#10b981'; // Saudi Arabia green
+                else if (matchId === 'bel-irn') color = '#10b981'; // Iran green
+                else if (matchId === 'uru-cpv') color = '#fbbf24'; // Cape Verde yellow
+                else if (matchId === 'nzl-egy') color = '#ef4444'; // Egypt red
             }
 
             // Circle background
@@ -810,6 +853,14 @@ function initializeDashboard() {
         else if (themeClass.includes('ned-swe') && teamFlag === 'swe') barColor = '#fbbf24';
         else if (themeClass.includes('ecu-cur') && teamFlag === 'cur') barColor = '#fbbf24';
         else if (themeClass.includes('tun-jpn') && teamFlag === 'jpn') barColor = '#3b82f6';
+        else if (themeClass.includes('esp-sau') && teamFlag === 'esp') barColor = '#ef4444';
+        else if (themeClass.includes('esp-sau') && teamFlag === 'sau') barColor = '#10b981';
+        else if (themeClass.includes('bel-irn') && teamFlag === 'bel') barColor = '#ef4444';
+        else if (themeClass.includes('bel-irn') && teamFlag === 'irn') barColor = '#10b981';
+        else if (themeClass.includes('uru-cpv') && teamFlag === 'uru') barColor = '#3b82f6';
+        else if (themeClass.includes('uru-cpv') && teamFlag === 'cpv') barColor = '#fbbf24';
+        else if (themeClass.includes('nzl-egy') && teamFlag === 'nzl') barColor = '#9ca3af';
+        else if (themeClass.includes('nzl-egy') && teamFlag === 'egy') barColor = '#ef4444';
 
         distData.forEach(item => {
             const pct = total > 0 ? (item.val / total * 100) : 0;
@@ -1973,6 +2024,193 @@ function initializeDashboard() {
                 runs: [
                     { name: '斯希里', from: { x: 180, y: 270 }, to: { x: 130, y: 270 }, duration: 800, delay: 200 },
                     { name: '拉菲亚', from: { x: 90, y: 310 }, to: { x: 90, y: 210 }, duration: 1200, delay: 1000 }
+                ]
+            }
+        },
+        'esp-sau': {
+            'offense': {
+                caption: '西班牙 4-3-3 传切体系：罗德里中场发牌与双翼齐飞斜塞',
+                commentary: [
+                    { time: 0, text: '【罗德里在中场稳健持球，分球给右翼高速插上的亚马尔】' },
+                    { time: 1000, text: '【亚马尔内切吸引三人防守，送出一记精彩的斜塞球打穿后防！】' },
+                    { time: 2200, text: '【尼科·威廉姆斯禁区左侧拍马赶到，不停球推射远角破门！⚽ 西班牙 1-0 沙特】' }
+                ],
+                players: {
+                    '罗德里': { x: 180, y: 240 },
+                    '亚马尔': { x: 290, y: 160 },
+                    '尼科·威廉姆斯': { x: 80, y: 110 },
+                    '奥尔莫': { x: 180, y: 120 },
+                    '布莱希': { x: 140, y: 110 },
+                    '阿劳杰': { x: 210, y: 100 }
+                },
+                passes: [
+                    { from: { x: 180, y: 240 }, to: { x: 290, y: 160 }, duration: 1000, delay: 0 },
+                    { from: { x: 290, y: 160 }, to: { x: 80, y: 110 }, duration: 1200, delay: 1000 },
+                    { from: { x: 80, y: 110 }, to: { x: 180, y: 15 }, duration: 500, delay: 2200 }
+                ],
+                runs: [
+                    { name: '亚马尔', from: { x: 290, y: 220 }, to: { x: 290, y: 160 }, duration: 1000, delay: 0 },
+                    { name: '尼科·威廉姆斯', from: { x: 70, y: 180 }, to: { x: 80, y: 110 }, duration: 1000, delay: 800 }
+                ]
+            },
+            'defense': {
+                caption: '沙特 5-4-1 大巴锁防与达瓦萨里快速反突击',
+                commentary: [
+                    { time: 0, text: '【西班牙奥尔莫前场中路分球，尝试塞给肋部插上的莫拉塔】' },
+                    { time: 1000, text: '【沙特后腰卡诺强硬卡位抢断，大脚将球分给边路的达瓦萨里！🛡️】' },
+                    { time: 2200, text: '【达瓦萨里得球后连停带过，长驱直入斜插西班牙腹地！】' }
+                ],
+                players: {
+                    '卡诺': { x: 160, y: 200 },
+                    '萨利姆·阿尔-达瓦萨里': { x: 80, y: 130 },
+                    '奥尔莫': { x: 180, y: 210 },
+                    '莫拉塔': { x: 150, y: 130 },
+                    '卡瓦哈尔': { x: 90, y: 220 }
+                },
+                passes: [
+                    { from: { x: 180, y: 210 }, to: { x: 160, y: 200 }, duration: 800, delay: 0 },
+                    { from: { x: 160, y: 200 }, to: { x: 80, y: 130 }, duration: 1200, delay: 1000 }
+                ],
+                runs: [
+                    { name: '卡诺', from: { x: 180, y: 240 }, to: { x: 160, y: 200 }, duration: 800, delay: 200 },
+                    { name: '萨利姆·阿尔-达瓦萨里', from: { x: 70, y: 220 }, to: { x: 80, y: 130 }, duration: 1200, delay: 1000 }
+                ]
+            }
+        },
+        'bel-irn': {
+            'offense': {
+                caption: '比利时 4-2-3-1 中场压制：德布劳内致命斜塞与多库强突',
+                commentary: [
+                    { time: 0, text: '【凯文·德布劳内中场起脚，精准长传大范围转移至左翼】' },
+                    { time: 1000, text: '【多库左路高速强突，连过两人低平球送入禁区前点】' },
+                    { time: 2200, text: '【奥蓬达迎球冲顶铲射挂网！⚽ 比利时 1-0 伊朗】' }
+                ],
+                players: {
+                    '凯文·德布劳内': { x: 180, y: 260 },
+                    '多库': { x: 60, y: 120 },
+                    '奥蓬达': { x: 180, y: 95 },
+                    '卡纳尼': { x: 160, y: 100 }
+                },
+                passes: [
+                    { from: { x: 180, y: 260 }, to: { x: 60, y: 120 }, duration: 1000, delay: 0 },
+                    { from: { x: 60, y: 120 }, to: { x: 180, y: 95 }, duration: 1200, delay: 1000 },
+                    { from: { x: 180, y: 95 }, to: { x: 180, y: 15 }, duration: 500, delay: 2200 }
+                ],
+                runs: [
+                    { name: '多库', from: { x: 60, y: 210 }, to: { x: 60, y: 120 }, duration: 1000, delay: 0 },
+                    { name: '奥蓬达', from: { x: 180, y: 160 }, to: { x: 180, y: 95 }, duration: 1000, delay: 800 }
+                ]
+            },
+            'defense': {
+                caption: '伊朗 4-4-2 硬朗反击：哈伊萨菲扫荡与塔雷米背身卸球',
+                commentary: [
+                    { time: 0, text: '【比利时特罗萨德前场做球，被伊朗老将哈伊萨菲识破】' },
+                    { time: 1000, text: '【哈伊萨菲倒地大脚铲传拦截，传给回撤接应的塔雷米！🛡️】' },
+                    { time: 2200, text: '【迈赫迪·塔雷米用身体硬扛费尔通亨，斜塞分给插上的阿兹蒙！】' }
+                ],
+                players: {
+                    '特罗萨德': { x: 230, y: 210 },
+                    '哈伊萨菲': { x: 180, y: 180 },
+                    '迈赫迪·塔雷米': { x: 160, y: 120 },
+                    '费尔通亨': { x: 150, y: 110 },
+                    '阿兹蒙': { x: 260, y: 110 }
+                },
+                passes: [
+                    { from: { x: 230, y: 210 }, to: { x: 180, y: 180 }, duration: 800, delay: 0 },
+                    { from: { x: 180, y: 180 }, to: { x: 160, y: 120 }, duration: 1000, delay: 1000 },
+                    { from: { x: 160, y: 120 }, to: { x: 260, y: 110 }, duration: 1000, delay: 2200 }
+                ],
+                runs: [
+                    { name: '迈赫迪·塔雷米', from: { x: 160, y: 80 }, to: { x: 160, y: 120 }, duration: 1000, delay: 800 },
+                    { name: '阿兹蒙', from: { x: 260, y: 180 }, to: { x: 260, y: 110 }, duration: 1000, delay: 1500 }
+                ]
+            }
+        },
+        'uru-cpv': {
+            'offense': {
+                caption: '乌拉圭 4-3-3 压迫进攻：巴尔韦德重炮轰门与努涅斯包抄',
+                commentary: [
+                    { time: 0, text: '【费德里科·巴尔韦德右肋盘带推进，送出高质量传中】' },
+                    { time: 1000, text: '【传球直指禁区深处，努涅斯利用身形卡住佛得角后卫皮科】' },
+                    { time: 2200, text: '【努涅斯强力头槌飞入球门右上角！⚽ 乌拉圭 1-0 佛得角】' }
+                ],
+                players: {
+                    '费德里科·巴尔韦德': { x: 270, y: 210 },
+                    '努涅斯': { x: 180, y: 95 },
+                    '皮科': { x: 150, y: 100 }
+                },
+                passes: [
+                    { from: { x: 270, y: 210 }, to: { x: 180, y: 95 }, duration: 1000, delay: 0 },
+                    { from: { x: 180, y: 95 }, to: { x: 180, y: 15 }, duration: 500, delay: 2200 }
+                ],
+                runs: [
+                    { name: '努涅斯', from: { x: 180, y: 150 }, to: { x: 180, y: 95 }, duration: 1000, delay: 800 }
+                ]
+            },
+            'defense': {
+                caption: '佛得角 5-4-1 拦截与瑞安·门德斯极速反击',
+                commentary: [
+                    { time: 0, text: '【乌拉圭中场本坦库尔长传，被佛得角后腰科斯塔卡位断下】' },
+                    { time: 1000, text: '【科斯塔得球大脚横传，准确给到右翼起动的门德斯！🛡️】' },
+                    { time: 2200, text: '【瑞安·门德斯利用速度生吃吉梅内斯，内切直插禁区冷射！】' }
+                ],
+                players: {
+                    '本坦库尔': { x: 180, y: 240 },
+                    '科斯塔': { x: 160, y: 190 },
+                    '瑞安·门德斯': { x: 80, y: 120 },
+                    '吉梅内斯': { x: 90, y: 180 }
+                },
+                passes: [
+                    { from: { x: 180, y: 240 }, to: { x: 160, y: 190 }, duration: 800, delay: 0 },
+                    { from: { x: 160, y: 190 }, to: { x: 80, y: 120 }, duration: 1200, delay: 1000 }
+                ],
+                runs: [
+                    { name: '瑞安·门德斯', from: { x: 70, y: 220 }, to: { x: 80, y: 120 }, duration: 1200, delay: 1000 }
+                ]
+            }
+        },
+        'nzl-egy': {
+            'offense': {
+                caption: '埃及 4-3-3 锋线突击：萨拉赫标志性内切金左脚破门',
+                commentary: [
+                    { time: 0, text: '【埃尔内尼中场大脚分球到右肋，萨拉赫接球启动】' },
+                    { time: 1000, text: '【萨拉赫狂飚内切，连续虚晃摆脱新西兰左闸卡卡切】' },
+                    { time: 2200, text: '【穆罕默德·萨拉赫起脚弧线球兜射远角破门！⚽ 新西兰 0-1 埃及】' }
+                ],
+                players: {
+                    '埃尔内尼': { x: 180, y: 240 },
+                    '穆罕默德·萨拉赫': { x: 260, y: 110 },
+                    '卡卡切': { x: 230, y: 140 },
+                    '马尔穆什': { x: 90, y: 150 }
+                },
+                passes: [
+                    { from: { x: 180, y: 240 }, to: { x: 260, y: 110 }, duration: 1000, delay: 0 },
+                    { from: { x: 260, y: 110 }, to: { x: 180, y: 15 }, duration: 500, delay: 2200 }
+                ],
+                runs: [
+                    { name: '穆罕默德·萨拉赫', from: { x: 280, y: 190 }, to: { x: 260, y: 110 }, duration: 1000, delay: 0 }
+                ]
+            },
+            'defense': {
+                caption: '新西兰 4-4-2 空中轰炸与克里斯·伍德压制争顶',
+                commentary: [
+                    { time: 0, text: '【埃及前场进攻长传被截断，新西兰萨尔佩特顶出解围】' },
+                    { time: 1000, text: '【伍德利用庞大体能扛住防守队员将高空球点下！🛡️】' },
+                    { time: 2200, text: '【伍德将皮球摆渡给侧翼接应的卡卡切，起脚斜传禁区！】' }
+                ],
+                players: {
+                    '萨尔佩特': { x: 180, y: 110 },
+                    '克里斯·伍德': { x: 180, y: 210 },
+                    '卡卡切': { x: 80, y: 220 },
+                    '埃及防守人': { x: 170, y: 220 }
+                },
+                passes: [
+                    { from: { x: 180, y: 110 }, to: { x: 180, y: 210 }, duration: 1000, delay: 0 },
+                    { from: { x: 180, y: 210 }, to: { x: 80, y: 220 }, duration: 1000, delay: 1000 }
+                ],
+                runs: [
+                    { name: '克里斯·伍德', from: { x: 180, y: 250 }, to: { x: 180, y: 210 }, duration: 1000, delay: 0 },
+                    { name: '卡卡切', from: { x: 80, y: 310 }, to: { x: 80, y: 220 }, duration: 1000, delay: 800 }
                 ]
             }
         }

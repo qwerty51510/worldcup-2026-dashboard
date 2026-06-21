@@ -1171,6 +1171,17 @@ body {
     background: linear-gradient(to left, rgba(59, 130, 246, 0.6), var(--accent-blue)) !important;
 }
 
+.esp-sau-theme .away-fill,
+.bel-irn-theme .away-fill {
+    background: linear-gradient(to left, rgba(16, 185, 129, 0.6), var(--accent-green)) !important;
+}
+.uru-cpv-theme .away-fill {
+    background: linear-gradient(to left, rgba(245, 158, 11, 0.6), var(--accent-yellow)) !important;
+}
+.nzl-egy-theme .away-fill {
+    background: linear-gradient(to left, rgba(239, 68, 68, 0.6), var(--accent-red)) !important;
+}
+
 /* Key Player Spotlight */
 .players-spotlight-wrapper {
     display: flex;
@@ -1267,6 +1278,20 @@ body {
 .tun-jpn-theme .away-player .player-photo-placeholder {
     border-color: var(--accent-blue);
     box-shadow: 0 0 15px rgba(59, 130, 246, 0.2);
+}
+
+.esp-sau-theme .away-player .player-photo-placeholder,
+.bel-irn-theme .away-player .player-photo-placeholder {
+    border-color: var(--accent-green);
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.2);
+}
+.uru-cpv-theme .away-player .player-photo-placeholder {
+    border-color: var(--accent-yellow);
+    box-shadow: 0 0 15px rgba(245, 158, 11, 0.2);
+}
+.nzl-egy-theme .away-player .player-photo-placeholder {
+    border-color: var(--accent-red);
+    box-shadow: 0 0 15px rgba(239, 68, 68, 0.2);
 }
 
 .jersey-num {
@@ -1415,6 +1440,11 @@ body {
 .ecu-cur-theme .away-text-accent { color: var(--accent-yellow); }
 .tun-jpn-theme .away-text-accent { color: var(--accent-blue); }
 
+.esp-sau-theme .away-text-accent,
+.bel-irn-theme .away-text-accent { color: var(--accent-green); }
+.uru-cpv-theme .away-text-accent { color: var(--accent-yellow); }
+.nzl-egy-theme .away-text-accent { color: var(--accent-red); }
+
 .injury-list {
     list-style: none;
     display: flex;
@@ -1510,6 +1540,11 @@ body {
 .ned-swe-theme .form-badge.away-bg,
 .ecu-cur-theme .form-badge.away-bg { background-color: var(--accent-yellow); }
 .tun-jpn-theme .form-badge.away-bg { background-color: var(--accent-blue); }
+
+.esp-sau-theme .form-badge.away-bg,
+.bel-irn-theme .form-badge.away-bg { background-color: var(--accent-green); }
+.uru-cpv-theme .form-badge.away-bg { background-color: var(--accent-yellow); }
+.nzl-egy-theme .form-badge.away-bg { background-color: var(--accent-red); }
 
 .vs-text {
     font-size: 0.7rem;
@@ -2049,6 +2084,89 @@ body {
     height: 6px;
     font-size: 4px;
 }
+
+/* Saudi Arabia Flag */
+.sau {
+    background: #006C35;
+    position: relative;
+}
+.sau::after {
+    content: '⚔';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+}
+.flag-large.sau::after { font-size: 10px; }
+.flag-dot.sau::after { font-size: 5px; }
+
+/* Belgium Flag */
+.bel {
+    background: linear-gradient(to right, #000000 33.3%, #f2d216 33.3%, #f2d216 66.6%, #da291c 66.6%);
+}
+
+/* Iran Flag */
+.irn {
+    background: linear-gradient(to bottom, #239e46 33.3%, #ffffff 33.3%, #ffffff 66.6%, #da291c 66.6%);
+    position: relative;
+}
+.irn::after {
+    content: '☫';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #da291c;
+}
+.flag-large.irn::after { font-size: 12px; }
+.flag-dot.irn::after { font-size: 6px; }
+
+/* Cape Verde Flag */
+.cpv {
+    background: linear-gradient(to bottom, #002b7f 50%, #ffffff 50%, #ffffff 58%, #d21034 58%, #d21034 67%, #ffffff 67%, #ffffff 75%, #002b7f 75%);
+    position: relative;
+}
+.cpv::after {
+    content: '★';
+    position: absolute;
+    top: 55%;
+    left: 25%;
+    font-size: 5px;
+    color: #f9e814;
+    line-height: 1;
+}
+
+/* New Zealand Flag */
+.nzl {
+    background: #00247d;
+    position: relative;
+}
+.nzl::after {
+    content: '★';
+    position: absolute;
+    top: 30%;
+    right: 20%;
+    font-size: 5px;
+    color: #cc142b;
+    line-height: 1;
+}
+
+/* Egypt Flag */
+.egy {
+    background: linear-gradient(to bottom, #c8102e 33.3%, #ffffff 33.3%, #ffffff 66.6%, #000000 66.6%);
+    position: relative;
+}
+.egy::after {
+    content: '🦅';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 1;
+}
+.flag-large.egy::after { font-size: 8px; }
+.flag-dot.egy::after { font-size: 4px; }
 
 /* 10. Animations */
 @keyframes pulse {
@@ -3137,6 +3255,58 @@ body {
     font-size: 0.75rem;
     color: var(--text-muted);
 }
+
+/* Polymarket Prediction Odds Bar Style */
+.market-odds-container {
+    margin: 16px 0 8px 0;
+    padding: 14px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    backdrop-filter: blur(8px);
+}
+.market-odds-title {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.market-odds-bar {
+    display: flex;
+    height: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.05);
+    margin-bottom: 8px;
+}
+.odds-bar-segment {
+    height: 100%;
+    transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.odds-bar-segment.odds-home {
+    background: linear-gradient(to right, #3b82f6, #60a5fa);
+    box-shadow: 0 0 8px rgba(59, 130, 246, 0.4);
+}
+.odds-bar-segment.odds-draw {
+    background: linear-gradient(to right, #f59e0b, #fbbf24);
+    box-shadow: 0 0 8px rgba(245, 158, 11, 0.4);
+}
+.odds-bar-segment.odds-away {
+    background: linear-gradient(to right, #10b981, #34d399);
+    box-shadow: 0 0 8px rgba(16, 185, 129, 0.4);
+}
+.market-odds-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.72rem;
+    font-weight: 600;
+}
+.market-odds-labels .label-home { color: #60a5fa; }
+.market-odds-labels .label-draw { color: #fbbf24; }
+.market-odds-labels .label-away { color: #34d399; }
 
 
 
