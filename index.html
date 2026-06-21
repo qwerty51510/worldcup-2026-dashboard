@@ -47,18 +47,12 @@
                     <span>角球与进攻关联分析</span>
                 </button>
 
-                <div class="menu-label">H组对战 (Group H)</div>
-                <button class="nav-item match-btn" id="btn-match-esp-sau" data-match="esp-sau">
+                <div class="menu-label">F组对战 (Group F)</div>
+                <button class="nav-item match-btn" id="btn-match-tun-jpn" data-match="tun-jpn">
                     <span class="flag-mini-container">
-                        <span class="flag-dot esp"></span>vs<span class="flag-dot sau"></span>
+                        <span class="flag-dot tun"></span>vs<span class="flag-dot jpn"></span>
                     </span>
-                    <span>西班牙 vs 沙特</span>
-                </button>
-                <button class="nav-item match-btn" id="btn-match-uru-cpv" data-match="uru-cpv">
-                    <span class="flag-mini-container">
-                        <span class="flag-dot uru"></span>vs<span class="flag-dot cpv"></span>
-                    </span>
-                    <span>乌拉圭 vs 佛得角</span>
+                    <span>突尼斯 vs 日本</span>
                 </button>
 
                 <div class="menu-label">G组对战 (Group G)</div>
@@ -73,6 +67,20 @@
                         <span class="flag-dot nzl"></span>vs<span class="flag-dot egy"></span>
                     </span>
                     <span>新西兰 vs 埃及</span>
+                </button>
+
+                <div class="menu-label">H组对战 (Group H)</div>
+                <button class="nav-item match-btn" id="btn-match-esp-sau" data-match="esp-sau">
+                    <span class="flag-mini-container">
+                        <span class="flag-dot esp"></span>vs<span class="flag-dot sau"></span>
+                    </span>
+                    <span>西班牙 vs 沙特</span>
+                </button>
+                <button class="nav-item match-btn" id="btn-match-uru-cpv" data-match="uru-cpv">
+                    <span class="flag-mini-container">
+                        <span class="flag-dot uru"></span>vs<span class="flag-dot cpv"></span>
+                    </span>
+                    <span>乌拉圭 vs 佛得角</span>
                 </button>
             </nav>
 
@@ -149,6 +157,30 @@
                     <!-- Match Quick Cards -->
                     <h3 class="section-subtitle">今日/明日焦点赛程</h3>
                     <div class="matches-grid">
+                        <!-- Card: tun-jpn -->
+                        <div class="match-preview-card glass-card hover-trigger" data-match="tun-jpn">
+                            <div class="match-group-tag">F 组第二轮</div>
+                            <div class="match-teams-row">
+                                <div class="team-block">
+                                    <span class="flag-large tun"></span>
+                                    <span class="team-name">突尼斯</span>
+                                </div>
+                                <div class="vs-badge">VS</div>
+                                <div class="team-block">
+                                    <span class="flag-large jpn"></span>
+                                    <span class="team-name">日本</span>
+                                </div>
+                            </div>
+                            <div class="match-meta-info">
+                                <span class="match-time">今天 01:30</span>
+                                <span class="match-venue">蒙特雷体育场</span>
+                            </div>
+                            <div class="match-highlights">
+                                <span class="hl-tag">斯希里扫荡</span>
+                                <span class="hl-tag">三笘薰爆破</span>
+                            </div>
+                        </div>
+
                         <!-- Card: esp-sau -->
                         <div class="match-preview-card glass-card hover-trigger" data-match="esp-sau">
                             <div class="match-group-tag">H 组第二轮</div>
@@ -310,17 +342,6 @@
                                         <td><span class="score-badge badge-red">0 - 0</span></td>
                                         <td><span class="diff-badge badge-red">严重偏离 (预测取胜 / 实际爆冷平局)</span></td>
                                         <td><strong>预测完全偏离。</strong> 厄瓜多尔空有 62% 的高控球率，但严重低估了库拉索 5-4-1 极密铁桶的阻截效率，更低估了库拉索门神 Eloy Room 的状态爆发（单场贡献 8 次神级扑救），最终 0-0 惨遭闷平。</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="review-team-row">
-                                                <span class="flag-dot tun"></span> 突尼斯 <span class="vs-text">vs</span> <span class="flag-dot jpn"></span> 日本
-                                            </div>
-                                        </td>
-                                        <td><span class="score-badge badge-blue">0 - 2</span></td>
-                                        <td><span class="score-badge badge-green">0 - 2</span></td>
-                                        <td><span class="diff-badge badge-green">精准吻合 (完全命中比分)</span></td>
-                                        <td><strong>预测完全精准（完全命中最终比分）。</strong> 突尼斯虽然摆出 5-4-1 深度铁桶阵，但模型成功预判了其防守弹性不足。日本利用远藤航发牌、三笘薰左路爆破强突送出助攻由久保建英铲射破门，日本 2-0 洞穿大巴。</td>
                                     </tr>
                                     <!-- 6月19日 赛事 (C组/D组第二轮) -->
                                     <tr>
