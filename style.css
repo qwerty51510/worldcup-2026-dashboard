@@ -2837,7 +2837,8 @@ body {
 }
 
 .review-table-container {
-    overflow-x: auto;
+    overflow: auto;
+    max-height: 480px;
     border: 1px solid var(--border-color);
     border-radius: 12px;
     background: rgba(10, 13, 22, 0.3);
@@ -3310,6 +3311,55 @@ body {
 .market-odds-labels .label-home { color: #60a5fa; }
 .market-odds-labels .label-draw { color: #fbbf24; }
 .market-odds-labels .label-away { color: #34d399; }
+
+/* 完赛战报卡片样式扩充 */
+.match-preview-card.completed-match {
+    background: rgba(10, 15, 28, 0.6);
+    border-color: rgba(255, 255, 255, 0.05);
+}
+
+.match-preview-card.completed-match:hover {
+    border-color: rgba(59, 130, 246, 0.25);
+    box-shadow: 0 8px 32px rgba(59, 130, 246, 0.08);
+}
+
+.match-group-tag.tag-completed {
+    background: rgba(156, 163, 175, 0.15);
+    color: var(--text-secondary);
+    border: 1px solid rgba(156, 163, 175, 0.25);
+}
+
+.vs-badge.score-badge-final {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--accent-yellow);
+    background: rgba(245, 158, 11, 0.1);
+    border-color: rgba(245, 158, 11, 0.25);
+    padding: 4px 14px;
+    letter-spacing: 1px;
+    box-shadow: inset 0 0 10px rgba(245, 158, 11, 0.05);
+    text-shadow: 0 0 8px rgba(245, 158, 11, 0.3);
+}
+
+.match-status-desc {
+    font-size: 0.72rem;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 4px;
+}
+
+.match-status-desc.text-green {
+    color: var(--accent-green);
+    text-shadow: 0 0 6px rgba(16, 185, 129, 0.2);
+}
+
+.match-status-desc.text-yellow {
+    color: var(--accent-yellow);
+    text-shadow: 0 0 6px rgba(245, 158, 11, 0.2);
+}
+
 
 
 

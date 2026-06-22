@@ -66,7 +66,7 @@ function initializeDashboard() {
             const overviewBtn = document.getElementById('btn-overview');
             if (overviewBtn) overviewBtn.classList.add('active');
             pageTitle.innerText = '赛事综合总览';
-            pageSubtitle.innerText = '美加墨世界杯超级比赛日・5场重磅对决深度解析';
+            pageSubtitle.innerText = '美加墨世界杯小组赛第二轮・焦点战全部完赛收官';
         } else if (targetTabId === 'correlation') {
             const corrBtn = document.getElementById('btn-correlation');
             if (corrBtn) corrBtn.classList.add('active');
@@ -453,6 +453,10 @@ function initializeDashboard() {
                 else if (matchId === 'bel-irn') color = '#10b981'; // Iran green
                 else if (matchId === 'uru-cpv') color = '#fbbf24'; // Cape Verde yellow
                 else if (matchId === 'nzl-egy') color = '#ef4444'; // Egypt red
+                else if (matchId === 'jor-alg') color = '#10b981'; // Algeria green
+                else if (matchId === 'por-uzb') color = '#3b82f6'; // Uzbekistan blue
+                else if (matchId === 'eng-gha') color = '#fbbf24'; // Ghana yellow
+                else if (matchId === 'col-cod') color = '#ef4444'; // Congo DR red
             }
 
             // Circle background
@@ -874,6 +878,10 @@ function initializeDashboard() {
         else if (themeClass.includes('uru-cpv') && teamFlag === 'cpv') barColor = '#fbbf24';
         else if (themeClass.includes('nzl-egy') && teamFlag === 'nzl') barColor = '#9ca3af';
         else if (themeClass.includes('nzl-egy') && teamFlag === 'egy') barColor = '#ef4444';
+        else if (themeClass.includes('jor-alg') && teamFlag === 'alg') barColor = '#10b981';
+        else if (themeClass.includes('por-uzb') && teamFlag === 'uzb') barColor = '#3b82f6';
+        else if (themeClass.includes('eng-gha') && teamFlag === 'gha') barColor = '#fbbf24';
+        else if (themeClass.includes('col-cod') && teamFlag === 'cod') barColor = '#ef4444';
 
         distData.forEach(item => {
             const pct = total > 0 ? (item.val / total * 100) : 0;
@@ -2468,7 +2476,14 @@ function initializeDashboard() {
 
     // 5. Initialize Widget Clock
     function updateClock() {
-        const now = new Date();
+        // Set the virtual base tournament date/time
+        const baseTime = new Date('2026-06-23T13:30:00');
+        // calculate elapsed milliseconds since script loaded to make it dynamic
+        if (!window.timeInitPerformanceOffset) {
+            window.timeInitPerformanceOffset = performance.now();
+        }
+        const elapsedMs = performance.now() - window.timeInitPerformanceOffset;
+        const now = new Date(baseTime.getTime() + elapsedMs);
         const yyyy = now.getFullYear();
         const mm = String(now.getMonth() + 1).padStart(2, '0');
         const dd = String(now.getDate()).padStart(2, '0');
