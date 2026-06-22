@@ -3363,3 +3363,17 @@ body {
 
 
 
+
+
+/* Custom Match Themes for Round 2 Focus Matches */
+.arg-aut-theme .away-fill { background: var(--accent-red); }
+.arg-aut-theme .away-text-accent { color: var(--accent-red); }
+.arg-aut-theme .away-player .player-photo-placeholder { border-color: var(--accent-red); box-shadow: 0 0 15px rgba(239, 68, 68, 0.4); }
+
+.fra-irq-theme .away-fill { background: var(--accent-green); }
+.fra-irq-theme .away-text-accent { color: var(--accent-green); }
+.fra-irq-theme .away-player .player-photo-placeholder { border-color: var(--accent-green); box-shadow: 0 0 15px rgba(16, 185, 129, 0.4); }
+
+.nor-sen-theme .away-fill { background: var(--accent-green); }
+.nor-sen-theme .away-text-accent { color: var(--accent-green); }
+.nor-sen-theme .away-player .player-photo-placeholder { border-color: var(--accent-green); box-shadow: 0 0 15px rgba(16, 185, 129, 0.4); }

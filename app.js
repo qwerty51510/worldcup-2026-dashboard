@@ -66,7 +66,7 @@ function initializeDashboard() {
             const overviewBtn = document.getElementById('btn-overview');
             if (overviewBtn) overviewBtn.classList.add('active');
             pageTitle.innerText = '赛事综合总览';
-            pageSubtitle.innerText = '美加墨世界杯小组赛第二轮・4场强强对话深度解析';
+            pageSubtitle.innerText = '美加墨世界杯小组赛第二轮・5场强强对话深度解析';
         } else if (targetTabId === 'correlation') {
             const corrBtn = document.getElementById('btn-correlation');
             if (corrBtn) corrBtn.classList.add('active');
@@ -457,6 +457,9 @@ function initializeDashboard() {
                 else if (matchId === 'por-uzb') color = '#3b82f6'; // Uzbekistan blue
                 else if (matchId === 'eng-gha') color = '#fbbf24'; // Ghana yellow
                 else if (matchId === 'col-cod') color = '#ef4444'; // Congo DR red
+                else if (matchId === 'arg-aut') color = '#ef4444'; // Austria red
+                else if (matchId === 'fra-irq') color = '#10b981'; // Iraq green
+                else if (matchId === 'nor-sen') color = '#10b981'; // Senegal green
             }
 
             // Circle background
