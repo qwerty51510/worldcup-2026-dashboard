@@ -66,7 +66,7 @@ function initializeDashboard() {
             const overviewBtn = document.getElementById('btn-overview');
             if (overviewBtn) overviewBtn.classList.add('active');
             pageTitle.innerText = '赛事综合总览';
-            pageSubtitle.innerText = '美加墨世界杯小组赛第二轮・焦点战全部完赛收官';
+            pageSubtitle.innerText = '美加墨世界杯小组赛第二轮・4场强强对话深度解析';
         } else if (targetTabId === 'correlation') {
             const corrBtn = document.getElementById('btn-correlation');
             if (corrBtn) corrBtn.classList.add('active');
@@ -2477,7 +2477,7 @@ function initializeDashboard() {
     // 5. Initialize Widget Clock
     function updateClock() {
         // Set the virtual base tournament date/time
-        const baseTime = new Date('2026-06-23T13:30:00');
+        const baseTime = new Date('2026-06-22T10:27:37');
         // calculate elapsed milliseconds since script loaded to make it dynamic
         if (!window.timeInitPerformanceOffset) {
             window.timeInitPerformanceOffset = performance.now();
@@ -2505,7 +2505,7 @@ function initializeDashboard() {
         if (!tbody) return;
 
         // 1. Gather all players from active matchData
-        let players = [];
+        let rawPlayers = [];
         Object.keys(matchData).forEach(matchId => {
             const m = matchData[matchId];
             if (m.squadPlayers) {
@@ -2517,7 +2517,7 @@ function initializeDashboard() {
                         const right = parseInt(p.goalDist.rightBox) || 0;
                         const outside = parseInt(p.goalDist.outsideBox) || 0;
                         const totalGoals = left + center + right + outside;
-                        players.push({
+                        rawPlayers.push({
                             originalData: p,
                             name: p.name,
                             age: p.age,
@@ -2542,7 +2542,7 @@ function initializeDashboard() {
                         const right = parseInt(p.goalDist.rightBox) || 0;
                         const outside = parseInt(p.goalDist.outsideBox) || 0;
                         const totalGoals = left + center + right + outside;
-                        players.push({
+                        rawPlayers.push({
                             originalData: p,
                             name: p.name,
                             age: p.age,
@@ -2561,6 +2561,21 @@ function initializeDashboard() {
                 }
             }
         });
+
+        // De-duplicate: Keep the player record with the maximum totalGoals
+        const uniquePlayersMap = new Map();
+        rawPlayers.forEach(p => {
+            const key = `${p.name}_${p.teamName}`;
+            if (!uniquePlayersMap.has(key)) {
+                uniquePlayersMap.set(key, p);
+            } else {
+                const existing = uniquePlayersMap.get(key);
+                if (p.totalGoals > existing.totalGoals) {
+                    uniquePlayersMap.set(key, p);
+                }
+            }
+        });
+        let players = Array.from(uniquePlayersMap.values());
 
         // 2. Sort by totalGoals descending
         players.sort((a, b) => b.totalGoals - a.totalGoals);
