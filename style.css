@@ -3377,3 +3377,12 @@ body {
 .nor-sen-theme .away-fill { background: var(--accent-green); }
 .nor-sen-theme .away-text-accent { color: var(--accent-green); }
 .nor-sen-theme .away-player .player-photo-placeholder { border-color: var(--accent-green); box-shadow: 0 0 15px rgba(16, 185, 129, 0.4); }
+
+
+.eng-gha-theme .away-fill { background: var(--accent-green); }
+.eng-gha-theme .away-text-accent { color: var(--accent-green); }
+.eng-gha-theme .away-player .player-photo-placeholder { border-color: var(--accent-green); box-shadow: 0 0 15px rgba(16, 185, 129, 0.4); }
+
+.col-cod-theme .away-fill { background: var(--accent-yellow); }
+.col-cod-theme .away-text-accent { color: var(--accent-yellow); }
+.col-cod-theme .away-player .player-photo-placeholder { border-color: var(--accent-yellow); box-shadow: 0 0 15px rgba(245, 158, 11, 0.4); }

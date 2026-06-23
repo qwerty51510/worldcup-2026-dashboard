@@ -47,10 +47,19 @@
                     <span>角球与进攻关联分析</span>
                 </button>
 
-                <div class="menu-label">当前待开赛焦点战</div>
-                <div class="nav-item" style="opacity: 0.6; cursor: default; justify-content: center;">
-                    <span>所有赛事已完赛</span>
-                </div>
+                <div class="menu-label">K组/L组焦点战</div>
+                <button class="nav-item match-btn" id="btn-match-eng-gha" data-match="eng-gha">
+                    <span class="flag-mini-container">
+                        <span class="flag-dot eng"></span>vs<span class="flag-dot gha"></span>
+                    </span>
+                    <span>英格兰 vs 加纳</span>
+                </button>
+                <button class="nav-item match-btn" id="btn-match-col-cod" data-match="col-cod">
+                    <span class="flag-mini-container">
+                        <span class="flag-dot col"></span>vs<span class="flag-dot cod"></span>
+                    </span>
+                    <span>哥伦比亚 vs 刚果 (金)</span>
+                </button>
             </nav>
 
             <div class="sidebar-footer">
@@ -92,8 +101,8 @@
                                 </svg>
                             </div>
                             <div class="summary-info">
-                                <h3>10 支焦点对决队伍</h3>
-                                <p>I组/J组/K组第二轮全员集结</p>
+                                <h3>4 支焦点对决队伍</h3>
+                                <p>K组/L组第二轮火热打响</p>
                             </div>
                         </div>
 
@@ -105,8 +114,8 @@
                                 </svg>
                             </div>
                             <div class="summary-info">
-                                <h3>5 场焦点战役</h3>
-                                <p>小组赛第二轮火热前瞻中</p>
+                                <h3>2 场焦点战役</h3>
+                                <p>小组赛第二轮即将收官</p>
                             </div>
                         </div>
 
@@ -117,16 +126,62 @@
                                 </svg>
                             </div>
                             <div class="summary-info">
-                                <h3>顶级巨星领衔登场</h3>
-                                <p>梅西、姆巴佩、哈兰德、C罗领衔出击</p>
+                                <h3>顶级球星领衔登场</h3>
+                                <p>凯恩、路易斯·迪亚斯领衔出击</p>
                             </div>
                         </div>
                     </div>
 
                     <!-- Match Quick Cards -->
                     <h3 class="section-subtitle">今日/明日焦点赛程</h3>
-                    <div class="matches-grid" style="display: flex; justify-content: center; align-items: center; min-height: 200px; color: #94a3b8; font-size: 1.1rem; border: 1px dashed rgba(255,255,255,0.1); border-radius: 12px; grid-template-columns: 1fr;">
-                        <p>✅ 小组赛第二轮焦点战已全部完赛，赛果已归档。请等待第三轮赛事数据分析更新...</p>
+                    <div class="matches-grid">
+                        <!-- Card: eng-gha -->
+                        <div class="match-preview-card glass-card hover-trigger" data-match="eng-gha">
+                            <div class="match-group-tag">L 组第二轮</div>
+                            <div class="match-teams-row">
+                                <div class="team-block">
+                                    <span class="flag-large eng"></span>
+                                    <span class="team-name">英格兰</span>
+                                </div>
+                                <div class="vs-badge">VS</div>
+                                <div class="team-block">
+                                    <span class="flag-large gha"></span>
+                                    <span class="team-name">加纳</span>
+                                </div>
+                            </div>
+                            <div class="match-meta-info">
+                                <span class="match-time">明天 05:00</span>
+                                <span class="match-venue">洛杉矶体育场</span>
+                            </div>
+                            <div class="match-highlights">
+                                <span class="hl-tag">凯恩回撤</span>
+                                <span class="hl-tag">库杜斯爆破</span>
+                            </div>
+                        </div>
+
+                        <!-- Card: col-cod -->
+                        <div class="match-preview-card glass-card hover-trigger" data-match="col-cod">
+                            <div class="match-group-tag">K 组第二轮</div>
+                            <div class="match-teams-row">
+                                <div class="team-block">
+                                    <span class="flag-large col"></span>
+                                    <span class="team-name">哥伦比亚</span>
+                                </div>
+                                <div class="vs-badge">VS</div>
+                                <div class="team-block">
+                                    <span class="flag-large cod"></span>
+                                    <span class="team-name">刚果 (金)</span>
+                                </div>
+                            </div>
+                            <div class="match-meta-info">
+                                <span class="match-time">明天 11:00</span>
+                                <span class="match-venue">温港华体育场</span>
+                            </div>
+                            <div class="match-highlights">
+                                <span class="hl-tag">迪亚斯单挑</span>
+                                <span class="hl-tag">维萨反击</span>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- Tactical Insight Column -->
@@ -138,7 +193,7 @@
                             <h3>2026 世界杯超级比赛日战术前瞻</h3>
                         </div>
                         <p class="insight-text">
-                            小组赛第二轮 29 场焦点对话已全部结束，各大豪门均有不同程度的精彩发挥。模型算法正在紧密运算并归档最新的球队战术特征数据，以准备小组赛第三轮的终极生死战前瞻分析。
+                            小组赛第二轮迎来最后两场收官之战。三狮军团英格兰将对决非洲黑星加纳，而哥伦比亚则迎战刚果 (金)。这 2 场焦点对决将为第二轮小组赛画上完美的句号。
                         </p>
                     </div>
 
