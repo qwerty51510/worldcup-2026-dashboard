@@ -66,7 +66,7 @@ function initializeDashboard() {
             const overviewBtn = document.getElementById('btn-overview');
             if (overviewBtn) overviewBtn.classList.add('active');
             pageTitle.innerText = '赛事综合总览';
-            pageSubtitle.innerText = '美加墨世界杯小组赛第二轮・5场强强对话深度解析';
+            pageSubtitle.innerText = '美加墨世界杯小组赛第二轮・焦点战已全部完赛';
         } else if (targetTabId === 'correlation') {
             const corrBtn = document.getElementById('btn-correlation');
             if (corrBtn) corrBtn.classList.add('active');
