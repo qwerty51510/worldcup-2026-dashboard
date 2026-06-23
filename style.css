@@ -3386,3 +3386,8 @@ body {
 .col-cod-theme .away-fill { background: var(--accent-yellow); }
 .col-cod-theme .away-text-accent { color: var(--accent-yellow); }
 .col-cod-theme .away-player .player-photo-placeholder { border-color: var(--accent-yellow); box-shadow: 0 0 15px rgba(245, 158, 11, 0.4); }
+
+
+.por-uzb-theme .away-fill { background: var(--accent-red); }
+.por-uzb-theme .away-text-accent { color: var(--accent-red); }
+.por-uzb-theme .away-player .player-photo-placeholder { border-color: var(--accent-red); box-shadow: 0 0 15px rgba(239, 68, 68, 0.4); }
