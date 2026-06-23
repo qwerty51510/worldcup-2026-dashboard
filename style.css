@@ -3391,3 +3391,8 @@ body {
 .por-uzb-theme .away-fill { background: var(--accent-red); }
 .por-uzb-theme .away-text-accent { color: var(--accent-red); }
 .por-uzb-theme .away-player .player-photo-placeholder { border-color: var(--accent-red); box-shadow: 0 0 15px rgba(239, 68, 68, 0.4); }
+
+
+.cro-pan-theme .away-fill { background: var(--accent-blue); }
+.cro-pan-theme .away-text-accent { color: var(--accent-blue); }
+.cro-pan-theme .away-player .player-photo-placeholder { border-color: var(--accent-blue); box-shadow: 0 0 15px rgba(59, 130, 246, 0.4); }
