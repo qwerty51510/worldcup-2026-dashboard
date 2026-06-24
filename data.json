@@ -13872,14 +13872,8 @@
       "text": "场面将极其胶着。"
     },
     "injuries": {
-      "home": {
-        "desc": "全员健康",
-        "impact": 0
-      },
-      "away": {
-        "desc": "无主力伤停",
-        "impact": 0
-      }
+      "home": [],
+      "away": []
     },
     "tactics": {
       "homeForm": "4-3-3",
@@ -14103,14 +14097,8 @@
       "text": "场面将极其胶着。"
     },
     "injuries": {
-      "home": {
-        "desc": "全员健康",
-        "impact": 0
-      },
-      "away": {
-        "desc": "无主力伤停",
-        "impact": 0
-      }
+      "home": [],
+      "away": []
     },
     "tactics": {
       "homeForm": "4-4-2",
@@ -14322,14 +14310,8 @@
       "text": "场面将极其胶着。"
     },
     "injuries": {
-      "home": {
-        "desc": "全员健康",
-        "impact": 0
-      },
-      "away": {
-        "desc": "无主力伤停",
-        "impact": 0
-      }
+      "home": [],
+      "away": []
     },
     "tactics": {
       "homeForm": "4-3-3",
@@ -14553,14 +14535,8 @@
       "text": "场面将极其胶着。"
     },
     "injuries": {
-      "home": {
-        "desc": "全员健康",
-        "impact": 0
-      },
-      "away": {
-        "desc": "无主力伤停",
-        "impact": 0
-      }
+      "home": [],
+      "away": []
     },
     "tactics": {
       "homeForm": "5-4-1",
@@ -14772,14 +14748,8 @@
       "text": "场面将极其胶着。"
     },
     "injuries": {
-      "home": {
-        "desc": "全员健康",
-        "impact": 0
-      },
-      "away": {
-        "desc": "无主力伤停",
-        "impact": 0
-      }
+      "home": [],
+      "away": []
     },
     "tactics": {
       "homeForm": "4-4-2",
@@ -15003,14 +14973,8 @@
       "text": "场面将极其胶着。"
     },
     "injuries": {
-      "home": {
-        "desc": "全员健康",
-        "impact": 0
-      },
-      "away": {
-        "desc": "无主力伤停",
-        "impact": 0
-      }
+      "home": [],
+      "away": []
     },
     "tactics": {
       "homeForm": "4-2-3-1",
