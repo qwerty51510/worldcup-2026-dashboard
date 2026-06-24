@@ -3396,3 +3396,24 @@ body {
 .cro-pan-theme .away-fill { background: var(--accent-blue); }
 .cro-pan-theme .away-text-accent { color: var(--accent-blue); }
 .cro-pan-theme .away-player .player-photo-placeholder { border-color: var(--accent-blue); box-shadow: 0 0 15px rgba(59, 130, 246, 0.4); }
+
+
+/* Round 3 Themes */
+.bra-sui-theme .away-fill { background: var(--accent-red); }
+.bra-sui-theme .away-text-accent { color: var(--accent-red); }
+.bra-sui-theme .away-player .player-photo-placeholder { border-color: var(--accent-red); box-shadow: 0 0 15px rgba(239, 68, 68, 0.4); }
+.hai-bih-theme .away-fill { background: var(--accent-yellow); }
+.hai-bih-theme .away-text-accent { color: var(--accent-yellow); }
+.hai-bih-theme .away-player .player-photo-placeholder { border-color: var(--accent-yellow); box-shadow: 0 0 15px rgba(251, 191, 36, 0.4); }
+.ger-ned-theme .away-fill { background: var(--accent-orange); }
+.ger-ned-theme .away-text-accent { color: var(--accent-orange); }
+.ger-ned-theme .away-player .player-photo-placeholder { border-color: var(--accent-orange); box-shadow: 0 0 15px rgba(249, 115, 22, 0.4); }
+.civ-swe-theme .away-fill { background: var(--accent-yellow); }
+.civ-swe-theme .away-text-accent { color: var(--accent-yellow); }
+.civ-swe-theme .away-player .player-photo-placeholder { border-color: var(--accent-yellow); box-shadow: 0 0 15px rgba(251, 191, 36, 0.4); }
+.esp-ita-theme .away-fill { background: var(--accent-blue); }
+.esp-ita-theme .away-text-accent { color: var(--accent-blue); }
+.esp-ita-theme .away-player .player-photo-placeholder { border-color: var(--accent-blue); box-shadow: 0 0 15px rgba(59, 130, 246, 0.4); }
+.jpn-crc-theme .away-fill { background: var(--accent-red); }
+.jpn-crc-theme .away-text-accent { color: var(--accent-red); }
+.jpn-crc-theme .away-player .player-photo-placeholder { border-color: var(--accent-red); box-shadow: 0 0 15px rgba(239, 68, 68, 0.4); }
