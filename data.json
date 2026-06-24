@@ -13855,11 +13855,11 @@
     },
     "marketPrediction": {
       "polymarketOdds": {
-        "homeWin": 45,
-        "draw": 30,
-        "awayWin": 25
+        "homeWin": 55,
+        "draw": 25,
+        "awayWin": 20
       },
-      "marketSentiment": "本场比赛胜负难料，双方都必须全力争胜。"
+      "marketSentiment": "欧洲劲旅底蕴更深，市场看好瑞士顺利拿下 3 分。"
     },
     "bettingPrediction": {
       "handicap": "平手盘",
@@ -13868,8 +13868,8 @@
       "reason": "考虑到双方实力接近，大概率会打平。"
     },
     "verdict": {
-      "score": "1 - 1",
-      "text": "场面将极其胶着。"
+      "score": "2 - 1",
+      "text": "瑞士的中场控制力更强，扎卡的调度将左右比赛。虽然加拿大的阿方索·戴维斯反击犀利，但瑞士整体防守稳固，预计能以微弱优势取胜。"
     },
     "injuries": {
       "home": [],
@@ -14080,11 +14080,11 @@
     },
     "marketPrediction": {
       "polymarketOdds": {
-        "homeWin": 45,
-        "draw": 30,
-        "awayWin": 25
+        "homeWin": 48,
+        "draw": 35,
+        "awayWin": 17
       },
-      "marketSentiment": "本场比赛胜负难料，双方都必须全力争胜。"
+      "marketSentiment": "波黑高空优势明显，资金略微倾向于主队。"
     },
     "bettingPrediction": {
       "handicap": "平手盘",
@@ -14093,8 +14093,8 @@
       "reason": "考虑到双方实力接近，大概率会打平。"
     },
     "verdict": {
-      "score": "1 - 1",
-      "text": "场面将极其胶着。"
+      "score": "1 - 0",
+      "text": "波黑身体优势明显，哲科虽然年迈但在禁区内的威慑力依然巨大。卡塔尔作为东道主虽有主场优势，但在阵地战中难破密集防守，预计波黑小胜。"
     },
     "injuries": {
       "home": [],
@@ -14293,11 +14293,11 @@
     },
     "marketPrediction": {
       "polymarketOdds": {
-        "homeWin": 45,
-        "draw": 30,
-        "awayWin": 25
+        "homeWin": 85,
+        "draw": 10,
+        "awayWin": 5
       },
-      "marketSentiment": "本场比赛胜负难料，双方都必须全力争胜。"
+      "marketSentiment": "实力悬殊，摩洛哥大胜是大概率事件，资金高度集中。"
     },
     "bettingPrediction": {
       "handicap": "平手盘",
@@ -14306,8 +14306,8 @@
       "reason": "考虑到双方实力接近，大概率会打平。"
     },
     "verdict": {
-      "score": "1 - 1",
-      "text": "场面将极其胶着。"
+      "score": "3 - 0",
+      "text": "摩洛哥整体实力完全碾压海地，齐耶赫和阿什拉夫的右路走廊将是海地防线的噩梦。预计这将是一场一边倒的大胜。"
     },
     "injuries": {
       "home": [],
@@ -14518,11 +14518,11 @@
     },
     "marketPrediction": {
       "polymarketOdds": {
-        "homeWin": 45,
-        "draw": 30,
-        "awayWin": 25
+        "homeWin": 12,
+        "draw": 20,
+        "awayWin": 68
       },
-      "marketSentiment": "本场比赛胜负难料，双方都必须全力争胜。"
+      "marketSentiment": "巴西星光熠熠，五星巴西受到市场一致追捧。"
     },
     "bettingPrediction": {
       "handicap": "平手盘",
@@ -14531,8 +14531,8 @@
       "reason": "考虑到双方实力接近，大概率会打平。"
     },
     "verdict": {
-      "score": "1 - 1",
-      "text": "场面将极其胶着。"
+      "score": "0 - 2",
+      "text": "苏格兰球风硬朗，但面对技术细腻的桑巴军团，中场控制权将被完全剥夺。维尼修斯的个人能力足以撕开防线，巴西将轻松带走胜利。"
     },
     "injuries": {
       "home": [],
@@ -14731,11 +14731,11 @@
     },
     "marketPrediction": {
       "polymarketOdds": {
-        "homeWin": 45,
+        "homeWin": 30,
         "draw": 30,
-        "awayWin": 25
+        "awayWin": 40
       },
-      "marketSentiment": "本场比赛胜负难料，双方都必须全力争胜。"
+      "marketSentiment": "亚洲之光韩国队受到亚洲球迷力挺，孙兴慜的进球被寄予厚望。"
     },
     "bettingPrediction": {
       "handicap": "平手盘",
@@ -14744,8 +14744,8 @@
       "reason": "考虑到双方实力接近，大概率会打平。"
     },
     "verdict": {
-      "score": "1 - 1",
-      "text": "场面将极其胶着。"
+      "score": "1 - 2",
+      "text": "南非身体素质出众，但战术纪律性稍逊。韩国拥有孙兴慜这样的世界级锋线，反击效率极高，预计韩国能在僵局中抓住机会绝杀对手。"
     },
     "injuries": {
       "home": [],
@@ -14956,11 +14956,11 @@
     },
     "marketPrediction": {
       "polymarketOdds": {
-        "homeWin": 45,
-        "draw": 30,
-        "awayWin": 25
+        "homeWin": 35,
+        "draw": 32,
+        "awayWin": 33
       },
-      "marketSentiment": "本场比赛胜负难料，双方都必须全力争胜。"
+      "marketSentiment": "两队实力极其接近，市场资金分歧极大，平局赔率居高不下。"
     },
     "bettingPrediction": {
       "handicap": "平手盘",
@@ -14970,7 +14970,7 @@
     },
     "verdict": {
       "score": "1 - 1",
-      "text": "场面将极其胶着。"
+      "text": "东欧铁骑与美洲猎豹的对决，捷克的定位球与高空轰炸对抗墨西哥的地面渗透。双方实力在伯仲之间，谁都难以轻易击倒对手，平局可能性极大。"
     },
     "injuries": {
       "home": [],
