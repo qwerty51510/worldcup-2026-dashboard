@@ -3417,3 +3417,24 @@ body {
 .jpn-crc-theme .away-fill { background: var(--accent-red); }
 .jpn-crc-theme .away-text-accent { color: var(--accent-red); }
 .jpn-crc-theme .away-player .player-photo-placeholder { border-color: var(--accent-red); box-shadow: 0 0 15px rgba(239, 68, 68, 0.4); }
+
+
+/* CORRECT Round 3 Themes */
+.sui-can-theme .away-fill { background: var(--accent-red); }
+.sui-can-theme .away-text-accent { color: var(--accent-red); }
+.sui-can-theme .away-player .player-photo-placeholder { border-color: var(--accent-red); box-shadow: 0 0 15px rgba(239, 68, 68, 0.4); }
+.bih-qat-theme .away-fill { background: var(--accent-blue); }
+.bih-qat-theme .away-text-accent { color: var(--accent-blue); }
+.bih-qat-theme .away-player .player-photo-placeholder { border-color: var(--accent-blue); box-shadow: 0 0 15px rgba(59, 130, 246, 0.4); }
+.mar-hai-theme .away-fill { background: var(--accent-green); }
+.mar-hai-theme .away-text-accent { color: var(--accent-green); }
+.mar-hai-theme .away-player .player-photo-placeholder { border-color: var(--accent-green); box-shadow: 0 0 15px rgba(16, 185, 129, 0.4); }
+.sco-bra-theme .away-fill { background: var(--accent-yellow); }
+.sco-bra-theme .away-text-accent { color: var(--accent-yellow); }
+.sco-bra-theme .away-player .player-photo-placeholder { border-color: var(--accent-yellow); box-shadow: 0 0 15px rgba(251, 191, 36, 0.4); }
+.rsa-kor-theme .away-fill { background: var(--accent-orange); }
+.rsa-kor-theme .away-text-accent { color: var(--accent-orange); }
+.rsa-kor-theme .away-player .player-photo-placeholder { border-color: var(--accent-orange); box-shadow: 0 0 15px rgba(249, 115, 22, 0.4); }
+.cze-mex-theme .away-fill { background: var(--accent-red); }
+.cze-mex-theme .away-text-accent { color: var(--accent-red); }
+.cze-mex-theme .away-player .player-photo-placeholder { border-color: var(--accent-red); box-shadow: 0 0 15px rgba(239, 68, 68, 0.4); }

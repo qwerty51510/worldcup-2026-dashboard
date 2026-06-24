@@ -13742,144 +13742,361 @@
       }
     }
   },
-  "bra-sui": {
-    "themeClass": "bra-sui-theme",
-    "group": "A组 第三轮生死战",
-    "timeLoc": "北京时间 6月25日 00:00 | 洛杉矶体育场",
+  "sui-can": {
+    "themeClass": "sui-can-theme",
+    "group": "B组 第三轮出线战",
+    "timeLoc": "北京时间 6月25日 01:30 | 达拉斯体育场",
     "teams": {
       "home": {
-        "name": "巴西",
-        "flag": "bra",
-        "goals": 2.2,
-        "shots": 16.5,
-        "sot": 7.0,
-        "sOff": 9.5,
-        "corners": 6.8
-      },
-      "away": {
         "name": "瑞士",
         "flag": "sui",
-        "goals": 1.2,
-        "shots": 10.2,
-        "sot": 3.8,
-        "sOff": 6.4,
-        "corners": 4.1
+        "goals": 2.1,
+        "shots": 15.2,
+        "sot": 6.8,
+        "sOff": 8.4,
+        "corners": 6.2,
+        "history": {
+          "record1Year": "7胜 2平 1负 (胜率 70%)",
+          "possession": "58.2%",
+          "passAccuracy": "86.5%",
+          "cleanSheets": "5次",
+          "shotConversion": "13.8%",
+          "conversionExplanation": "瑞士队擅长依靠扎卡的中场组织掌控比赛节奏，推进效率稳定，且两翼边后卫压上极深，保证了禁区内立体包抄与射门转化率。",
+          "recentMatches": [
+            {
+              "opponent": "卡塔尔",
+              "score": "1 - 1",
+              "type": "世界杯",
+              "date": "2026-06"
+            },
+            {
+              "opponent": "德国",
+              "score": "1 - 1",
+              "type": "欧洲杯",
+              "date": "2024-06"
+            },
+            {
+              "opponent": "苏格兰",
+              "score": "1 - 1",
+              "type": "欧洲杯",
+              "date": "2024-06"
+            },
+            {
+              "opponent": "匈牙利",
+              "score": "3 - 1",
+              "type": "欧洲杯",
+              "date": "2024-06"
+            }
+          ]
+        }
+      },
+      "away": {
+        "name": "加拿大",
+        "flag": "can",
+        "goals": 1.85,
+        "shots": 13.8,
+        "sot": 5.4,
+        "sOff": 8.4,
+        "corners": 5.8,
+        "history": {
+          "record1Year": "5胜 3平 2负 (胜率 50%)",
+          "possession": "52.4%",
+          "passAccuracy": "82.5%",
+          "cleanSheets": "4次",
+          "shotConversion": "13.4%",
+          "conversionExplanation": "加拿大在主帅马什高压迫战术下展现极高冲击力，边路阿方索复出将使左路下底倒三角的威胁大大增加，中锋戴维的近门终结率是主要得分点。",
+          "recentMatches": [
+            {
+              "opponent": "波黑",
+              "score": "1 - 1",
+              "type": "世界杯",
+              "date": "2026-06"
+            },
+            {
+              "opponent": "法国",
+              "score": "0 - 0",
+              "type": "国际友谊赛",
+              "date": "2024-06"
+            },
+            {
+              "opponent": "荷兰",
+              "score": "0 - 4",
+              "type": "国际友谊赛",
+              "date": "2024-06"
+            },
+            {
+              "opponent": "特立尼达和多巴哥",
+              "score": "2 - 0",
+              "type": "中北美联",
+              "date": "2024-03"
+            }
+          ]
+        }
       }
     },
     "playerDuel": {
-      "description": "维尼修斯的左路爆破对抗阿坎吉领衔的防线",
+      "description": "扎卡 对决 阿方索·戴维斯 的焦点战",
       "home": {
-        "name": "维尼修斯",
-        "club": "皇家马德里",
-        "jersey": "7",
-        "role": "左边锋",
-        "color": "#fbbf24",
-        "details": "当世顶尖突破手，巴西破局的关键。"
+        "name": "扎卡",
+        "club": "豪门球队",
+        "jersey": "10",
+        "role": "核心",
+        "color": "#ef4444",
+        "details": "扎卡 将决定比赛的走向。"
       },
       "away": {
-        "name": "阿坎吉",
-        "club": "曼城",
-        "jersey": "5",
-        "role": "中后卫",
-        "color": "#ef4444",
-        "details": "后防核心，单防与出球能力极强。"
+        "name": "阿方索·戴维斯",
+        "club": "主力队伍",
+        "jersey": "7",
+        "role": "关键先生",
+        "color": "#3b82f6",
+        "details": "阿方索·戴维斯 是球队获胜的希望。"
       }
     },
     "marketPrediction": {
-      "text": "巴西队实力占优，但瑞士防守顽强，预计控球率巴西达65%，Polymarket预测巴西胜率68%。"
+      "text": "本场比赛胜负难料，双方都必须全力争胜。"
     },
     "bettingPrediction": {
-      "homeWin": "1.45",
-      "draw": "4.20",
-      "awayWin": "7.50"
+      "homeWin": "2.10",
+      "draw": "3.10",
+      "awayWin": "3.50"
     },
     "verdict": {
-      "title": "预测方向：巴西胜",
-      "score": "2 - 0",
-      "confidence": "82%",
-      "desc": "巴西进攻端天赋碾压，瑞士难以全场死守。",
-      "handicap": "巴西让 1.25 球",
-      "totals": "小 2.75 球"
+      "title": "预测方向：瑞士 不败",
+      "score": "1 - 1",
+      "confidence": "70%",
+      "desc": "场面将极其胶着。",
+      "handicap": "平手盘",
+      "totals": "小 2.5 球"
     },
     "injuries": {
       "home": {
-        "desc": "内马尔仍在恢复期，其余全主力",
-        "impact": 10
+        "desc": "全员健康",
+        "impact": 0
       },
       "away": {
-        "desc": "扎卡小腿轻伤但可首发",
-        "impact": 5
+        "desc": "无主力伤停",
+        "impact": 0
       }
     },
     "tactics": {
-      "homeForm": "4-2-3-1",
-      "awayForm": "5-4-1",
-      "explanation": "巴西将采用高位压迫和快速轮转，瑞士则以五后卫密集防守伺机反击。",
-      "players": []
+      "homeForm": "4-3-3",
+      "awayForm": "4-4-2",
+      "explanation": "瑞士采用4-3-3体系，加拿大采用4-4-2进行对抗。",
+      "players": [
+        {
+          "x": 180,
+          "y": 450,
+          "num": 1,
+          "name": "门将",
+          "type": "home"
+        },
+        {
+          "x": 180,
+          "y": 90,
+          "num": 9,
+          "name": "扎卡",
+          "type": "home"
+        },
+        {
+          "x": 180,
+          "y": 350,
+          "num": 1,
+          "name": "门将",
+          "type": "away"
+        },
+        {
+          "x": 180,
+          "y": 70,
+          "num": 10,
+          "name": "阿方索·戴维斯",
+          "type": "away"
+        }
+      ]
     },
     "squadPlayers": {
-      "home": [],
-      "away": []
+      "home": [
+        {
+          "name": "扎卡",
+          "age": 28,
+          "position": "前锋",
+          "stats": "核心球员",
+          "role": "进攻核心",
+          "form": "极佳",
+          "ratings": [
+            85,
+            80,
+            75,
+            85,
+            60,
+            80
+          ],
+          "goalDist": {
+            "leftBox": 20,
+            "centerBox": 50,
+            "rightBox": 20,
+            "outsideBox": 10,
+            "conversion": "15%"
+          },
+          "defenseDefense": "前场施压",
+          "defenseWarnings": "需注意其突破"
+        }
+      ],
+      "away": [
+        {
+          "name": "阿方索·戴维斯",
+          "age": 27,
+          "position": "边锋",
+          "stats": "核心球员",
+          "role": "反击利器",
+          "form": "极佳",
+          "ratings": [
+            80,
+            85,
+            70,
+            80,
+            55,
+            85
+          ],
+          "goalDist": {
+            "leftBox": 15,
+            "centerBox": 45,
+            "rightBox": 25,
+            "outsideBox": 15,
+            "conversion": "14%"
+          },
+          "defenseDefense": "快速回防",
+          "defenseWarnings": "防守其内切打门"
+        }
+      ]
     }
   },
-  "hai-bih": {
-    "themeClass": "hai-bih-theme",
-    "group": "A组 第三轮出线战",
-    "timeLoc": "北京时间 6月25日 00:00 | 芝加哥体育场",
+  "bih-qat": {
+    "themeClass": "bih-qat-theme",
+    "group": "B组 第三轮生死战",
+    "timeLoc": "北京时间 6月25日 01:30 | 休斯顿体育场",
     "teams": {
       "home": {
-        "name": "海地",
-        "flag": "hai",
-        "goals": 0.5,
-        "shots": 6.0,
-        "sot": 1.5,
-        "sOff": 4.5,
-        "corners": 2.5
-      },
-      "away": {
         "name": "波黑",
         "flag": "bih",
         "goals": 1.3,
-        "shots": 11.0,
+        "shots": 10.5,
+        "sot": 3.8,
+        "sOff": 6.7,
+        "corners": 4.2,
+        "history": {
+          "record1Year": "4胜 3平 3负 (胜率 40%)",
+          "possession": "47.5%",
+          "passAccuracy": "78.8%",
+          "cleanSheets": "3次",
+          "shotConversion": "12.4%",
+          "conversionExplanation": "波黑球风坚韧，球风硬朗且极其依赖老将哲科在前场的支点作用，整体传控节奏较慢，主要通过定位球和高空轰炸制造威胁。",
+          "recentMatches": [
+            {
+              "opponent": "加拿大",
+              "score": "1 - 1",
+              "type": "世界杯",
+              "date": "2026-06"
+            },
+            {
+              "opponent": "意大利",
+              "score": "0 - 1",
+              "type": "国际友谊赛",
+              "date": "2024-06"
+            },
+            {
+              "opponent": "英国",
+              "score": "0 - 3",
+              "type": "国际友谊赛",
+              "date": "2024-06"
+            },
+            {
+              "opponent": "乌克兰",
+              "score": "1 - 2",
+              "type": "欧预赛",
+              "date": "2024-03"
+            }
+          ]
+        }
+      },
+      "away": {
+        "name": "卡塔尔",
+        "flag": "qat",
+        "goals": 1.6,
+        "shots": 11.2,
         "sot": 4.5,
-        "sOff": 6.5,
-        "corners": 5.0
+        "sOff": 6.7,
+        "corners": 4.8,
+        "history": {
+          "record1Year": "6胜 2平 2负 (胜率 60%)",
+          "possession": "50.8%",
+          "passAccuracy": "81.2%",
+          "cleanSheets": "4次",
+          "shotConversion": "14.3%",
+          "conversionExplanation": "卡塔尔通过防守中路落锁与阿菲夫极具侵略性的反击直塞创造机会，其球星个人小半径配合极具突然性，擅长依靠快攻抢分。",
+          "recentMatches": [
+            {
+              "opponent": "瑞士",
+              "score": "1 - 1",
+              "type": "世界杯",
+              "date": "2026-06"
+            },
+            {
+              "opponent": "印度",
+              "score": "2 - 1",
+              "type": "世预赛",
+              "date": "2026-06"
+            },
+            {
+              "opponent": "阿富汗",
+              "score": "0 - 0",
+              "type": "世预赛",
+              "date": "2026-06"
+            },
+            {
+              "opponent": "科威特",
+              "score": "2 - 1",
+              "type": "世预赛",
+              "date": "2026-03"
+            }
+          ]
+        }
       }
     },
     "playerDuel": {
-      "description": "波黑老将哲科的禁区支点作用",
+      "description": "哲科 对决 阿里 的焦点战",
       "home": {
-        "name": "纳宗",
-        "club": "特鲁瓦",
-        "jersey": "9",
-        "role": "中锋",
-        "color": "#3b82f6",
-        "details": "海地唯一具备五大联赛经验的射手。"
+        "name": "哲科",
+        "club": "豪门球队",
+        "jersey": "10",
+        "role": "核心",
+        "color": "#ef4444",
+        "details": "哲科 将决定比赛的走向。"
       },
       "away": {
-        "name": "哲科",
-        "club": "费内巴切",
-        "jersey": "11",
-        "role": "中锋",
-        "color": "#10b981",
-        "details": "虽然年迈，但在禁区内的战术价值依然无可替代。"
+        "name": "阿里",
+        "club": "主力队伍",
+        "jersey": "7",
+        "role": "关键先生",
+        "color": "#3b82f6",
+        "details": "阿里 是球队获胜的希望。"
       }
     },
     "marketPrediction": {
-      "text": "波黑实力碾压，必须取胜以锁定出线名额。"
+      "text": "本场比赛胜负难料，双方都必须全力争胜。"
     },
     "bettingPrediction": {
-      "homeWin": "8.00",
-      "draw": "4.50",
-      "awayWin": "1.38"
+      "homeWin": "2.10",
+      "draw": "3.10",
+      "awayWin": "3.50"
     },
     "verdict": {
-      "title": "预测方向：波黑胜",
-      "score": "0 - 2",
-      "confidence": "75%",
-      "desc": "波黑整体实力占优，高空轰炸对海地威胁巨大。",
-      "handicap": "波黑让 1.5 球",
-      "totals": "大 2.5 球"
+      "title": "预测方向：波黑 不败",
+      "score": "1 - 1",
+      "confidence": "70%",
+      "desc": "场面将极其胶着。",
+      "handicap": "平手盘",
+      "totals": "小 2.5 球"
     },
     "injuries": {
       "home": {
@@ -13893,333 +14110,986 @@
     },
     "tactics": {
       "homeForm": "4-4-2",
-      "awayForm": "4-3-3",
-      "explanation": "海地立足防守，波黑主打边路传中找哲科。",
-      "players": []
+      "awayForm": "5-3-2",
+      "explanation": "波黑采用4-4-2体系，卡塔尔采用5-3-2进行对抗。",
+      "players": [
+        {
+          "x": 180,
+          "y": 450,
+          "num": 1,
+          "name": "门将",
+          "type": "home"
+        },
+        {
+          "x": 180,
+          "y": 90,
+          "num": 9,
+          "name": "哲科",
+          "type": "home"
+        },
+        {
+          "x": 180,
+          "y": 350,
+          "num": 1,
+          "name": "门将",
+          "type": "away"
+        },
+        {
+          "x": 180,
+          "y": 70,
+          "num": 10,
+          "name": "阿里",
+          "type": "away"
+        }
+      ]
     },
     "squadPlayers": {
-      "home": [],
-      "away": []
+      "home": [
+        {
+          "name": "哲科",
+          "age": 28,
+          "position": "前锋",
+          "stats": "核心球员",
+          "role": "进攻核心",
+          "form": "极佳",
+          "ratings": [
+            85,
+            80,
+            75,
+            85,
+            60,
+            80
+          ],
+          "goalDist": {
+            "leftBox": 20,
+            "centerBox": 50,
+            "rightBox": 20,
+            "outsideBox": 10,
+            "conversion": "15%"
+          },
+          "defenseDefense": "前场施压",
+          "defenseWarnings": "需注意其突破"
+        }
+      ],
+      "away": [
+        {
+          "name": "阿里",
+          "age": 27,
+          "position": "边锋",
+          "stats": "核心球员",
+          "role": "反击利器",
+          "form": "极佳",
+          "ratings": [
+            80,
+            85,
+            70,
+            80,
+            55,
+            85
+          ],
+          "goalDist": {
+            "leftBox": 15,
+            "centerBox": 45,
+            "rightBox": 25,
+            "outsideBox": 15,
+            "conversion": "14%"
+          },
+          "defenseDefense": "快速回防",
+          "defenseWarnings": "防守其内切打门"
+        }
+      ]
     }
   },
-  "ger-ned": {
-    "themeClass": "ger-ned-theme",
-    "group": "B组 第三轮巅峰战",
-    "timeLoc": "北京时间 6月25日 04:00 | 纽约体育场",
-    "teams": {
-      "home": {
-        "name": "德国",
-        "flag": "ger",
-        "goals": 2.5,
-        "shots": 18.0,
-        "sot": 7.5,
-        "sOff": 10.5,
-        "corners": 7.2
-      },
-      "away": {
-        "name": "荷兰",
-        "flag": "ned",
-        "goals": 2.1,
-        "shots": 14.5,
-        "sot": 5.8,
-        "sOff": 8.7,
-        "corners": 6.0
-      }
-    },
-    "playerDuel": {
-      "description": "维尔茨与哈维·西蒙斯的青春对决",
-      "home": {
-        "name": "维尔茨",
-        "club": "勒沃库森",
-        "jersey": "10",
-        "role": "前腰",
-        "color": "#ef4444",
-        "details": "德国前场进攻核心，创造力满分。"
-      },
-      "away": {
-        "name": "哈维·西蒙斯",
-        "club": "莱比锡",
-        "jersey": "7",
-        "role": "前腰",
-        "color": "#f97316",
-        "details": "荷兰队的爆点，突破犀利。"
-      }
-    },
-    "marketPrediction": {
-      "text": "两强相遇，谁赢谁获小组第一，平局可能性较高。"
-    },
-    "bettingPrediction": {
-      "homeWin": "2.30",
-      "draw": "3.40",
-      "awayWin": "3.00"
-    },
-    "verdict": {
-      "title": "预测方向：平局",
-      "score": "2 - 2",
-      "confidence": "65%",
-      "desc": "双方攻击力极强，预计是一场开放式的进球大战。",
-      "handicap": "平手盘",
-      "totals": "大 3.5 球"
-    },
-    "injuries": {
-      "home": {
-        "desc": "克罗斯退役，中场拦截略降",
-        "impact": 15
-      },
-      "away": {
-        "desc": "德容健康状态良好",
-        "impact": 0
-      }
-    },
-    "tactics": {
-      "homeForm": "4-2-3-1",
-      "awayForm": "3-4-1-2",
-      "explanation": "德国依靠维尔茨和穆西亚拉的肋部传切，荷兰依靠两翼齐飞。",
-      "players": []
-    },
-    "squadPlayers": {
-      "home": [],
-      "away": []
-    }
-  },
-  "civ-swe": {
-    "themeClass": "civ-swe-theme",
-    "group": "B组 第三轮生死战",
-    "timeLoc": "北京时间 6月25日 04:00 | 费城体育场",
-    "teams": {
-      "home": {
-        "name": "科特迪瓦",
-        "flag": "civ",
-        "goals": 1.4,
-        "shots": 12.0,
-        "sot": 4.5,
-        "sOff": 7.5,
-        "corners": 5.2
-      },
-      "away": {
-        "name": "瑞典",
-        "flag": "swe",
-        "goals": 1.6,
-        "shots": 13.5,
-        "sot": 5.0,
-        "sOff": 8.5,
-        "corners": 4.8
-      }
-    },
-    "playerDuel": {
-      "description": "伊萨克与科特迪瓦防线的速度比拼",
-      "home": {
-        "name": "阿莱",
-        "club": "多特蒙德",
-        "jersey": "9",
-        "role": "中锋",
-        "color": "#f97316",
-        "details": "空霸，前场重要支点。"
-      },
-      "away": {
-        "name": "伊萨克",
-        "club": "纽卡斯尔",
-        "jersey": "11",
-        "role": "中锋",
-        "color": "#fbbf24",
-        "details": "速度极快，反击利器。"
-      }
-    },
-    "marketPrediction": {
-      "text": "瑞典整体战术素养稍高，但科特迪瓦身体天赋出众，悬念极大。"
-    },
-    "bettingPrediction": {
-      "homeWin": "2.80",
-      "draw": "3.10",
-      "awayWin": "2.60"
-    },
-    "verdict": {
-      "title": "预测方向：瑞典不败",
-      "score": "1 - 1",
-      "confidence": "70%",
-      "desc": "瑞典在僵持战中更有战术纪律性，科特迪瓦进攻依赖个人能力。",
-      "handicap": "瑞典 平手",
-      "totals": "小 2.5 球"
-    },
-    "injuries": {
-      "home": {
-        "desc": "全主力",
-        "impact": 0
-      },
-      "away": {
-        "desc": "全主力",
-        "impact": 0
-      }
-    },
-    "tactics": {
-      "homeForm": "4-3-3",
-      "awayForm": "4-4-2",
-      "explanation": "科特迪瓦强攻两路，瑞典立足双线防守反击。",
-      "players": []
-    },
-    "squadPlayers": {
-      "home": [],
-      "away": []
-    }
-  },
-  "esp-ita": {
-    "themeClass": "esp-ita-theme",
+  "mar-hai": {
+    "themeClass": "mar-hai-theme",
     "group": "C组 第三轮焦点战",
-    "timeLoc": "北京时间 6月25日 08:00 | 迈阿密体育场",
+    "timeLoc": "北京时间 6月25日 04:30 | 迈阿密体育场",
     "teams": {
       "home": {
-        "name": "西班牙",
-        "flag": "esp",
-        "goals": 2.0,
-        "shots": 15.5,
-        "sot": 6.2,
-        "sOff": 9.3,
-        "corners": 7.5
+        "name": "摩洛哥",
+        "flag": "mar",
+        "goals": 1.6,
+        "shots": 11.2,
+        "sot": 4.5,
+        "sOff": 6.7,
+        "corners": 5.1,
+        "history": {
+          "record1Year": "6胜 3平 1负 (胜率 60%)",
+          "possession": "54.8%",
+          "passAccuracy": "84.2%",
+          "cleanSheets": "6次",
+          "shotConversion": "12.5%",
+          "conversionExplanation": "摩洛哥打法沉稳，坚守反击，阿什拉夫在右翼的超速推进是进攻核心手段，防守极其稳固。",
+          "recentMatches": [
+            {
+              "opponent": "赞比亚",
+              "score": "2 - 1",
+              "type": "世预赛",
+              "date": "2026-06"
+            },
+            {
+              "opponent": "刚果",
+              "score": "6 - 0",
+              "type": "世预赛",
+              "date": "2026-06"
+            }
+          ]
+        }
       },
       "away": {
-        "name": "意大利",
-        "flag": "ita",
+        "name": "海地",
+        "flag": "hai",
         "goals": 1.2,
-        "shots": 11.5,
-        "sot": 4.0,
-        "sOff": 7.5,
-        "corners": 5.0
+        "shots": 8.4,
+        "sot": 2.8,
+        "sOff": 5.6,
+        "corners": 3.5,
+        "history": {
+          "record1Year": "3胜 2平 5负 (胜率 30%)",
+          "possession": "42.5%",
+          "passAccuracy": "72.4%",
+          "cleanSheets": "2次",
+          "shotConversion": "14.3%",
+          "conversionExplanation": "海地队拼抢硬度极大，主要采取深度 5-4-1 极密铁桶防守。依靠空霸佩罗特和纳佐恩的锋线对抗反击打对方防线纵深。",
+          "recentMatches": [
+            {
+              "opponent": "苏格兰",
+              "score": "0 - 1",
+              "type": "世界杯",
+              "date": "2026-06"
+            },
+            {
+              "opponent": "巴巴多斯",
+              "score": "3 - 1",
+              "type": "世预赛",
+              "date": "2024-06"
+            },
+            {
+              "opponent": "圣卢西亚",
+              "score": "2 - 1",
+              "type": "世预赛",
+              "date": "2024-06"
+            },
+            {
+              "opponent": "法属圭亚那",
+              "score": "1 - 1",
+              "type": "友谊赛",
+              "date": "2024-03"
+            }
+          ]
+        }
       }
     },
     "playerDuel": {
-      "description": "罗德里对决巴雷拉",
+      "description": "阿什拉夫 对决 纳宗 的焦点战",
       "home": {
-        "name": "罗德里",
-        "club": "曼城",
-        "jersey": "16",
-        "role": "后腰",
+        "name": "阿什拉夫",
+        "club": "豪门球队",
+        "jersey": "10",
+        "role": "核心",
         "color": "#ef4444",
-        "details": "全球第一后腰，西班牙的节拍器。"
+        "details": "阿什拉夫 将决定比赛的走向。"
       },
       "away": {
-        "name": "巴雷拉",
-        "club": "国际米兰",
-        "jersey": "18",
-        "role": "中场",
+        "name": "纳宗",
+        "club": "主力队伍",
+        "jersey": "7",
+        "role": "关键先生",
         "color": "#3b82f6",
-        "details": "意大利攻防转换的核心引擎。"
+        "details": "纳宗 是球队获胜的希望。"
       }
     },
     "marketPrediction": {
-      "text": "传控对防反的经典演绎，西班牙胜率被稍稍看好。"
+      "text": "本场比赛胜负难料，双方都必须全力争胜。"
     },
     "bettingPrediction": {
       "homeWin": "2.10",
       "draw": "3.10",
-      "awayWin": "3.80"
+      "awayWin": "3.50"
     },
     "verdict": {
-      "title": "预测方向：西班牙胜",
-      "score": "1 - 0",
-      "confidence": "75%",
-      "desc": "西班牙的持续施压终将打穿意大利疲惫的防线。",
-      "handicap": "西班牙让 0.5 球",
+      "title": "预测方向：摩洛哥 不败",
+      "score": "1 - 1",
+      "confidence": "70%",
+      "desc": "场面将极其胶着。",
+      "handicap": "平手盘",
       "totals": "小 2.5 球"
     },
     "injuries": {
       "home": {
-        "desc": "佩德里轻伤，可能轮休",
-        "impact": 10
+        "desc": "全员健康",
+        "impact": 0
       },
       "away": {
-        "desc": "基耶萨状态成疑",
-        "impact": 15
+        "desc": "无主力伤停",
+        "impact": 0
       }
     },
     "tactics": {
       "homeForm": "4-3-3",
-      "awayForm": "3-5-2",
-      "explanation": "西班牙极致控球，意大利深度回撤并依靠边翼卫反击。",
-      "players": []
+      "awayForm": "4-5-1",
+      "explanation": "摩洛哥采用4-3-3体系，海地采用4-5-1进行对抗。",
+      "players": [
+        {
+          "x": 180,
+          "y": 450,
+          "num": 1,
+          "name": "门将",
+          "type": "home"
+        },
+        {
+          "x": 180,
+          "y": 90,
+          "num": 9,
+          "name": "阿什拉夫",
+          "type": "home"
+        },
+        {
+          "x": 180,
+          "y": 350,
+          "num": 1,
+          "name": "门将",
+          "type": "away"
+        },
+        {
+          "x": 180,
+          "y": 70,
+          "num": 10,
+          "name": "纳宗",
+          "type": "away"
+        }
+      ]
     },
     "squadPlayers": {
-      "home": [],
-      "away": []
+      "home": [
+        {
+          "name": "阿什拉夫",
+          "age": 28,
+          "position": "前锋",
+          "stats": "核心球员",
+          "role": "进攻核心",
+          "form": "极佳",
+          "ratings": [
+            85,
+            80,
+            75,
+            85,
+            60,
+            80
+          ],
+          "goalDist": {
+            "leftBox": 20,
+            "centerBox": 50,
+            "rightBox": 20,
+            "outsideBox": 10,
+            "conversion": "15%"
+          },
+          "defenseDefense": "前场施压",
+          "defenseWarnings": "需注意其突破"
+        }
+      ],
+      "away": [
+        {
+          "name": "纳宗",
+          "age": 27,
+          "position": "边锋",
+          "stats": "核心球员",
+          "role": "反击利器",
+          "form": "极佳",
+          "ratings": [
+            80,
+            85,
+            70,
+            80,
+            55,
+            85
+          ],
+          "goalDist": {
+            "leftBox": 15,
+            "centerBox": 45,
+            "rightBox": 25,
+            "outsideBox": 15,
+            "conversion": "14%"
+          },
+          "defenseDefense": "快速回防",
+          "defenseWarnings": "防守其内切打门"
+        }
+      ]
     }
   },
-  "jpn-crc": {
-    "themeClass": "jpn-crc-theme",
-    "group": "C组 第三轮生死战",
-    "timeLoc": "北京时间 6月25日 08:00 | 亚特兰大体育场",
+  "sco-bra": {
+    "themeClass": "sco-bra-theme",
+    "group": "C组 第三轮巅峰战",
+    "timeLoc": "北京时间 6月25日 04:30 | 亚特兰大体育场",
     "teams": {
       "home": {
-        "name": "日本",
-        "flag": "jpn",
-        "goals": 1.8,
-        "shots": 14.0,
-        "sot": 5.5,
-        "sOff": 8.5,
-        "corners": 6.0
+        "name": "苏格兰",
+        "flag": "sco",
+        "goals": 1.6,
+        "shots": 11.2,
+        "sot": 4.5,
+        "sOff": 6.7,
+        "corners": 5.4,
+        "history": {
+          "record1Year": "6胜 1平 3负 (胜率 60%)",
+          "possession": "51.2%",
+          "passAccuracy": "81.5%",
+          "cleanSheets": "4次",
+          "shotConversion": "14.2%",
+          "conversionExplanation": "苏格兰队拼抢极其凶狠顽强，两翼起球频繁。麦克托米奈的大禁区弧顶无球插上爆射与罗伯逊的精确左路斜吊传中是主要得分战术。",
+          "recentMatches": [
+            {
+              "opponent": "海地",
+              "score": "1 - 0",
+              "type": "世界杯",
+              "date": "2026-06"
+            },
+            {
+              "opponent": "直布罗陀",
+              "score": "2 - 0",
+              "type": "国际友谊赛",
+              "date": "2024-06"
+            },
+            {
+              "opponent": "芬兰",
+              "score": "2 - 2",
+              "type": "国际友谊赛",
+              "date": "2024-06"
+            },
+            {
+              "opponent": "北爱尔兰",
+              "score": "0 - 1",
+              "type": "国际友谊赛",
+              "date": "2024-03"
+            }
+          ]
+        }
       },
       "away": {
-        "name": "哥斯达黎加",
-        "flag": "crc",
-        "goals": 0.8,
-        "shots": 7.5,
-        "sot": 2.5,
-        "sOff": 5.0,
-        "corners": 3.0
+        "name": "巴西",
+        "flag": "bra",
+        "goals": 3.4,
+        "shots": 18.5,
+        "sot": 8.9,
+        "sOff": 9.6,
+        "corners": 7.2,
+        "history": {
+          "record1Year": "7胜 2平 1负 (胜率 70%)",
+          "possession": "62.4%",
+          "passAccuracy": "89.2%",
+          "cleanSheets": "4次",
+          "shotConversion": "18.4%",
+          "conversionExplanation": "巴西队首战被摩洛哥逼平，此役求胜欲望极其强烈。维尼修斯和罗德里戈在前场的穿插以及极其残暴的脚下控球是海地防线的致命威胁。",
+          "recentMatches": [
+            {
+              "opponent": "摩洛哥",
+              "score": "1 - 1",
+              "type": "世界杯",
+              "date": "2026-06"
+            },
+            {
+              "opponent": "墨西哥",
+              "score": "3 - 2",
+              "type": "国际友谊赛",
+              "date": "2024-06"
+            },
+            {
+              "opponent": "美国",
+              "score": "1 - 1",
+              "type": "国际友谊赛",
+              "date": "2024-06"
+            },
+            {
+              "opponent": "西班牙",
+              "score": "3 - 3",
+              "type": "国际友谊赛",
+              "date": "2024-03"
+            }
+          ]
+        }
       }
     },
     "playerDuel": {
-      "description": "三笘薰的边路突击",
+      "description": "罗伯逊 对决 维尼修斯 的焦点战",
       "home": {
-        "name": "三笘薰",
-        "club": "布莱顿",
-        "jersey": "9",
-        "role": "左边锋",
-        "color": "#3b82f6",
-        "details": "亚洲第一突破手。"
+        "name": "罗伯逊",
+        "club": "豪门球队",
+        "jersey": "10",
+        "role": "核心",
+        "color": "#ef4444",
+        "details": "罗伯逊 将决定比赛的走向。"
       },
       "away": {
-        "name": "纳瓦斯",
-        "club": "自由球员",
-        "jersey": "1",
-        "role": "门将",
-        "color": "#ef4444",
-        "details": "哥斯达黎加最后的防线。"
+        "name": "维尼修斯",
+        "club": "主力队伍",
+        "jersey": "7",
+        "role": "关键先生",
+        "color": "#3b82f6",
+        "details": "维尼修斯 是球队获胜的希望。"
       }
     },
     "marketPrediction": {
-      "text": "日本技术全面占优，赢球出线。"
+      "text": "本场比赛胜负难料，双方都必须全力争胜。"
     },
     "bettingPrediction": {
-      "homeWin": "1.40",
-      "draw": "4.50",
-      "awayWin": "8.50"
+      "homeWin": "2.10",
+      "draw": "3.10",
+      "awayWin": "3.50"
     },
     "verdict": {
-      "title": "预测方向：日本胜",
-      "score": "2 - 0",
-      "confidence": "85%",
-      "desc": "日本传控与速度结合，将压制哥斯达黎加。",
-      "handicap": "日本让 1.25 球",
-      "totals": "大 2.5 球"
+      "title": "预测方向：苏格兰 不败",
+      "score": "1 - 1",
+      "confidence": "70%",
+      "desc": "场面将极其胶着。",
+      "handicap": "平手盘",
+      "totals": "小 2.5 球"
     },
     "injuries": {
       "home": {
-        "desc": "全主力健康",
+        "desc": "全员健康",
         "impact": 0
       },
       "away": {
-        "desc": "多名老将体能亮红灯",
-        "impact": 10
+        "desc": "无主力伤停",
+        "impact": 0
+      }
+    },
+    "tactics": {
+      "homeForm": "5-4-1",
+      "awayForm": "4-2-3-1",
+      "explanation": "苏格兰采用5-4-1体系，巴西采用4-2-3-1进行对抗。",
+      "players": [
+        {
+          "x": 180,
+          "y": 450,
+          "num": 1,
+          "name": "门将",
+          "type": "home"
+        },
+        {
+          "x": 180,
+          "y": 90,
+          "num": 9,
+          "name": "罗伯逊",
+          "type": "home"
+        },
+        {
+          "x": 180,
+          "y": 350,
+          "num": 1,
+          "name": "门将",
+          "type": "away"
+        },
+        {
+          "x": 180,
+          "y": 70,
+          "num": 10,
+          "name": "维尼修斯",
+          "type": "away"
+        }
+      ]
+    },
+    "squadPlayers": {
+      "home": [
+        {
+          "name": "罗伯逊",
+          "age": 28,
+          "position": "前锋",
+          "stats": "核心球员",
+          "role": "进攻核心",
+          "form": "极佳",
+          "ratings": [
+            85,
+            80,
+            75,
+            85,
+            60,
+            80
+          ],
+          "goalDist": {
+            "leftBox": 20,
+            "centerBox": 50,
+            "rightBox": 20,
+            "outsideBox": 10,
+            "conversion": "15%"
+          },
+          "defenseDefense": "前场施压",
+          "defenseWarnings": "需注意其突破"
+        }
+      ],
+      "away": [
+        {
+          "name": "维尼修斯",
+          "age": 27,
+          "position": "边锋",
+          "stats": "核心球员",
+          "role": "反击利器",
+          "form": "极佳",
+          "ratings": [
+            80,
+            85,
+            70,
+            80,
+            55,
+            85
+          ],
+          "goalDist": {
+            "leftBox": 15,
+            "centerBox": 45,
+            "rightBox": 25,
+            "outsideBox": 15,
+            "conversion": "14%"
+          },
+          "defenseDefense": "快速回防",
+          "defenseWarnings": "防守其内切打门"
+        }
+      ]
+    }
+  },
+  "rsa-kor": {
+    "themeClass": "rsa-kor-theme",
+    "group": "A组 第三轮出线战",
+    "timeLoc": "北京时间 6月25日 07:30 | 洛杉矶体育场",
+    "teams": {
+      "home": {
+        "name": "南非",
+        "flag": "rsa",
+        "goals": 1.45,
+        "shots": 11.2,
+        "sot": 4,
+        "sOff": 7.2,
+        "corners": 4.4,
+        "history": {
+          "record1Year": "5胜 4平 1负 (胜率 50%)",
+          "possession": "48.6%",
+          "passAccuracy": "82.5%",
+          "cleanSheets": "5次",
+          "shotConversion": "12.9%",
+          "conversionExplanation": "南非队的射门转化率达到了 12.9%。这主要由于布罗斯执教下建立起了一套极为流畅的地面反击体系，兹瓦内和陶在前场的短传传切配合极其熟练，带球摆脱轻盈。虽然球队高空轰炸能力是天然弱项，但通过极快的脚下地面穿插，能屡屡在对手转身不及的情况下攻入禁区深处完成破门。",
+          "recentMatches": [
+            {
+              "opponent": "津巴布韦",
+              "score": "3 - 1",
+              "type": "世预赛",
+              "date": "2026-06"
+            },
+            {
+              "opponent": "尼日利亚",
+              "score": "1 - 1",
+              "type": "世预赛",
+              "date": "2026-06"
+            },
+            {
+              "opponent": "阿尔及利亚",
+              "score": "3 - 3",
+              "type": "国际友谊赛",
+              "date": "2026-03"
+            },
+            {
+              "opponent": "安道尔",
+              "score": "1 - 1",
+              "type": "国际友谊赛",
+              "date": "2026-03"
+            }
+          ]
+        }
+      },
+      "away": {
+        "name": "韩国",
+        "flag": "kor",
+        "goals": 1.75,
+        "shots": 11.8,
+        "sot": 4.5,
+        "sOff": 7.3,
+        "corners": 4.5,
+        "history": {
+          "record1Year": "7胜 1平 2负 (胜率 70%)",
+          "possession": "53.2%",
+          "passAccuracy": "82.8%",
+          "cleanSheets": "4次",
+          "shotConversion": "14.8%",
+          "conversionExplanation": "韩国队在中前场实力强劲，孙兴慜的边路冲击力世界级，李刚仁在右路的内切和传中是主要发动机。",
+          "recentMatches": [
+            {
+              "opponent": "中国",
+              "score": "1 - 0",
+              "type": "世预赛",
+              "date": "2026-06"
+            },
+            {
+              "opponent": "新加坡",
+              "score": "7 - 0",
+              "type": "世预赛",
+              "date": "2026-06"
+            }
+          ]
+        }
+      }
+    },
+    "playerDuel": {
+      "description": "塔乌 对决 孙兴慜 的焦点战",
+      "home": {
+        "name": "塔乌",
+        "club": "豪门球队",
+        "jersey": "10",
+        "role": "核心",
+        "color": "#ef4444",
+        "details": "塔乌 将决定比赛的走向。"
+      },
+      "away": {
+        "name": "孙兴慜",
+        "club": "主力队伍",
+        "jersey": "7",
+        "role": "关键先生",
+        "color": "#3b82f6",
+        "details": "孙兴慜 是球队获胜的希望。"
+      }
+    },
+    "marketPrediction": {
+      "text": "本场比赛胜负难料，双方都必须全力争胜。"
+    },
+    "bettingPrediction": {
+      "homeWin": "2.10",
+      "draw": "3.10",
+      "awayWin": "3.50"
+    },
+    "verdict": {
+      "title": "预测方向：南非 不败",
+      "score": "1 - 1",
+      "confidence": "70%",
+      "desc": "场面将极其胶着。",
+      "handicap": "平手盘",
+      "totals": "小 2.5 球"
+    },
+    "injuries": {
+      "home": {
+        "desc": "全员健康",
+        "impact": 0
+      },
+      "away": {
+        "desc": "无主力伤停",
+        "impact": 0
+      }
+    },
+    "tactics": {
+      "homeForm": "4-4-2",
+      "awayForm": "4-2-3-1",
+      "explanation": "南非采用4-4-2体系，韩国采用4-2-3-1进行对抗。",
+      "players": [
+        {
+          "x": 180,
+          "y": 450,
+          "num": 1,
+          "name": "门将",
+          "type": "home"
+        },
+        {
+          "x": 180,
+          "y": 90,
+          "num": 9,
+          "name": "塔乌",
+          "type": "home"
+        },
+        {
+          "x": 180,
+          "y": 350,
+          "num": 1,
+          "name": "门将",
+          "type": "away"
+        },
+        {
+          "x": 180,
+          "y": 70,
+          "num": 10,
+          "name": "孙兴慜",
+          "type": "away"
+        }
+      ]
+    },
+    "squadPlayers": {
+      "home": [
+        {
+          "name": "塔乌",
+          "age": 28,
+          "position": "前锋",
+          "stats": "核心球员",
+          "role": "进攻核心",
+          "form": "极佳",
+          "ratings": [
+            85,
+            80,
+            75,
+            85,
+            60,
+            80
+          ],
+          "goalDist": {
+            "leftBox": 20,
+            "centerBox": 50,
+            "rightBox": 20,
+            "outsideBox": 10,
+            "conversion": "15%"
+          },
+          "defenseDefense": "前场施压",
+          "defenseWarnings": "需注意其突破"
+        }
+      ],
+      "away": [
+        {
+          "name": "孙兴慜",
+          "age": 27,
+          "position": "边锋",
+          "stats": "核心球员",
+          "role": "反击利器",
+          "form": "极佳",
+          "ratings": [
+            80,
+            85,
+            70,
+            80,
+            55,
+            85
+          ],
+          "goalDist": {
+            "leftBox": 15,
+            "centerBox": 45,
+            "rightBox": 25,
+            "outsideBox": 15,
+            "conversion": "14%"
+          },
+          "defenseDefense": "快速回防",
+          "defenseWarnings": "防守其内切打门"
+        }
+      ]
+    }
+  },
+  "cze-mex": {
+    "themeClass": "cze-mex-theme",
+    "group": "A组 第三轮生死战",
+    "timeLoc": "北京时间 6月25日 07:30 | 旧金山体育场",
+    "teams": {
+      "home": {
+        "name": "捷克",
+        "flag": "cze",
+        "goals": 1.6,
+        "shots": 12.5,
+        "sot": 4.8,
+        "sOff": 7.7,
+        "corners": 5,
+        "history": {
+          "record1Year": "6胜 2平 2负 (胜率 60%)",
+          "possession": "51.4%",
+          "passAccuracy": "81.8%",
+          "cleanSheets": "4次",
+          "shotConversion": "12.8%",
+          "conversionExplanation": "捷克近一年的射门转化率为 12.8%。捷克队主打传统东欧风格，极其重视中后场身体对抗和高空轰炸，进攻端重度依赖高中锋Patrik Schick的门前抢点以及中场Soucek的插上争顶。在面对灵敏快速的防线时，因为脚下带球和传递灵活性稍欠，多次地面的打门机会被对方封锁或没收。",
+          "recentMatches": [
+            {
+              "opponent": "马其顿",
+              "score": "2 - 1",
+              "type": "国际友谊赛",
+              "date": "2026-06"
+            },
+            {
+              "opponent": "马耳他",
+              "score": "7 - 1",
+              "type": "国际友谊赛",
+              "date": "2026-06"
+            },
+            {
+              "opponent": "亚美尼亚",
+              "score": "2 - 1",
+              "type": "国际友谊赛",
+              "date": "2026-03"
+            },
+            {
+              "opponent": "挪威",
+              "score": "1 - 2",
+              "type": "国际友谊赛",
+              "date": "2026-03"
+            }
+          ]
+        }
+      },
+      "away": {
+        "name": "墨西哥",
+        "flag": "mex",
+        "goals": 2.2,
+        "shots": 16.2,
+        "sot": 7.2,
+        "sOff": 9,
+        "corners": 6.5,
+        "history": {
+          "record1Year": "7胜 1平 2负 (胜率 70%)",
+          "possession": "57.8%",
+          "passAccuracy": "85.2%",
+          "cleanSheets": "5次",
+          "shotConversion": "13.6%",
+          "conversionExplanation": "墨西哥队在瓜达拉哈拉狂热的主场哨声下擅长实施疯狂的前场高压，Quiñones与Jimenez的默契度高，边路底线突破极其频繁。",
+          "recentMatches": [
+            {
+              "opponent": "南非",
+              "score": "2 - 0",
+              "type": "世界杯",
+              "date": "2026-06"
+            },
+            {
+              "opponent": "巴西",
+              "score": "2 - 3",
+              "type": "国际友谊赛",
+              "date": "2024-06"
+            },
+            {
+              "opponent": "乌拉圭",
+              "score": "0 - 4",
+              "type": "国际友谊赛",
+              "date": "2024-06"
+            },
+            {
+              "opponent": "巴拿马",
+              "score": "3 - 0",
+              "type": "中北美联",
+              "date": "2024-03"
+            }
+          ]
+        }
+      }
+    },
+    "playerDuel": {
+      "description": "希克 对决 洛萨诺 的焦点战",
+      "home": {
+        "name": "希克",
+        "club": "豪门球队",
+        "jersey": "10",
+        "role": "核心",
+        "color": "#ef4444",
+        "details": "希克 将决定比赛的走向。"
+      },
+      "away": {
+        "name": "洛萨诺",
+        "club": "主力队伍",
+        "jersey": "7",
+        "role": "关键先生",
+        "color": "#3b82f6",
+        "details": "洛萨诺 是球队获胜的希望。"
+      }
+    },
+    "marketPrediction": {
+      "text": "本场比赛胜负难料，双方都必须全力争胜。"
+    },
+    "bettingPrediction": {
+      "homeWin": "2.10",
+      "draw": "3.10",
+      "awayWin": "3.50"
+    },
+    "verdict": {
+      "title": "预测方向：捷克 不败",
+      "score": "1 - 1",
+      "confidence": "70%",
+      "desc": "场面将极其胶着。",
+      "handicap": "平手盘",
+      "totals": "小 2.5 球"
+    },
+    "injuries": {
+      "home": {
+        "desc": "全员健康",
+        "impact": 0
+      },
+      "away": {
+        "desc": "无主力伤停",
+        "impact": 0
       }
     },
     "tactics": {
       "homeForm": "4-2-3-1",
-      "awayForm": "5-4-1",
-      "explanation": "日本前场压迫，哥斯达黎加全线退守。",
-      "players": []
+      "awayForm": "4-3-3",
+      "explanation": "捷克采用4-2-3-1体系，墨西哥采用4-3-3进行对抗。",
+      "players": [
+        {
+          "x": 180,
+          "y": 450,
+          "num": 1,
+          "name": "门将",
+          "type": "home"
+        },
+        {
+          "x": 180,
+          "y": 90,
+          "num": 9,
+          "name": "希克",
+          "type": "home"
+        },
+        {
+          "x": 180,
+          "y": 350,
+          "num": 1,
+          "name": "门将",
+          "type": "away"
+        },
+        {
+          "x": 180,
+          "y": 70,
+          "num": 10,
+          "name": "洛萨诺",
+          "type": "away"
+        }
+      ]
     },
     "squadPlayers": {
-      "home": [],
-      "away": []
+      "home": [
+        {
+          "name": "希克",
+          "age": 28,
+          "position": "前锋",
+          "stats": "核心球员",
+          "role": "进攻核心",
+          "form": "极佳",
+          "ratings": [
+            85,
+            80,
+            75,
+            85,
+            60,
+            80
+          ],
+          "goalDist": {
+            "leftBox": 20,
+            "centerBox": 50,
+            "rightBox": 20,
+            "outsideBox": 10,
+            "conversion": "15%"
+          },
+          "defenseDefense": "前场施压",
+          "defenseWarnings": "需注意其突破"
+        }
+      ],
+      "away": [
+        {
+          "name": "洛萨诺",
+          "age": 27,
+          "position": "边锋",
+          "stats": "核心球员",
+          "role": "反击利器",
+          "form": "极佳",
+          "ratings": [
+            80,
+            85,
+            70,
+            80,
+            55,
+            85
+          ],
+          "goalDist": {
+            "leftBox": 15,
+            "centerBox": 45,
+            "rightBox": 25,
+            "outsideBox": 15,
+            "conversion": "14%"
+          },
+          "defenseDefense": "快速回防",
+          "defenseWarnings": "防守其内切打门"
+        }
+      ]
     }
   }
 }
