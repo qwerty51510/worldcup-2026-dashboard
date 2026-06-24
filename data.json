@@ -13854,20 +13854,22 @@
       }
     },
     "marketPrediction": {
-      "text": "本场比赛胜负难料，双方都必须全力争胜。"
+      "polymarketOdds": {
+        "homeWin": 45,
+        "draw": 30,
+        "awayWin": 25
+      },
+      "marketSentiment": "本场比赛胜负难料，双方都必须全力争胜。"
     },
     "bettingPrediction": {
-      "homeWin": "2.10",
-      "draw": "3.10",
-      "awayWin": "3.50"
+      "handicap": "平手盘",
+      "totals": "小 2.5",
+      "recommendation": "推荐平局或让球下盘",
+      "reason": "考虑到双方实力接近，大概率会打平。"
     },
     "verdict": {
-      "title": "预测方向：瑞士 不败",
       "score": "1 - 1",
-      "confidence": "70%",
-      "desc": "场面将极其胶着。",
-      "handicap": "平手盘",
-      "totals": "小 2.5 球"
+      "text": "场面将极其胶着。"
     },
     "injuries": {
       "home": {
@@ -14083,20 +14085,22 @@
       }
     },
     "marketPrediction": {
-      "text": "本场比赛胜负难料，双方都必须全力争胜。"
+      "polymarketOdds": {
+        "homeWin": 45,
+        "draw": 30,
+        "awayWin": 25
+      },
+      "marketSentiment": "本场比赛胜负难料，双方都必须全力争胜。"
     },
     "bettingPrediction": {
-      "homeWin": "2.10",
-      "draw": "3.10",
-      "awayWin": "3.50"
+      "handicap": "平手盘",
+      "totals": "小 2.5",
+      "recommendation": "推荐平局或让球下盘",
+      "reason": "考虑到双方实力接近，大概率会打平。"
     },
     "verdict": {
-      "title": "预测方向：波黑 不败",
       "score": "1 - 1",
-      "confidence": "70%",
-      "desc": "场面将极其胶着。",
-      "handicap": "平手盘",
-      "totals": "小 2.5 球"
+      "text": "场面将极其胶着。"
     },
     "injuries": {
       "home": {
@@ -14300,20 +14304,22 @@
       }
     },
     "marketPrediction": {
-      "text": "本场比赛胜负难料，双方都必须全力争胜。"
+      "polymarketOdds": {
+        "homeWin": 45,
+        "draw": 30,
+        "awayWin": 25
+      },
+      "marketSentiment": "本场比赛胜负难料，双方都必须全力争胜。"
     },
     "bettingPrediction": {
-      "homeWin": "2.10",
-      "draw": "3.10",
-      "awayWin": "3.50"
+      "handicap": "平手盘",
+      "totals": "小 2.5",
+      "recommendation": "推荐平局或让球下盘",
+      "reason": "考虑到双方实力接近，大概率会打平。"
     },
     "verdict": {
-      "title": "预测方向：摩洛哥 不败",
       "score": "1 - 1",
-      "confidence": "70%",
-      "desc": "场面将极其胶着。",
-      "handicap": "平手盘",
-      "totals": "小 2.5 球"
+      "text": "场面将极其胶着。"
     },
     "injuries": {
       "home": {
@@ -14529,20 +14535,22 @@
       }
     },
     "marketPrediction": {
-      "text": "本场比赛胜负难料，双方都必须全力争胜。"
+      "polymarketOdds": {
+        "homeWin": 45,
+        "draw": 30,
+        "awayWin": 25
+      },
+      "marketSentiment": "本场比赛胜负难料，双方都必须全力争胜。"
     },
     "bettingPrediction": {
-      "homeWin": "2.10",
-      "draw": "3.10",
-      "awayWin": "3.50"
+      "handicap": "平手盘",
+      "totals": "小 2.5",
+      "recommendation": "推荐平局或让球下盘",
+      "reason": "考虑到双方实力接近，大概率会打平。"
     },
     "verdict": {
-      "title": "预测方向：苏格兰 不败",
       "score": "1 - 1",
-      "confidence": "70%",
-      "desc": "场面将极其胶着。",
-      "handicap": "平手盘",
-      "totals": "小 2.5 球"
+      "text": "场面将极其胶着。"
     },
     "injuries": {
       "home": {
@@ -14746,20 +14754,22 @@
       }
     },
     "marketPrediction": {
-      "text": "本场比赛胜负难料，双方都必须全力争胜。"
+      "polymarketOdds": {
+        "homeWin": 45,
+        "draw": 30,
+        "awayWin": 25
+      },
+      "marketSentiment": "本场比赛胜负难料，双方都必须全力争胜。"
     },
     "bettingPrediction": {
-      "homeWin": "2.10",
-      "draw": "3.10",
-      "awayWin": "3.50"
+      "handicap": "平手盘",
+      "totals": "小 2.5",
+      "recommendation": "推荐平局或让球下盘",
+      "reason": "考虑到双方实力接近，大概率会打平。"
     },
     "verdict": {
-      "title": "预测方向：南非 不败",
       "score": "1 - 1",
-      "confidence": "70%",
-      "desc": "场面将极其胶着。",
-      "handicap": "平手盘",
-      "totals": "小 2.5 球"
+      "text": "场面将极其胶着。"
     },
     "injuries": {
       "home": {
@@ -14975,20 +14985,22 @@
       }
     },
     "marketPrediction": {
-      "text": "本场比赛胜负难料，双方都必须全力争胜。"
+      "polymarketOdds": {
+        "homeWin": 45,
+        "draw": 30,
+        "awayWin": 25
+      },
+      "marketSentiment": "本场比赛胜负难料，双方都必须全力争胜。"
     },
     "bettingPrediction": {
-      "homeWin": "2.10",
-      "draw": "3.10",
-      "awayWin": "3.50"
+      "handicap": "平手盘",
+      "totals": "小 2.5",
+      "recommendation": "推荐平局或让球下盘",
+      "reason": "考虑到双方实力接近，大概率会打平。"
     },
     "verdict": {
-      "title": "预测方向：捷克 不败",
       "score": "1 - 1",
-      "confidence": "70%",
-      "desc": "场面将极其胶着。",
-      "handicap": "平手盘",
-      "totals": "小 2.5 球"
+      "text": "场面将极其胶着。"
     },
     "injuries": {
       "home": {
