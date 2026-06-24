@@ -13263,9 +13263,6 @@
   "cro-pan": {
     "themeClass": "cro-pan-theme",
     "group": "L组",
-    "matchTime": "今天 11:30",
-    "stadium": "达拉斯体育场",
-    "marketSentiment": "克罗地亚首战遗憾2-4不敌英格兰，本场面对小组最弱的巴拿马必须全取三分。Polymarket预测克罗地亚胜率高达 78%。",
     "teams": {
       "home": {
         "name": "克罗地亚",
@@ -13556,41 +13553,193 @@
         }
       ]
     },
-    "tacticalDetails": {
-      "home": {
-        "formation": "4-3-3",
-        "style": "中场控球，肋部渗透",
-        "injuries": {
-          "desc": "无主力球员受伤，全主力出战",
-          "impact": 0,
-          "detail": "克罗地亚阵容齐整，莫德里奇体能恢复良好。"
+    "timeLoc": "北京时间 6月24日 11:30 | 达拉斯体育场",
+    "tactics": {
+      "homeForm": "4-3-3",
+      "awayForm": "5-4-1",
+      "explanation": "克罗地亚采用 4-3-3，中场控球，肋部渗透。巴拿马采用 5-4-1，低位防守，伺机反击。",
+      "players": [
+        {
+          "x": 180,
+          "y": 450,
+          "num": 1,
+          "name": "利瓦科维奇",
+          "type": "home"
         },
-        "defenseWarnings": "面对巴拿马的反击，克罗地亚后腰需注意保护防线身后空间。"
-      },
-      "away": {
-        "formation": "5-4-1",
-        "style": "低位防守，伺机反击",
-        "injuries": {
-          "desc": "无关键球员伤停",
-          "impact": 0,
-          "detail": "巴拿马预计将排出最强防线死守。"
+        {
+          "x": 140,
+          "y": 380,
+          "num": 4,
+          "name": "格瓦迪奥尔",
+          "type": "home"
         },
-        "defenseWarnings": "需重点盯防克罗地亚中场的后插上远射，减少大禁区前沿的犯规。"
-      }
+        {
+          "x": 220,
+          "y": 380,
+          "num": 6,
+          "name": "苏塔洛",
+          "type": "home"
+        },
+        {
+          "x": 70,
+          "y": 360,
+          "num": 3,
+          "name": "博尔纳·索萨",
+          "type": "home"
+        },
+        {
+          "x": 290,
+          "y": 360,
+          "num": 2,
+          "name": "尤拉诺维奇",
+          "type": "home"
+        },
+        {
+          "x": 180,
+          "y": 280,
+          "num": 11,
+          "name": "布罗佐维奇",
+          "type": "home"
+        },
+        {
+          "x": 140,
+          "y": 230,
+          "num": 8,
+          "name": "科瓦契奇",
+          "type": "home"
+        },
+        {
+          "x": 220,
+          "y": 230,
+          "num": 10,
+          "name": "莫德里奇",
+          "type": "home"
+        },
+        {
+          "x": 100,
+          "y": 140,
+          "num": 7,
+          "name": "马耶尔",
+          "type": "home"
+        },
+        {
+          "x": 260,
+          "y": 140,
+          "num": 15,
+          "name": "帕萨利奇",
+          "type": "home"
+        },
+        {
+          "x": 180,
+          "y": 90,
+          "num": 9,
+          "name": "克拉马里奇",
+          "type": "home"
+        },
+        {
+          "x": 180,
+          "y": 350,
+          "num": 1,
+          "name": "莫斯克拉",
+          "type": "away"
+        },
+        {
+          "x": 100,
+          "y": 290,
+          "num": 3,
+          "name": "卡明斯",
+          "type": "away"
+        },
+        {
+          "x": 180,
+          "y": 290,
+          "num": 4,
+          "name": "埃斯科巴",
+          "type": "away"
+        },
+        {
+          "x": 260,
+          "y": 290,
+          "num": 5,
+          "name": "安德拉德",
+          "type": "away"
+        },
+        {
+          "x": 60,
+          "y": 240,
+          "num": 2,
+          "name": "黑客托尔",
+          "type": "away"
+        },
+        {
+          "x": 300,
+          "y": 240,
+          "num": 23,
+          "name": "穆里略",
+          "type": "away"
+        },
+        {
+          "x": 140,
+          "y": 190,
+          "num": 8,
+          "name": "卡拉斯基利亚",
+          "type": "away"
+        },
+        {
+          "x": 220,
+          "y": 190,
+          "num": 20,
+          "name": "戈多伊",
+          "type": "away"
+        },
+        {
+          "x": 120,
+          "y": 130,
+          "num": 10,
+          "name": "巴尔塞纳斯",
+          "type": "away"
+        },
+        {
+          "x": 240,
+          "y": 130,
+          "num": 7,
+          "name": "罗德里格斯",
+          "type": "away"
+        },
+        {
+          "x": 180,
+          "y": 70,
+          "num": 17,
+          "name": "法哈多",
+          "type": "away"
+        }
+      ]
     },
-    "odds": {
+    "marketPrediction": {
+      "text": "克罗地亚首战遗憾2-4不敌英格兰，本场面对小组最弱的巴拿马必须全取三分。Polymarket预测克罗地亚胜率高达 78%。"
+    },
+    "bettingPrediction": {
       "homeWin": "1.30",
       "draw": "4.80",
       "awayWin": "11.00"
     },
-    "prediction": {
-      "winner": "home",
+    "verdict": {
+      "title": "预测方向：克罗地亚胜",
       "score": "2 - 0",
-      "confidence": 85,
+      "confidence": "85%",
+      "desc": "本场比赛实力悬殊，克罗地亚急需三分稳固出线形势。在必须净胜球的情况下，预计克罗地亚将牢牢掌控比赛节奏并多次攻破巴拿马防线。让步1.5球方向合理，推荐克罗地亚取胜穿盘。",
       "handicap": "克罗地亚让 1.5 球",
-      "totals": "大 2.5 球",
-      "direction": "克罗地亚方向",
-      "recommendationDetail": "本场比赛实力悬殊，克罗地亚急需三分稳固出线形势。在必须净胜球的情况下，预计克罗地亚将牢牢掌控比赛节奏并多次攻破巴拿马防线。让步1.5球方向合理，推荐克罗地亚取胜穿盘。"
+      "totals": "大 2.5 球"
+    },
+    "injuries": {
+      "home": {
+        "desc": "无主力球员受伤，全主力出战",
+        "impact": 0
+      },
+      "away": {
+        "desc": "无关键球员伤停",
+        "impact": 0
+      }
     }
   }
 }
